@@ -23,6 +23,7 @@ import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
 import co.nnull.prj.command.LogoutCommand;
 import co.nnull.prj.command.MainCommand;
+import co.nnull.prj.command.MainMCommand;
 import co.nnull.prj.command.MapCommand;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.Notice;
@@ -45,6 +46,7 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		map = new HashMap<String, Command>();
 		
+//		유저페이지		
 //		메인
 		map.put("/main.do", new MainCommand()); // 메인
 		
@@ -74,6 +76,11 @@ public class FrontController extends HttpServlet {
 //		오시는길
 		map.put("/map.do", new MapCommand());	// 오시는길
 		map.put("/insertEnquiry.do", new InsertEnquiry());	// 문의사항
+		
+		
+//		관리자페이지
+//		메인
+		map.put("/mainM.do", new MainMCommand());	//메인
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
