@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="myapp.homepage" template="/WEB-INF/views/layout/layoutU.jsp">
+		<put-attribute name="title" value="Team1-User" />
+		<put-attribute name="head" value="/WEB-INF/views/layout/headU.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="foot" value="/WEB-INF/views/layout/footU.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:*/*" extends="myapp.homepage">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="myapp.managerpage" template="/WEB-INF/views/layout/layoutM.jsp">
+		<put-attribute name="title" value="Team1-Manager" />
+		<put-attribute name="head" value="/WEB-INF/views/layout/headM.jsp" />
+		<put-attribute name="side" value="/WEB-INF/views/layout/sideM.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="foot" value="/WEB-INF/views/layout/footM.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:manager/*/*" extends="myapp.managerpage">
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

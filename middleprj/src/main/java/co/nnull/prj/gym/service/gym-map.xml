@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.nnull.prj.gym.service.GymMapper">
+	<resultMap type="co.nnull.prj.gym.vo.GymVO" id="gymMap">
+		<id property="gymId" column="gym_id" />
+		<result property="gymName" column="gym_name" />
+		<result property="gymLoc" column="gym_loc" />
+		<result property="gymAdd" column="gym_add" />
+		<result property="gymTel" column="gym_tel" />
+		<result property="gymMail" column="gym_mail" />
+		<result property="gymStart" column="gym_start" />
+		<result property="gymEnd" column="gym_end" />
+	</resultMap>
+	
+	<select id="selectList" resultMap="gymMap">
+		SELECT * FROM GYM ORDER BY GYM_ID
+	</select>
+</mapper>
