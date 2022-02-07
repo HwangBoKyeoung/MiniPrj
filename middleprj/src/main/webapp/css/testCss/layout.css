@@ -1,0 +1,586 @@
+@charset "utf-8";
+
+body {
+	font-family:  'Lucida Sans', "Lucida Grande", Verdana, 'Nanum Gothic', '맑은 고딕','malgun gothic','돋움',Dotum,"Apple SD Gothic Neo",'Apple Gothic',Helvetica,Arial;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #595959;
+	font-weight: 400;
+}
+
+#wrap,
+#header,
+#visual,
+#container,
+#footer {
+	clear: both;
+	position: relative;
+	width: 100%;
+}
+
+#wrap {
+	min-width: 1472px;
+}
+
+/* Header */
+.bg-wrap {
+	position: absolute;
+	width: 100%;
+	height: 53px;
+	top: 119px;
+	background: url(../images/common/bg_wrap.png) repeat-x 0 0;
+	z-index: 1;
+}
+#header {
+	position: absolute;
+	height: 119px;
+	background: url(../images/common/bg_header.png) repeat-x 0 0;
+	z-index: 30;
+}
+
+#header .head-inner {
+	position: relative;
+	width: 1170px;
+	margin: 0 auto;
+}
+
+#header .head-inner h1 {
+	float: left;
+	/*margin-right: 119px;*/
+	/*margin-right: 84px;*/
+	padding-top: 54px;
+}
+
+#header .head-inner div.important {
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 34px;
+}
+
+#header .head-inner p {
+	float: left;
+}
+
+#header .head-inner .important .call {
+	margin-left: 9px;
+	padding-left: 14px;
+	background: url(../images/common/bl_call.gif) no-repeat 0 50%;
+}
+
+#header .head-inner .important .kakaotalk {
+	margin-left: 9px;
+	padding-left: 14px;
+	background: url(../images/common/bl_call.gif) no-repeat 0 50%;
+}
+
+#header .head-inner .important .kakao {
+	vertical-align:middle;
+	padding-right:4px;
+}
+
+#header .head-inner p span {
+	margin-right: 8px;
+	color: #7c6f43;
+}
+
+#header .head-inner p strong {
+	color: #363636;
+}
+
+#header .head-inner #cna {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#header .head-inner #cna .cna-list {
+	overflow: hidden;
+}
+
+#header .head-inner #cna .cna-list li {
+	float: left;
+}
+
+#header .head-inner #cna .cna-list li a {
+	margin-left: 5px;
+	padding-left: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #363636;
+	line-height: 34px;
+	letter-spacing: -0.1px;
+	background: url(../images/common/bl_cna.gif) no-repeat 0 50%;
+}
+
+#header .head-inner #cna .cna-list li:first-child a {
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+
+#header .head-inner #gna {
+	padding-top: 65px;
+	font-family: 'Nanum Gothic', '맑은 고딕','malgun gothic','돋움',Dotum,"Apple SD Gothic Neo",'Apple Gothic',Helvetica,Arial;
+}
+
+
+#header .head-inner #gna .gna-list {
+    float:right;
+	overflow: hidden;
+}
+
+#header .head-inner #gna .gna-list > li {
+	float: left;
+	margin-left: 33px;
+}
+
+#header .head-inner #gna .gna-list > li:first-child {
+	margin-left: 0;
+}
+
+#header .head-inner #gna .gna-list > li > a {
+	display: block;
+	margin-bottom: 30px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#header .head-inner #gna .gna-list > li > a:hover,
+#header .head-inner #gna .gna-list > li > a.active,
+#header .head-inner #gna .gna-list > li.active > a {
+	font-weight: 800;
+	color: #ffc600;
+}
+
+#header .head-inner #gna .gna-list li .main-inner {
+	position: absolute;
+	display: none;
+	top: 119px;
+	z-index: 10;
+}
+
+#header .head-inner #gna .gna-list li.gna2 .main-inner {
+	margin-left: 15px;
+}
+#header .head-inner #gna .gna-list li.gna3 .main-inner {
+	margin-left: -51px;
+}
+#header .head-inner #gna .gna-list li.gna4 .main-inner {
+	margin-left: -92px;
+}
+#header .head-inner #gna .gna-list li.gna5 .main-inner {
+	margin-left: -18px;
+}
+#header .head-inner #gna .gna-list li.gna6 .main-inner {
+	margin-left: -8px;
+}
+#header .head-inner #gna .gna-list li.gna7 .main-inner {
+	xmargin-left: -230px;
+	margin-left: -365px;
+}
+
+#header .head-inner #gna .gna-list li.gna8 .main-inner {
+	margin-left: -35px;
+}
+
+#header .head-inner #gna .gna-list li.gna9 .main-inner {
+	margin-left: -205px;
+}
+
+#header .head-inner #gna .gna-list li .main-inner .sub-list {
+	overflow: hidden;
+}
+
+#header .head-inner #gna .gna-list li .main-inner .sub-list li {
+	float: left;
+	margin-left: 31px;
+}
+
+#header .head-inner #gna .gna-list li .main-inner .sub-list li.sub1 {
+	margin-left: 0;
+}
+
+#header .head-inner #gna .gna-list li .main-inner .sub-list li a {
+	font-size: 14px;
+	color: #ebebeb;
+	line-height: 54px;
+	letter-spacing: -1px;
+}
+
+#header .head-inner #gna .gna-list li .main-inner .sub-list li a:hover,
+#header .head-inner #gna .gna-list li .main-inner .sub-list li a.active {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#visual {
+	overflow: hidden;
+}
+
+/* Container */
+#container {
+}
+
+
+/*aside*/
+#aside {
+	clear: both;
+	position: relative;
+	width: 100%;
+	height: 48px;
+	padding-top: 8px;
+	background-color: #ffc600;
+}
+
+#aside div {
+	position: absolute;
+	width: 88px;
+	left: 50%;
+	margin-left: -44px;
+}
+
+#aside a {
+	display: block;
+	height: 41px;
+	text-decoration: none;
+	font-size: 28px;
+	font-weight: bold;
+	font-style: italic;
+	color: #363636;
+	background: url(../images/common/arr_top.gif) no-repeat 100% 50%;
+}
+
+#aside a:hover {
+	background: url(../images/common/arr_top_ov.gif) no-repeat 100% 50%;
+}
+
+/* Footer */
+#footer {
+	padding-bottom: 30px;
+	background-color: #3c3c3c;
+}
+
+#footer .foot-inner {
+	position: relative;
+	width: 1170px;
+	margin: 0 auto;
+}
+
+#footer .foot-inner .company-info {
+	padding-top: 28px;
+	margin-bottom: 3px;
+	color: #7f7f7f;
+	font-size: 13px;
+	letter-spacing: -1px;
+	line-height: 19px;
+	font-family: 'Nanum Gothic', '맑은 고딕','malgun gothic','돋움',Dotum,"Apple SD Gothic Neo",'Apple Gothic',Helvetica,Arial;
+}
+
+#footer .foot-inner .company-info p {
+	font-weight: 800;
+}
+
+#footer .foot-inner .company-info span.ceo {
+	display: inline-block;
+	margin-left: 13px;
+	padding-left: 16px;
+	background: url(../images/common/bl_footer.gif) no-repeat 0 50%;
+}
+
+#footer .foot-inner .company-info .info1 dl dt.addr {
+	font-weight: 800;
+}
+
+#footer .foot-inner .company-info dl {
+	clear: both;
+}
+
+#footer .foot-inner .company-info dl dt {
+	float: left;
+}
+
+#footer .foot-inner .company-info dl dt.lice,
+#footer .foot-inner .company-info dl dt.tel {
+	margin-right: 5px;
+}
+
+#footer .foot-inner .company-info dl dt.lice,
+#footer .foot-inner .company-info dl dt.tel,
+#footer .foot-inner .company-info dl dd.addr {
+	margin-left: 13px;
+	padding-left: 18px;
+	background: url(../images/common/bl_footer.gif) no-repeat 0 50%;	
+}
+
+#footer .foot-inner .company-info dl dd {
+	float: left;
+}
+
+#footer .foot-inner .copyright {
+	clear: both;
+	margin-top: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #575757;
+	letter-spacing: -0.5px;
+}
+
+#footer .foot-inner .sitelink {
+	position: absolute;
+	top: 50px;
+	right: 0;
+}
+
+#footer .foot-inner .sitelink .links {
+	overflow: hidden;
+}
+
+/* 2016-01-15 추가 */
+#footer .foot-inner .sitelink .links li {
+	float: left;
+	margin-left: 4px;
+}
+
+#footer .foot-inner .sitelink .links li:first-child {
+	margin-left: 0;
+}
+
+#footer .foot-inner .sitelink .links li a {
+	display: block;
+	width: 39px;
+	height: 39px;
+}
+
+#footer .foot-inner .sitelink .links .link1 a {
+	background: url(../images/common/link_cafe.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link1 a:hover {
+	background: url(../images/common/link_cafe_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link2 a {
+	background: url(../images/common/link_blog.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link2 a:hover {
+	background: url(../images/common/link_blog_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link3 a {
+	background: url(../images/common/link_fb.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link3 a:hover {
+	background: url(../images/common/link_fb_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link4 a {
+	background: url(../images/common/link_kas.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link4 a:hover {
+	background: url(../images/common/link_kas_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link5 a {
+	background: url(../images/common/link_insta.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link5 a:hover {
+	background: url(../images/common/link_insta_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link6 a {
+	background: url(../images/common/link_yp.gif) no-repeat 0 0;
+	margin-bottom:15px;
+	margin-left:0;
+	clear:both;
+}
+
+#footer .foot-inner .sitelink .links .link6 a:hover {
+	background: url(../images/common/link_yp_ov.gif) no-repeat 0 0;
+}
+
+#footer .foot-inner .sitelink .links .link7 {
+
+	margin-left:0;
+	clear:both;
+}
+
+#footer .foot-inner .sitelink .links .link7 a {
+	display: block;
+	width: 50px;
+	height: 55px;
+	background: url(../images/common/footer1.png) no-repeat 0 0;
+	background-size:55px auto;
+	margin-left:80px;
+}
+
+#footer .foot-inner .sitelink .links .link8 a {
+	display: block;
+	width: 38px;
+	height: 55px;
+	margin:0 20px;
+	background: url(../images/common/footer2.png) no-repeat 0 0;
+	background-size:38px auto;
+}
+
+#footer .foot-inner .sitelink .links .link9 a {
+	display: block;
+	width: 38px;
+	height: 55px;
+	background: url(../images/common/footer3.png) no-repeat 0 0;
+	background-size:38px auto;
+}
+
+/* quick bar */
+#quick {
+	position: absolute;
+	left: 50%;
+	margin-left: 621px;
+	z-index: 50;
+}
+
+#quick .q-menu {
+	width: 116px;
+}
+
+#quick .q-menu ul li a {
+	display: block;
+	width: 116px;
+	height: 104px;
+}
+
+#quick .q-menu ul li.q1 a {
+	height: 47px;
+	background: url(../images/common/q1.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q2 a {
+	height: 107px;
+	background: url(../images/common/q2.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q2 a:hover {
+	background: url(../images/common/q2_ov.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q3 a {
+	background: url(../images/common/q3.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q3 a:hover {
+	background: url(../images/common/q3_ov.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q4 a {
+	background: url(../images/common/q4.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q4 a:hover {
+	background: url(../images/common/q4_ov.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q5 a {
+	background: url(../images/common/q5.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q5 a:hover {
+	background: url(../images/common/q5_ov.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q6 a {
+	height: 104px;
+	background: url(../images/common/q6.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q6 a:hover {
+	background: url(../images/common/q6_ov.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q7 a {
+	height: 107px;
+	background: url(../images/common/q7.gif) no-repeat 0 0;
+}
+
+#quick .q-menu ul li.q7 a:hover {
+	background: url(../images/common/q7_ov.gif) no-repeat 0 0;
+}
+
+/*sitemap*/
+#sitemap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -590px;
+	width: 1180px;
+	height: 718px;
+	background: url(../images/common/bg_sitemap.png) no-repeat 0 0;
+	font-family: 'Nanum Gothic', '맑은 고딕','malgun gothic','돋움',Dotum,"Apple SD Gothic Neo",'Apple Gothic',Helvetica,Arial;
+}
+
+#sitemap > div {
+	position: relative;
+	margin: 0 57px;
+}
+
+#sitemap h2 {
+	padding-top: 39px;
+	margin-bottom: 34px;
+	font-size: 40px;
+	color: #2f2f2f;
+	letter-spacing: -4px;
+	background: url(../images/common/bg_sitemap_tit.gif) no-repeat 173px 67px;
+}
+
+#sitemap .btn-sitemap {
+	position: absolute;
+	right: 0;
+	top: 51px;
+	width: 63px;
+	height: 64px;
+}
+
+#sitemap div ul {
+	letter-spacing: -1px;
+}
+
+#sitemap div ul li.menu1 {
+	margin-bottom: 43px;
+}
+
+#sitemap > div > ul > li {
+	float: left;
+	margin-left: 29px;
+	text-align: center;
+	width: 190px;
+}
+
+#sitemap > div > ul > li > em {
+	display: block;
+	margin-bottom: 24px;
+	font-size: 22px;
+	line-height: 52px;
+	font-weight: bold;
+	color: #393939;
+	border-top: 1px solid #525252;
+	border-bottom: 1px solid #525252;
+}
+
+#sitemap div .sitemap-lst ul li a {
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.alpha-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background-color: #000;
+}

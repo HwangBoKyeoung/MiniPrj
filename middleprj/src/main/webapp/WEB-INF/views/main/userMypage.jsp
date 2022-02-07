@@ -1,159 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html lang="ko">
+<style>
+	#lists {
+		box-sizing: border-box;
+		width: 30%;
+		height: 100%;
+	}
+	#menus li:hover{
+		background-color: yellow;
+	}
+	#menus li{
+		text-align: center;
+	}
+	#imgstyle{
+		text-align: center;
+		border-radius: 30px;
+	}
+</style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-    <script>
-    	var location = document.querySelector('#tabs-content').offsetTop;
-    
-    	window.scrollTo({top:location, left:0, behavior:'auto'});
-        function scroll_follow(id) {
-            $(window).scroll(function () //스크롤이 움직일때마다 이벤트 발생
-                {
-                    var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
-                    $(id).stop().animate({
-                        top: position + "px"
-                    }, 1); //해당 오브젝트 위치값 재설정
-                });
-        }
-        scroll_follow("#tabs");
-    </script>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        HTML, body {
-            height: 100%;
-            overflow: auto;
-        }
 
-        #tabs {
-            position: absolute;
-        }
+<div id="lists">
+	<div class="rounded shadow p-4 sticky-bar">
+		<div id="imgstyle"><img src="https://colorlib.com/wp/wp-content/uploads/sites/2/colorlib-push-logo.png" alt=""></div><br><br>
+		<ul id="menus" class="list-unstyled mb-0">
+			<li><a href="#general" class="mouse-down h6 text-dark">나의정보</a></li>
+			<li><a href="#orderlist" class="mouse-down h6 text-dark">주문목록</a></li>
+			<li><a href="#requirelist" class="mouse-down h6 text-dark">상담문의조회</a></li>
+			<li><a href="#actionlist" class="mouse-down h6 text-dark">체험신청조회</a></li>
+			<li><a href="#updateinfo" class="mouse-down h6 text-dark">회원정보수정</a></li>
+			<li><a href="#deleteinfo" class="mouse-down h6 text-dark">회원탈퇴</a></li>
+		</ul>
+	</div>
+</div>
 
-        #tabs li>a:link {
-            text-decoration: none;
-            color: yellow;
-        }
+<h1 style="text-align: center;">ㅇㅇㅇ님 환영합니다!</h1>
+<p style="text-align: center;">
+	For more awesome templates please visit <strong><a
+		href="https://colorlib.com/wp/templates/">Colorlib</a></strong>.
+</p>
+<br>
+<p style="text-align: center; color: red;">
+	<strong>Copyright information for the template can't be
+		altered/removed unless you purchase a license.</strong>
+<p style="text-align: center;">
+	<strong>Removing copyright information without the license
+		will result in suspension of your hosting and/or domain name(s).</strong>
+<p style="text-align: center;">
+	<strong>More information about the license is available <a
+		href="https://colorlib.com/wp/licence/">here</a></strong>.
+</p>
 
-        #tabs li>a:visited {
-            text-decoration: none;
-            color: yellow;
-        }
 
-        #tabs li:hover {
-            text-decoration: none;
-            background-color: green;
-            color: yellow;
-        }
-
-        #tabs>ul>li {
-            display: inline-block;
-            list-style: none;
-            font-size: 15px;
-            line-height: 50px;
-            border: 0.5px solid grey;
-            width: 80%;
-            text-align: center;
-            background-color: grey;
-        }
-
-        #tabs {
-            float: left;
-            width: 25%;
-            /* background-color: yellow; */
-        }
-
-        #tabs-content {
-            float: right;
-            width: 75%;
-            /* background-color: indigo; */
-        }
-    </style>
-
-</head>
-
-<body id="bdy">
-    <div id='tabs'>
-        <ul>
-            <li><a href='#tabs-1'>나의정보</a></li>
-        </ul>
-        <ul>
-            <li><a href='#tabs-2'>주문목록</a></li>
-        </ul>
-        <ul>
-            <li><a href='#tabs-3'>상담문의조회</a></li>
-        </ul>
-        <ul>
-            <li><a href='#tabs-3'>체험신청조회</a></li>
-        </ul>
-        <ul>
-            <li><a href='#tabs-3'>회원정보수정</a></li>
-        </ul>
-        <ul>
-            <li><a href='#tabs-3'>회원탈퇴</a></li>
-        </ul>
-    </div>
-
-    <div id="tabs-content" class='tabs-content'>
-        <article id='tabs-1'>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-01.png" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h4>Best Education</h4>
-                    <p>
-                        Grad School is free educational HTML template with Bootstrap
-                        4.5.2 CSS layout. Feel free to use it for educational or
-                        commercial purposes. You may want to make <a href="https://paypal.me/templatemo"
-                            target="_parent" rel="sponsored">a little donation</a> to TemplateMo. Please tell
-                        your friends about us. Thank you.
-                    </p>
-                </div>
-            </div>
-        </article>
-        <article id='tabs-2'>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-02.png" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h4>Top Level</h4>
-                    <p>You can modify this HTML layout by editing contents and
-                        adding more pages as you needed. Since this template has options
-                        to add dropdown menus, you can put many HTML pages.</p>
-                    <p>Suspendisse tincidunt, magna ut finibus rutrum, libero
-                        dolor euismod odio, nec interdum quam felis non ante.</p>
-                </div>
-            </div>
-        </article>
-        <article id='tabs-3'>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="assets/images/choose-us-image-03.png" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h4>Quality Meeting</h4>
-                    <p>
-                        You are NOT allowed to redistribute this template ZIP file on any
-                        template collection website. However, you can use this template
-                        to convert into a specific theme for any kind of CMS platform
-                        such as WordPress. For more information, you shall <a rel="nofollow"
-                            href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> now.
-                    </p>
-                </div>
-            </div>
-        </article>
-    </div>
-</body>
-
-</html>

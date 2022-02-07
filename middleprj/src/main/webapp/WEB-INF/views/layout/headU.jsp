@@ -25,7 +25,7 @@
 
 									<li><a href="#">이용안내<i class="ti-angle-down"></i></a>
 										<ul class="submenu">
-											<li><a href="#">프로그램</a></li>
+											<li><a href="infoUse.do">프로그램</a></li>
 											<li><a href="#">스케줄</a></li>
 										</ul></li>
 
