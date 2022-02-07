@@ -20,5 +20,6 @@
 	<mappers>
 		<mapper resource="co/nnull/prj/gym/service/gym-map.xml" />
 		<mapper resource="co/nnull/prj/enquiry/service/enquiry-map.xml" />
+		<mapper resource="co/nnull/prj/members/service/members-map.xml" />
 	</mappers>
 </configuration>

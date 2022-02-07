@@ -20,7 +20,7 @@
 									<li><a href="main.do">홈</a></li>
 									<li><a href="#">멤버십<i class="ti-angle-down"></i></a>
 										<ul class="submenu">
-											<li><a href="memberShip.do">상품</a></li>
+											<li><a href="memberShip.do">서비스</a></li>
 										</ul></li>
 
 									<li><a href="#">이용안내<i class="ti-angle-down"></i></a>
@@ -31,10 +31,10 @@
 
 									<li><a href="#">게시판 <i class="ti-angle-down"></i></a>
 										<ul class="submenu">
-											<li><a href="#">공지사항</a></li>
-											<li><a href="#">자유게시판</a></li>
-											<li><a href="#">중고거래</a></li>
-											<li><a href="#">체험문의</a></li>
+											<li><a href="notice.do">공지사항</a></li>
+											<li><a href="free.do">자유게시판</a></li>
+											<li><a href="deal.do">중고거래</a></li>
+											<li><a href="experience.do">체험문의</a></li>
 										</ul></li>
 									<li><a href="map.do">오시는길</a></li>
 								</ul>
@@ -43,7 +43,7 @@
 
 					</div>
 					<c:choose>
-						<c:when test="${sessionAuthor=='admin'}">
+						<c:when test="${author=='admin'}">
 							<div class="col-xl-3 col-lg-3 d-none d-lg-block">
 								<div class="Appointment">
 									<div class="book_btn d-none d-lg-block">
@@ -67,13 +67,13 @@
 
 							</div>
 						</c:when>
-						<c:when test="${sessionAuthor=='user'}">
+						<c:when test="${author=='user'}">
 							<div class="col-xl-3 col-lg-3 d-none d-lg-block">
 								<div class="Appointment">
 									<div class="book_btn d-none d-lg-block">
 										<a class="nav-link dropdown-toggle" href="#" id="userDropdown"
 											role="button" data-toggle="dropdown" aria-haspopup="true"
-											aria-expanded="false">${sessionName}님</a>
+											aria-expanded="false">${name}님</a>
 										<div
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
@@ -101,11 +101,11 @@
 										<div
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
-											<a class="dropdown-item" href="#"> <i
+											<a class="dropdown-item" href="registerForm.do"> <i
 												class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 회원가입
-											</a> <a class="dropdown-item" href="#"> <i
+											</a> <a class="dropdown-item" href="loginForm.do"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
-											</a> <a class="dropdown-item" href="#"> <i
+											</a> <a class="dropdown-item" href="logout.do"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
 										</div>

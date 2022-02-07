@@ -1,6 +1,7 @@
 package co.nnull.prj.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -12,15 +13,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.Deal;
+import co.nnull.prj.command.Experience;
+import co.nnull.prj.command.Free;
+import co.nnull.prj.command.IdCheck;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertEnquiry;
+import co.nnull.prj.command.LoginCommand;
+import co.nnull.prj.command.LoginForm;
+import co.nnull.prj.command.LogoutCommand;
 import co.nnull.prj.command.MainCommand;
 import co.nnull.prj.command.MapCommand;
-import co.nnull.prj.command.UserMyPage;
 import co.nnull.prj.command.MemberShip;
+import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
+import co.nnull.prj.command.RegisterForm;
+import co.nnull.prj.command.UserMyPage;
 
 
 @WebServlet("*.do")
@@ -35,15 +45,35 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		map = new HashMap<String, Command>();
 		
+//		메인
 		map.put("/main.do", new MainCommand()); // 메인
-		map.put("/map.do", new MapCommand());	// 오시는길
-		map.put("/insertEnquiry.do", new InsertEnquiry());	// 문의사항 db insert
+		
+//		접속관련
+		map.put("/loginForm.do", new LoginForm()); // 로그인 폼
+		map.put("/login.do", new LoginCommand()); // 로그인
+		map.put("/logout.do", new LogoutCommand()); // 로그아웃
+		map.put("/registerForm.do", new RegisterForm()); // 회원가입 폼 호출
+		map.put("/idCheck.do", new IdCheck()); // 아이디 중복체크
 		map.put("/userMypage.do", new UserMyPage());	// 일반회원 마이페이지
+		
+//		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/payment.do", new Payment()); // 결제 테스트
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
+		
+//		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
+		
+//		게시판
+		map.put("/notice.do", new Notice());	// 공지사항
+		map.put("/free.do", new Free());	// 자유게시판
+		map.put("/deal.do", new Deal());	// 중고거래
+		map.put("/experience.do", new Experience());	// 체험신청
+		
+//		오시는길
+		map.put("/map.do", new MapCommand());	// 오시는길
+		map.put("/insertEnquiry.do", new InsertEnquiry());	// 문의사항
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +87,12 @@ public class FrontController extends HttpServlet {
 		String viewPage = command.exec(request, response);
 		
 		if(viewPage!=null && !viewPage.endsWith(".do")) {
-			viewPage = viewPage + ".tiles";
+			if(viewPage.startsWith("ajax:")){
+				PrintWriter out = response.getWriter();
+				out.print(viewPage.substring(5));
+			} else {
+				viewPage = viewPage + ".tiles";
+			}
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(viewPage);

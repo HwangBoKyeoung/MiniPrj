@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.members.service.MembersMapper">
+	<resultMap type="co.nnull.prj.members.vo.MembersVO" id="membersMap">
+		<id property="membersId" column="members_id"/>
+		<result property="membersPassword" column="members_password"/>
+		<result property="membersName" column="members_name"/>
+		<result property="membersTel" column="members_tel"/>
+		<result property="membersAddress" column="members_address"/>
+		<result property="membersAuthor" column="members_author"/>
+		<result property="membersMembership" column="members_membership"/>
+	</resultMap>
+
+	<select id="memberSelectList" resultType="co.nnull.prj.members.vo.MembersVO">
+		SELECT
+			MEMBERS_ID AS MEMBERSID,
+			MEMBERS_PASSWORD AS MEMBERSPASSWORD,
+			MEMBERS_NAME AS MEMBERSNAME,
+			MEMBERS_TEL AS MEMBERSTEL,
+			MEMBERS_ADDRESS AS MEMBERSADDRESS,
+			MEMBERS_AUTHOR AS MEMBERSAUTHOR,
+			MEMBERS_MEMBERSHIP AS MEMBERSMEMBERSHIP
+		FROM MEMBERS ORDER BY MEMBERS_ID DESC
+	</select>
+	
+	<select id="memberSelect" resultMap="membersMap">
+		SELECT * FROM MEMBERS
+		WHERE MEMBERS_ID = #{membersId}
+		<if test="membersPassword != null">
+			AND MEMBERS_PASSWORD = #{membersPassword}
+		</if>
+	</select>
+	
+	<insert id="memberInsert" parameterType="co.nnull.prj.members.vo.MembersVO">
+		<selectKey keyProperty="membersId" resultType="int" order="BEFORE">
+			SELECT MAX(MEMBERS_ID) +1 AS MEMBERSID FROM MEMBERS
+		</selectKey>
+		INSERT INTO MEMBERS(MEMBERS_ID,MEMBERS_PASSWORD,MEMBERS_NAME,MEMBERS_TEL,MEMBERS_ADDRESS,
+		MEMBERS_AUTHOR,MEMBERS_MEMBERSHIP) VALUES(#{membersId},#{membersPassword},#{membersName},
+		#{membersTel},#{membersAddress},#{membersAuthor},#{membersMembership})
+	</insert>
+	
+	<update id="memberUpdate">
+		UPDATE MEMBERS
+		<if test="membersPassword != null">SET MEMBERS_PASSWORD = #{membersPassword}</if>
+		<if test="membersName != null">SET MEMBERS_NAME = #{membersName}</if>
+		<if test="membersTel != null">SET MEMBERS_TEL = #{membersTel}</if>
+		<if test="membersAddress != null">SET MEMBERS_ADDRESS = #{membersAddress}</if>
+	</update>
+	
+	<delete id="memberDelete">
+		DELETE FROM MEMBERS WHERE MEMBERS_ID = #{membersId}
+	</delete>
+	
+	<select id="isIdCheck" parameterType="String" resultType="boolean">
+		SELECT CASE WHEN COUNT(*) = 1 THEN 0 ELSE 1 END AS ID
+		FROM MEMBERS WHERE MEMBERS_ID = #{id}
+	</select>
+</mapper>

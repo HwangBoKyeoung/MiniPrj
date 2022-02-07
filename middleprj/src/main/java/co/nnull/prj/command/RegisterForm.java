@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
 
-public class UserMyPage implements Command {
+public class RegisterForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		return "member/userMypage";
+		return "member/registerForm";
 	}
 
 }

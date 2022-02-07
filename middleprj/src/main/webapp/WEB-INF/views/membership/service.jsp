@@ -89,7 +89,39 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="section_title text-center mb-73">
-						<h3></h3>
+						<h3>운영 프로그램</h3>
+							<div class="roomImage">
+							<img src="img/programs/01.PNG" class="rounded"
+								alt="웨이트룸1" width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/02.PNG" class="rounded"
+								alt="웨이트룸2" width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/03.PNG" class="rounded"
+								alt="유산소룸" width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/04.PNG" class="rounded" alt="g.x룸"
+								width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/05.PNG" class="rounded"
+								alt="샤워실" width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/06.PNG" class="rounded" alt="사우나"
+								width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/07.PNG" class="rounded" alt="사우나"
+								width="304" height="236">
+						</div>
+						<div class="roomImage">
+							<img src="img/programs/08.PNG" class="rounded" alt="사우나"
+								width="304" height="236">
+						</div>
 					</div>
 				</div>
 			</div>
