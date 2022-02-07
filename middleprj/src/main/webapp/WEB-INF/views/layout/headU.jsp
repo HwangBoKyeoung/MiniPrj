@@ -53,8 +53,9 @@
 										<div
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
-											<a class="dropdown-item" href="#"> <i
-												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 관리자페이지
+											<a class="dropdown-item" href="mainM.do"> <i
+												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+												관리자페이지
 											</a> <a class="dropdown-item" href="#"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
@@ -78,7 +79,8 @@
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
 											<a class="dropdown-item" href="userMypage.do"> <i
-												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 마이페이지
+												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+												마이페이지
 											</a> <a class="dropdown-item" href="#"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
