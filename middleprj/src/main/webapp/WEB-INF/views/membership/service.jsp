@@ -16,7 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 이용 시설-->
+	<!-- 이용 시설-->
 	<div class="priscing_area">
 		<div class="container">
 			<div class="row">
@@ -82,53 +82,59 @@
 			</div>
 		</div>
 	</div>
-<!-- 이용 시설 끝-->
-<!-- 운영 프로그램 -->
+	<!-- 이용 시설 끝-->
+	<!-- 운영 프로그램 -->
 	<div class="priscing_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="section_title text-center mb-73">
 						<h3>운영 프로그램</h3>
-							<div class="roomImage">
-							<img src="img/programs/01.PNG" class="rounded"
-								alt="웨이트룸1" width="304" height="236">
+						<div class="roomImage">
+							<a href="infoUse.do#program1"> <img src="img/programs/01.PNG"
+								class="rounded" alt="스트롱바이줌바" width="304" height="236">
+							</a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/02.PNG" class="rounded"
-								alt="웨이트룸2" width="304" height="236">
+							<a href="infoUse.do#program2"> <img src="img/programs/02.PNG"
+								class="rounded" alt="플라잉요가" width="304" height="236">
+							</a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/03.PNG" class="rounded"
-								alt="유산소룸" width="304" height="236">
+							<a href="infoUse.do#program3"> <img src="img/programs/03.PNG"
+								class="rounded" alt="바디컴뱃" width="304" height="236">
+							</a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/04.PNG" class="rounded" alt="g.x룸"
-								width="304" height="236">
+							<a href="infoUse.do#program4"><img src="img/programs/04.PNG"
+								class="rounded" alt="Vg댄스" width="304" height="236"> </a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/05.PNG" class="rounded"
-								alt="샤워실" width="304" height="236">
+							<a href="infoUse.do#program5"><img src="img/programs/05.PNG"
+								class="rounded" alt="다이어트댄스" width="304" height="236"> </a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/06.PNG" class="rounded" alt="사우나"
-								width="304" height="236">
+							<a href="infoUse.do#program6"> <img src="img/programs/06.PNG"
+								class="rounded" alt="그룹P.T" width="304" height="236">
+							</a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/07.PNG" class="rounded" alt="사우나"
-								width="304" height="236">
+							<a href="infoUse.do#program7"> <img src="img/programs/07.PNG"
+								class="rounded" alt="스피닝" width="304" height="236">
+							</a>
 						</div>
 						<div class="roomImage">
-							<img src="img/programs/08.PNG" class="rounded" alt="사우나"
-								width="304" height="236">
+							<a href="infoUse.do#program8"> <img src="img/programs/08.PNG"
+								class="rounded" alt="점핑잭" width="304" height="236">
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- 운영 프로그램 끝 -->
-<!-- 멤버십 상품 -->
+	<!-- 운영 프로그램 끝 -->
+	<!-- 멤버십 상품 -->
 	<div class="priscing_area">
 		<div class="container">
 			<div class="row">
@@ -171,7 +177,8 @@
 								<li>24시간 이용</li>
 								<li>월 P.T 2회 제공</li>
 								<li>락커룸 & 샤워실 무제한</li>
-								<li>G.X & 스피닝 무제한<li>
+								<li>G.X & 스피닝 무제한
+								<li>
 								<li class="off-color"></li>
 							</ul>
 						</div>
@@ -188,8 +195,10 @@
 								<li>24시간 이용</li>
 								<li>월 P.T 4회 제공</li>
 								<li>락커룸 & 샤워실 무제한</li>
-								<li>G.X & 스피닝 무제한<li>
-								<li>사우나 무제한<li>
+								<li>G.X & 스피닝 무제한
+								<li>
+								<li>사우나 무제한
+								<li>
 							</ul>
 						</div>
 					</div>

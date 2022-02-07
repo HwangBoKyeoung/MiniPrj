@@ -12,7 +12,7 @@
 </head>
 <body>
 	<section class="program24">
-		<div class="section-inner ta-r">
+		<div class="section-inner ta-r" id="program1">
 			<img alt="1번" src="img/programs/01.PNG">
 			<h4>
 				<span class="num">01</span><strong class="tit">스트롱 바이 줌바</strong>
@@ -27,7 +27,7 @@
 	</section>
 
 	<section class="program23">
-		<div class="section-inner">
+		<div class="section-inner" id="program2">
 			<img alt="2번" src="img/programs/02.PNG">
 			<h4>
 				<span class="num">02</span><strong class="tit">플라잉 요가</strong>
@@ -43,7 +43,7 @@
 	</section>
 
 	<section class="program22">
-		<div class="section-inner ta-r">
+		<div class="section-inner ta-r" id="program3">
 			<img alt="3번" src="img/programs/03.PNG">
 			<h4>
 				<span class="num">03</span><strong class="tit">바디컴뱃</strong>
@@ -59,7 +59,7 @@
 		</div>
 	</section>
 	<section class="program19">
-		<div class="section-inner">
+		<div class="section-inner" id="program4">
 			<img alt="4번" src="img/programs/04.PNG">
 			<h4>
 				<span class="num">04</span><strong class="tit">Vg댄스</strong>
@@ -75,7 +75,7 @@
 	</section>
 
 	<section class="program20">
-		<div class="section-inner ta-r""="">
+		<div class="section-inner ta-r""="" id="program5">
 			<img alt="5번" src="img/programs/05.PNG">
 			<h4>
 				<span class="num">05</span><strong class="tit">다이어트댄스</strong>
@@ -94,7 +94,7 @@
 	</section>
 
 	<section class="program21">
-		<div class="section-inner">
+		<div class="section-inner" id="program6">
 			<img alt="6번" src="img/programs/06.PNG">
 			<h4>
 				<span class="num">06</span><strong class="tit">그룹P.T</strong>
@@ -108,7 +108,7 @@
 		</div>
 	</section>
 	<section class="program1">
-		<div class="section-inner ta-r">
+		<div class="section-inner ta-r" id="program7">
 			<img alt="7번" src="img/programs/07.PNG">
 			<h4>
 				<span class="num">07</span><strong class="tit">스피닝</strong>
@@ -124,7 +124,7 @@
 		</div>
 	</section>
 	<section class="program2">
-		<div class="section-inner">
+		<div class="section-inner" id="program8">
 			<img alt="8번" src="img/programs/08.PNG">
 			<h4>
 				<span class="num">08</span><strong class="tit">점핑잭</strong>
