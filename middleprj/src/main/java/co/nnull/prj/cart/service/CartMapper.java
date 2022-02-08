@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.nnull.prj.cart.vo.CartVO;
 
-public interface CartService {
+public interface CartMapper {
 	List<CartVO> cartMoney();
 	void insert(CartVO vo); // 장바구니 추가
 	List<CartVO> listCart(String membersId); // 장바구니 목록

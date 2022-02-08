@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,9 +83,9 @@
 
 </script>
 <style>
-	#container {
-		padding-top:50px;
-	}
+#container {
+	padding-top: 50px;
+}
 </style>
 <!-- CSS============================================= -->
 <link rel="stylesheet" href="css/linearicons.css">
@@ -102,25 +103,26 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="section_title text-center mb-73">
-							<!--================Cart Area =================-->
-							<section class="cart_area">
-								<div class="container">
-									<div class="cart_inner">
-										<div class="table-responsive">
-											<table class="table">
-												<thead>
+						<!--================Cart Area =================-->
+						<section class="cart_area">
+							<div class="container">
+								<div class="cart_inner">
+									<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th scope="col">선 택</th>
+													<th scope="col">상 품</th>
+													<th scope="col">월별 가격</th>
+													<th scope="col">기간(개월)</th>
+													<th scope="col">총 가격</th>
+												</tr>
+											</thead>
+											<tbody>
+												<c:forEach items="${memberships }" var="membership">
 													<tr>
-														<th scope="col">선 택</th>
-														<th scope="col">상 품</th>
-														<th scope="col">월별 가격</th>
-														<th scope="col">기간(개월)</th>
-													</tr>
-												</thead>
-												<tbody>
-													<c:set var="total" value="0"/>
-													<c:forEach items="${memberships }" var="membership">
-													<tr>
-														<td><input type="checkbox" id="check${membership.membershipNum}" ></td>
+														<td><input type="checkbox"
+															id="check${membership.membershipNum}"></td>
 														<td>
 															<div class="media">
 																<div class="d-flex">
@@ -131,49 +133,61 @@
 																</div>
 															</div>
 														</td>
-														<td>
-															<h5>&#8361; ${membership.membershipPrice } / Month</h5>
-														</td>
+														<td><fmt:formatNumber pattern="###,###,###"
+																value="${membership.membershipPrice}" />원</td>
 														<td>
 															<div class="product_count">
-																<input type="text" name="qty" id="sst${membership.membershipNum}" maxlength="12"
-																	value="1" title="Quantity:" class="input-text qty">
+																<input type="text" name="qty"
+																	id="sst${membership.membershipNum}" maxlength="12"
+																	value="${membership.membershipMonth }"
+																	title="Quantity:" class="input-text qty">
 																<button
 																	onclick="var result = document.getElementById('sst${membership.membershipNum}'); var sst${membership.membershipNum} = result.value; if( !isNaN( sst${membership.membershipNum} )) result.value++;return false;"
-																	class="increase items-count" type="button" id="plus" style="width:20pt;height:23pt;">+
-																	<i class="lnr lnr-chevron-up"></i>
+																	class="increase items-count" type="button" id="plus"
+																	style="width: 20pt; height: 23pt;">
+																	+ <i class="lnr lnr-chevron-up"></i>
 																</button>
 																<button
 																	onclick="var result = document.getElementById('sst${membership.membershipNum}'); var sst${membership.membershipNum} = result.value; if( !isNaN( sst${membership.membershipNum} ) &amp;&amp; sst${membership.membershipNum} > 0 ) result.value--;return false;"
-																	class="reduced items-count" type="button" id="minus" style="width:20pt;height:23pt;">-
-																	<i class="lnr lnr-chevron-down"></i>
+																	class="reduced items-count" type="button" id="minus"
+																	style="width: 20pt; height: 23pt;">
+																	- <i class="lnr lnr-chevron-down"></i>
 																</button>
 															</div>
 														</td>
-													</tr>
-													<c:set var="total" value="${total + (membership.membershipPrice * membership.membershipMonth)}"/>
-													</c:forEach>
-													<tr>
-														<td></td>
-														<td></td>
 														<td>
-															<h5>최종 가격</h5>
-														</td>
-														<td>
-															<h5>&#8361;<c:out value="${total }"/></h5>
+															<div>
+																<fmt:formatNumber pattern="###,###,###"
+																	value="${membership.membershipPrice * membership.membershipMonth}" />
+																원
+															</div>
 														</td>
 													</tr>
-													
-												</tbody>
-											</table>
-										</div>
+												</c:forEach>
+												<tr>
+													<td></td>
+													<td></td>
+													<td>
+														<h5>최종 가격</h5>
+													</td>
+													<td>
+														<h5>
+															&#8361;
+															<c:out value="${total }" />
+														</h5>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
 									</div>
 								</div>
-							<div>
-							<button onclick="requestPay();" class="boxed-btn3">결 제</button>
 							</div>
-							</section>
-							<!--================End Cart Area =================-->
+							<div>
+								<button onclick="requestPay();" class="boxed-btn3">결 제</button>
+							</div>
+						</section>
+						<!--================End Cart Area =================-->
 					</div>
 				</div>
 			</div>
