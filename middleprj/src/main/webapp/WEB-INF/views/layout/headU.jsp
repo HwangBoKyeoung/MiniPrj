@@ -56,7 +56,7 @@
 											<a class="dropdown-item" href="mainM.do"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 												관리자페이지
-											</a> <a class="dropdown-item" href="#"> <i
+											</a> <a class="dropdown-item" href="logout.do"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
 										</div>
@@ -81,7 +81,7 @@
 											<a class="dropdown-item" href="userMypage.do"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 												마이페이지
-											</a> <a class="dropdown-item" href="#"> <i
+											</a> <a class="dropdown-item" href="logout.do"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
 										</div>
@@ -107,8 +107,6 @@
 												class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 회원가입
 											</a> <a class="dropdown-item" href="loginForm.do"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
-											</a> <a class="dropdown-item" href="logout.do"> <i
-												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
 										</div>
 										<div class="col-12">

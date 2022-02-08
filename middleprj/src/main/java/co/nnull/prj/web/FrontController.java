@@ -30,6 +30,7 @@ import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
+import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.UserMyPage;
 
@@ -55,6 +56,7 @@ public class FrontController extends HttpServlet {
 		map.put("/login.do", new LoginCommand()); // 로그인
 		map.put("/logout.do", new LogoutCommand()); // 로그아웃
 		map.put("/registerForm.do", new RegisterForm()); // 회원가입 폼 호출
+		map.put("/register.do", new Register()); // 회원가입)
 		map.put("/idCheck.do", new IdCheck()); // 아이디 중복체크
 		map.put("/userMypage.do", new UserMyPage());	// 일반회원 마이페이지
 		
