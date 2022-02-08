@@ -38,18 +38,32 @@
 		});
 	}
 	
-	
-	for(var i=0; i<100; i++ ) {
-		$(document).ready(function(){
-			$("#check"+i).change(function(){         
-			        if($("#check"+i).is(":checked") == true){
-			           $("#sst"+i).val("1");
-			        }else {
-			        	$("#sst"+i).val("0");
-			        }
-			    });
-			});
-	}
+	 
+     function itemSum() {
+         var str = "";
+         var sum = 0;
+         for (var i = 0; i < 100; i++) {
+             if ($(".chkbox")[i].checked == true) {
+                 sum += parseInt($(".chkbox")[i].value);
+             }
+         }
+         $("#total_sum").html(sum + " 원");
+         $("#amount").val(sum);
+     }
+
+
+     
+// 	for(var i=0; i<100; i++ ) {
+// 		$(document).ready(function(){
+// 			$("#check"+i).change(function(){         
+// 			        if($("#check"+i).is(":checked") == true){
+// 			           $("#sst"+i}.val("1");
+// 			        }else {
+// 			        	$("#sst"+i].val("0");
+// 			        }
+// 			    });
+// 			});
+// 	}
 
 //      // 0부터 시작
 //      var count = 0;
@@ -115,14 +129,15 @@
 													<th scope="col">상 품</th>
 													<th scope="col">월별 가격</th>
 													<th scope="col">기간(개월)</th>
-													<th scope="col">총 가격</th>
 												</tr>
 											</thead>
 											<tbody>
 												<c:forEach items="${memberships }" var="membership">
 													<tr>
-														<td><input type="checkbox"
-															id="check${membership.membershipNum}"></td>
+														<td><input type="checkbox" onClick="itemSum()"
+															class="chkbox"
+															value="${membership.membershipPrice * membership.membershipMonth}"
+															data-membershipNum="${membership.membershipNum }"></td>
 														<td>
 															<div class="media">
 																<div class="d-flex">
@@ -155,13 +170,6 @@
 																</button>
 															</div>
 														</td>
-														<td>
-															<div>
-																<fmt:formatNumber pattern="###,###,###"
-																	value="${membership.membershipPrice * membership.membershipMonth}" />
-																원
-															</div>
-														</td>
 													</tr>
 												</c:forEach>
 												<tr>
@@ -172,8 +180,7 @@
 													</td>
 													<td>
 														<h5>
-															&#8361;
-															<c:out value="${total }" />
+															<div class="total-cart-p" id="total_sum"></div>
 														</h5>
 													</td>
 												</tr>

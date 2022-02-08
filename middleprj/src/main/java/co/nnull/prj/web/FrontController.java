@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.CartCommand;
+import co.nnull.prj.command.CartForm;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
@@ -61,6 +63,8 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/payment.do", new Payment()); // 결제 테스트
+		map.put("/cartForm.do", new CartForm()); // 장바구니 폼 호출
+		map.put("/cart.do", new CartCommand()); // 장바구니 넣기
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
 		
