@@ -28,6 +28,9 @@ public class LoginCommand implements Command {
 			session.setAttribute("id", vo.getMembersId());
 			session.setAttribute("author", vo.getMembersAuthor());
 			session.setAttribute("name", vo.getMembersName());
+			session.setAttribute("tel", vo.getMembersTel());
+			session.setAttribute("address", vo.getMembersAddress());
+			session.setAttribute("membership", vo.getMembersMembership());
 			request.setAttribute("member", vo);
 			page = "main.do";
 		} else {

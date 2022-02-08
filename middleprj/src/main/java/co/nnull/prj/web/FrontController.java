@@ -97,6 +97,7 @@ public class FrontController extends HttpServlet {
 			if(viewPage.startsWith("ajax:")){
 				PrintWriter out = response.getWriter();
 				out.print(viewPage.substring(5));
+				return;
 			} else {
 				viewPage = viewPage + ".tiles";
 			}

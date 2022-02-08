@@ -30,7 +30,7 @@
 			AND MEMBERS_PASSWORD = #{membersPassword}
 		</if>
 	</select>
-	
+
 	<insert id="memberInsert" parameterType="co.nnull.prj.members.vo.MembersVO">
 		<selectKey keyProperty="membersId" resultType="int" order="BEFORE">
 			SELECT MAX(MEMBERS_ID) +1 AS MEMBERSID FROM MEMBERS
