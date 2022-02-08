@@ -29,6 +29,7 @@ import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.NoticeDelete;
 import co.nnull.prj.command.NoticeSelect;
+import co.nnull.prj.command.NoticeUpdate;
 import co.nnull.prj.command.NoticeUpdateForm;
 import co.nnull.prj.command.NoticeWrite;
 import co.nnull.prj.command.NoticeWriteForm;
@@ -78,6 +79,7 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeWriteForm.do", new NoticeWriteForm()); // 공지사항 글쓰기 폼
 		map.put("/noticeWrite.do", new NoticeWrite()); // 공지사항 글쓰기
 		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지사항 글수정 폼
+		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지사항 글수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
 		
 		map.put("/free.do", new Free());	// 자유게시판

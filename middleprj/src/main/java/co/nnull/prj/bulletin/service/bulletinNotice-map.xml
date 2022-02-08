@@ -38,12 +38,10 @@
 		DELETE FROM BULLETIN_NOTICE WHERE NOTICE_ID = #{noticeId}
 	</delete>
 	 
-	<update id="noticeUpdate" parameterType="int">
+	<update id="noticeUpdate" parameterType="co.nnull.prj.bulletin.vo.BulletinNoticeVO">		
 		UPDATE BULLETIN_NOTICE
-		<if test="noticeWriter != null">SET NOTICE_WRITER = #{noticeWriter}</if>
-		<if test="noticeTitle != null">SET NOTICE_TITLE = #{noticeTitle}</if>
-		<if test="noticeSubject != null">SET NOTICE_SUBJECT = #{noticeSubject}</if>
-		<if test="noticeDate != null">SET NOTICE_DATE = #{noticeDate}</if>
+		SET NOTICE_TITLE = NVL(#{noticeTitle},NOTICE_TITLE),
+			NOTICE_SUBJECT = NVL(#{noticeSubject},NOTICE_SUBJECT)
 		WHERE NOTICE_ID = #{noticeId}
 	</update>
 	
