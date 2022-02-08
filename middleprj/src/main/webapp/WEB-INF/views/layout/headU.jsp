@@ -78,7 +78,7 @@
 										<div
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
-											<a class="dropdown-item" href="userMypage.do"> <i
+											<a class="dropdown-item" href="userMypage.do?id=${id}"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 												마이페이지
 											</a> <a class="dropdown-item" href="logout.do"> <i

@@ -19,7 +19,7 @@
 				<i class="fas fa-laugh-wink"></i>
 			</div>
 			<div class="sidebar-brand-text mx-3">
-				도서관리 <sup></sup>
+				GymYD 헬스장 관리 <sup></sup>
 			</div>
 		</a>
 
@@ -27,28 +27,28 @@
 		<hr class="sidebar-divider my-0">
 
 		<!-- Nav Item - Dashboard -->
-		<li class="nav-item active"><a class="nav-link" href="main.do">
-				<i class="fas fa-fw fa-tachometer-alt"></i> <span>마이페이지</span>
+		<li class="nav-item active"><a class="nav-link" href="sales.do">
+				<i class="fas fa-fw fa-tachometer-alt"></i> <span>매출현황</span>
 		</a></li>
 
 		<!-- Divider -->
 		<hr class="sidebar-divider">
 
 		<!-- Heading -->
-		<div class="sidebar-heading">Interface</div>
+		<div class="sidebar-heading">관리프로그램</div>
 
 		<!-- Nav Item - Pages Collapse Menu -->
 		<li class="nav-item"><a class="nav-link collapsed" href="#"
 			data-toggle="collapse" data-target="#collapseTwo"
 			aria-expanded="true" aria-controls="collapseTwo"> <i
-				class="fas fa-fw fa-cog"></i> <span>Components</span>
+				class="fas fa-fw fa-cog"></i> <span>회원</span>
 		</a>
 			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 				data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
-					<h6 class="collapse-header">Custom Components:</h6>
-					<a class="collapse-item" href="buttons.html">Buttons</a> <a
-						class="collapse-item" href="cards.html">Cards</a>
+					<h6 class="collapse-header">Member's information</h6>
+					<a class="collapse-item" href="buttons.html">회원리스트</a> <a
+						class="collapse-item" href="cards.html">회원수정</a>
 				</div>
 			</div></li>
 

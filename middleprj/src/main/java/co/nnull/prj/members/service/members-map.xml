@@ -36,16 +36,17 @@
 		VALUES(#{membersId},#{membersPassword},#{membersName},#{membersTel},#{membersAddress})
 	</insert>
 	
-	<update id="memberUpdate">
+	<update id="memberUpdate" parameterType="co.nnull.prj.members.vo.MembersVO">
 		UPDATE MEMBERS
-		<if test="membersPassword != null">SET MEMBERS_PASSWORD = #{membersPassword}</if>
-		<if test="membersName != null">SET MEMBERS_NAME = #{membersName}</if>
-		<if test="membersTel != null">SET MEMBERS_TEL = #{membersTel}</if>
-		<if test="membersAddress != null">SET MEMBERS_ADDRESS = #{membersAddress}</if>
+		SET MEMBERS_PASSWORD=NVL(#{membersPassword},MEMBERS_PASSWORD), 
+			MEMBERS_NAME=NVL(#{membersName},MEMBERS_NAME),
+			MEMBERS_TEL=NVL(#{membersTel},MEMBERS_TEL),
+			MEMBERS_ADDRESS=NVL(#{membersAddress},MEMBERS_ADDRESS)
+		WHERE MEMBERS_ID=#{membersId}
 	</update>
 	
-	<delete id="memberDelete">
-		DELETE FROM MEMBERS WHERE MEMBERS_ID = #{membersId}
+	<delete id="memberDelete" parameterType="co.nnull.prj.members.vo.MembersVO">
+		DELETE FROM MEMBERS WHERE MEMBERS_ID = #{membersId} AND MEMBERS_PASSWORD=#{membersPassword}
 	</delete>
 	
 	<select id="isIdCheck" parameterType="String" resultType="boolean">

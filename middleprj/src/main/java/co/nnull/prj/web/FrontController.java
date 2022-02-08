@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
 import co.nnull.prj.command.Deal;
+import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
 import co.nnull.prj.command.IdCheck;
@@ -26,6 +27,7 @@ import co.nnull.prj.command.MainCommand;
 import co.nnull.prj.command.MainMCommand;
 import co.nnull.prj.command.MapCommand;
 import co.nnull.prj.command.MemberShip;
+import co.nnull.prj.command.MyInfoUpdate;
 import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.NoticeDelete;
 import co.nnull.prj.command.NoticeSelect;
@@ -38,6 +40,7 @@ import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
+import co.nnull.prj.command.Sales;
 import co.nnull.prj.command.UserMyPage;
 
 
@@ -65,6 +68,8 @@ public class FrontController extends HttpServlet {
 		map.put("/register.do", new Register()); // 회원가입)
 		map.put("/idCheck.do", new IdCheck()); // 아이디 중복체크
 		map.put("/userMypage.do", new UserMyPage());	// 일반회원 마이페이지
+		map.put("/myInfoUpdate.do", new MyInfoUpdate());	// 회원정보수정
+		map.put("/deleteUser.do", new DeleteUser());	//회원정보삭제
 		
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
@@ -96,6 +101,9 @@ public class FrontController extends HttpServlet {
 //		관리자페이지
 //		메인
 		map.put("/mainM.do", new MainMCommand());	//메인
+		
+//		매출현황
+		map.put("/sales.do", new Sales());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
