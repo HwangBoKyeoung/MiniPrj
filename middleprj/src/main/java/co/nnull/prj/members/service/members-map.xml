@@ -32,12 +32,8 @@
 	</select>
 	
 	<insert id="memberInsert" parameterType="co.nnull.prj.members.vo.MembersVO">
-		<selectKey keyProperty="membersId" resultType="int" order="BEFORE">
-			SELECT MAX(MEMBERS_ID) +1 AS MEMBERSID FROM MEMBERS
-		</selectKey>
-		INSERT INTO MEMBERS(MEMBERS_ID,MEMBERS_PASSWORD,MEMBERS_NAME,MEMBERS_TEL,MEMBERS_ADDRESS,
-		MEMBERS_AUTHOR,MEMBERS_MEMBERSHIP) VALUES(#{membersId},#{membersPassword},#{membersName},
-		#{membersTel},#{membersAddress},#{membersAuthor},#{membersMembership})
+		INSERT INTO MEMBERS(MEMBERS_ID,MEMBERS_PASSWORD,MEMBERS_NAME,MEMBERS_TEL,MEMBERS_ADDRESS)
+		VALUES(#{membersId},#{membersPassword},#{membersName},#{membersTel},#{membersAddress})
 	</insert>
 	
 	<update id="memberUpdate">
