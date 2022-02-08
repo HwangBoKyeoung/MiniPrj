@@ -36,7 +36,7 @@
 					<div class="footer_widget">
 						<h3 class="footer_title">Useful Links</h3>
 						<ul class="links">
-							<li><a href="membership.do#service">Pricing</a></li>
+							<li><a href="">Pricing</a></li>
 							<li><a href="#">About</a></li>
 							<li><a href="#"> Gallery</a></li>
 							<li><a href="map.do"> Contact</a></li>
