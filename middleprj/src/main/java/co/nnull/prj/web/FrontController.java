@@ -27,6 +27,11 @@ import co.nnull.prj.command.MainMCommand;
 import co.nnull.prj.command.MapCommand;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.Notice;
+import co.nnull.prj.command.NoticeDelete;
+import co.nnull.prj.command.NoticeSelect;
+import co.nnull.prj.command.NoticeUpdateForm;
+import co.nnull.prj.command.NoticeWrite;
+import co.nnull.prj.command.NoticeWriteForm;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
@@ -69,6 +74,12 @@ public class FrontController extends HttpServlet {
 		
 //		게시판
 		map.put("/notice.do", new Notice());	// 공지사항
+		map.put("/noticeSelect.do", new NoticeSelect()); // 공지사항 한 건 선택
+		map.put("/noticeWriteForm.do", new NoticeWriteForm()); // 공지사항 글쓰기 폼
+		map.put("/noticeWrite.do", new NoticeWrite()); // 공지사항 글쓰기
+		map.put("/noticeUpdateForm.do", new NoticeUpdateForm()); // 공지사항 글수정 폼
+		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
+		
 		map.put("/free.do", new Free());	// 자유게시판
 		map.put("/deal.do", new Deal());	// 중고거래
 		map.put("/experience.do", new Experience());	// 체험신청

@@ -4,7 +4,7 @@ create table bulletin_notice(
     notice_subject varchar2(500),
     notice_writer varchar2(30),
     notice_date date,
-    notice_hit number
+    notice_hit number default 0
 );
 
 insert into bulletin_notice
