@@ -135,7 +135,7 @@
 	</div>
 	<!-- 운영 프로그램 끝 -->
 	<!-- 멤버십 상품 -->
-	<div class="priscing_area">
+	<div id="service" class="priscing_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">

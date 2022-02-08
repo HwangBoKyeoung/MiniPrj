@@ -7,7 +7,7 @@
 				<div class="col-xl-3 col-md-6 col-lg-3 ">
 					<div class="footer_widget">
 						<div class="footer_logo">
-							<a href="userMypage.do"> <img src="img/footer_logo.png" alt="">
+							<a href="main.do"> <img src="img/footer_logo.png" alt="">
 							</a>
 						</div>
 						<p>
@@ -36,7 +36,7 @@
 					<div class="footer_widget">
 						<h3 class="footer_title">Useful Links</h3>
 						<ul class="links">
-							<li><a href="#">Pricing</a></li>
+							<li><a href="membership.do#service">Pricing</a></li>
 							<li><a href="#">About</a></li>
 							<li><a href="#"> Gallery</a></li>
 							<li><a href="map.do"> Contact</a></li>
