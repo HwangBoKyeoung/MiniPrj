@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,35 +37,47 @@
 		});
 	}
 	
-	$(document).ready(function(){
-		$("#checkbox1").change(function(){         
-		        if($("#checkbox1").is(":checked") == true){
-		           $("#sst1").val("1");
-		        }else {
-		        	$("#sst1").val("0");
-		        }
-		    });
-		});
 	
-	$(document).ready(function(){
-		$("#checkbox2").change(function(){         
-		        if($("#checkbox2").is(":checked") == true){
-		           $("#sst2").val("1");
-		        }else {
-		        	$("#sst2").val("0");
-		        }
-		    });
-		});
+	for(var i=0; i<100; i++ ) {
+		$(document).ready(function(){
+			$("#check"+i).change(function(){         
+			        if($("#check"+i).is(":checked") == true){
+			           $("#sst"+i).val("1");
+			        }else {
+			        	$("#sst"+i).val("0");
+			        }
+			    });
+			});
+	}
+
+//      // 0부터 시작
+//      var count = 0;
+//      // 현재 number 항목을 얻음 
+//      var n = $("#check" + count);
+//      // 새로운 number를 할당
+//      count = count + 1;
+//      // 새로운 number 할당
+//      n.attr("id", "check" + count);
+ 
+// 	$(document).ready(function(){
+// 		$("#check2").change(function(){         
+// 		        if($("#check2").is(":checked") == true){
+// 		           $("#sst2").val("1");
+// 		        }else {
+// 		        	$("#sst2").val("0");
+// 		        }
+// 		    });
+// 		});
 	
-	$(document).ready(function(){
-		$("#checkbox3").change(function(){         
-		        if($("#checkbox3").is(":checked") == true){
-		           $("#sst3").val("1");
-		        }else {
-		        	$("#sst3").val("0");
-		        }
-		    });
-		});
+// 	$(document).ready(function(){
+// 		$("#check3").change(function(){         
+// 		        if($("#check3").is(":checked") == true){
+// 		           $("#sst3").val("1");
+// 		        }else {
+// 		        	$("#sst3").val("0");
+// 		        }
+// 		    });
+// 		});
 
 
 </script>
@@ -104,102 +117,42 @@
 													</tr>
 												</thead>
 												<tbody>
+													<c:set var="total" value="0"/>
+													<c:forEach items="${memberships }" var="membership">
 													<tr>
-														<td><input type="checkbox" id="checkbox1" ></td>
+														<td><input type="checkbox" id="check${membership.membershipNum}" ></td>
 														<td>
 															<div class="media">
 																<div class="d-flex">
 																	<img src="img/cart.jpg" alt="">
 																</div>
 																<div class="media-body">
-																	<p>Silver</p>
+																	<p>${membership.membershipName }</p>
 																</div>
 															</div>
 														</td>
 														<td>
-															<h5>&#8361; 50,000 / Month</h5>
+															<h5>&#8361; ${membership.membershipPrice } / Month</h5>
 														</td>
 														<td>
 															<div class="product_count">
-																<input type="text" name="qty" id="sst1" maxlength="12"
-																	value="0" title="Quantity:" class="input-text qty">
+																<input type="text" name="qty" id="sst${membership.membershipNum}" maxlength="12"
+																	value="1" title="Quantity:" class="input-text qty">
 																<button
-																	onclick="var result = document.getElementById('sst1'); var sst1 = result.value; if( !isNaN( sst1 )) result.value++;return false;"
+																	onclick="var result = document.getElementById('sst${membership.membershipNum}'); var sst${membership.membershipNum} = result.value; if( !isNaN( sst${membership.membershipNum} )) result.value++;return false;"
 																	class="increase items-count" type="button" id="plus" style="width:20pt;height:23pt;">+
 																	<i class="lnr lnr-chevron-up"></i>
 																</button>
 																<button
-																	onclick="var result = document.getElementById('sst1'); var sst1 = result.value; if( !isNaN( sst1 ) &amp;&amp; sst1 > 0 ) result.value--;return false;"
-																	class="reduced items-count" type="button" id="minus"style="width:20pt;height:23pt;">-
+																	onclick="var result = document.getElementById('sst${membership.membershipNum}'); var sst${membership.membershipNum} = result.value; if( !isNaN( sst${membership.membershipNum} ) &amp;&amp; sst${membership.membershipNum} > 0 ) result.value--;return false;"
+																	class="reduced items-count" type="button" id="minus" style="width:20pt;height:23pt;">-
 																	<i class="lnr lnr-chevron-down"></i>
 																</button>
 															</div>
 														</td>
 													</tr>
-													<tr>
-														<td><input type="checkbox" id="checkbox2"></td>														
-														<td>
-															<div class="media">
-																<div class="d-flex">
-																	<img src="img/cart.jpg" alt="">
-																</div>
-																<div class="media-body">
-																	<p>Gold</p>
-																</div>
-															</div>
-														</td>
-														<td>
-															<h5>&#8361; 100,000 / Month</h5>
-														</td>
-														<td>
-															<div class="product_count">
-																<input type="text" name="qty" id="sst2" maxlength="12"
-																	value="0" title="Quantity:" class="input-text qty">
-																<button
-																	onclick="var result = document.getElementById('sst2'); var sst2 = result.value; if( !isNaN( sst2 )) result.value++;return false;"
-																	class="increase items-count" type="button" id="plus" style="width:20pt;height:25pt;">+
-																	<i class="lnr lnr-chevron-up"></i>
-																</button>
-																<button
-																	onclick="var result = document.getElementById('sst2'); var sst2 = result.value; if( !isNaN( sst2 ) &amp;&amp; sst2 > 0 ) result.value--;return false;"
-																	class="reduced items-count" type="button" id="minus" style="width:20pt;height:25pt;">-
-																	<i class="lnr lnr-chevron-down"></i>
-																</button>
-															</div>
-														</td>
-													</tr>					
-													<tr>
-														<td><input type="checkbox" id="checkbox3"></td>
-														<td>
-															<div class="media">
-																<div class="d-flex">
-																	<img src="img/cart.jpg" alt="">
-																</div>
-																<div class="media-body">
-																	<p>Platinum</p>
-																</div>
-															</div>
-														</td>
-														<td>
-															<h5>&#8361; 150,000 / Month</h5>
-														</td>
-														<td>
-															<div class="product_count">
-																<input type="text" name="qty" id="sst3" maxlength="12"
-																	value="0" title="Quantity:" class="input-text qty">
-																<button
-																	onclick="var result = document.getElementById('sst3'); var sst3 = result.value; if( !isNaN( sst3 )) result.value++;return false;"
-																	class="increase items-count" type="button" id="plus" style="width:20pt;height:25pt;">+
-																	<i class="lnr lnr-chevron-up"></i>
-																</button>
-																<button
-																	onclick="var result = document.getElementById('sst3'); var sst3 = result.value; if( !isNaN( sst3 ) &amp;&amp; sst3 > 0 ) result.value--;return false;"
-																	class="reduced items-count" type="button" id="minus" style="width:20pt;height:25pt;">-
-																	<i class="lnr lnr-chevron-down"></i>
-																</button>
-															</div>
-														</td>
-													</tr>								
+													<c:set var="total" value="${total + (membership.membershipPrice * membership.membershipMonth)}"/>
+													</c:forEach>
 													<tr>
 														<td></td>
 														<td></td>
@@ -207,9 +160,10 @@
 															<h5>최종 가격</h5>
 														</td>
 														<td>
-															<h5>$2160.00</h5>
+															<h5>&#8361;<c:out value="${total }"/></h5>
 														</td>
 													</tr>
+													
 												</tbody>
 											</table>
 										</div>

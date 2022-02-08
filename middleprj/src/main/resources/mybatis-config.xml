@@ -22,5 +22,6 @@
 		<mapper resource="co/nnull/prj/enquiry/service/enquiry-map.xml" />
 		<mapper resource="co/nnull/prj/members/service/members-map.xml" />
 		<mapper resource="co/nnull/prj/bulletin/service/bulletinNotice-map.xml"/>
+		<mapper resource="co/nnull/prj/membership/service/membership-map.xml"/>
 	</mappers>
 </configuration>
