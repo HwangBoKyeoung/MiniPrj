@@ -99,6 +99,7 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지사항 글수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
 		
+		
 		map.put("/free.do", new Free());	// 자유게시판
 		map.put("/deal.do", new Deal());	// 중고거래
 		map.put("/experience.do", new Experience());	// 체험신청
