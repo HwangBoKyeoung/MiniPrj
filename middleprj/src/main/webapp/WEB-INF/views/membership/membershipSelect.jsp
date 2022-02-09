@@ -9,30 +9,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>상품 상세정보</h2>
+
+ <h2>상품 상세정보${membership}${vo}${memberships}</h2>
     <table border="1">
         <tr>
             <td>
-                <img src="${path}/images/${vo.productUrl}" width="340" height="300">
+                <img src="" width="340" height="300">
             </td>
             <td>
                 <table border="1" style="height: 300px; width: 400px;">
                     <tr align="center">
                         <td>상품명</td>
-                        <td>${vo.productName}</td>
+                        <td>${memberships.membershipName}</td>
                     </tr>
                     <tr align="center">
                         <td>가격</td>
-                        <td><fmt:formatNumber value="${vo.productPrice}" pattern="###,###,###"/></td>
+                        <td><fmt:formatNumber value="${membership.membershipPrice}" pattern="###,###,###"/></td>
                     </tr>
                     <tr align="center">
                         <td>상품소개</td>
-                        <td>${vo.productDesc}</td>
+                        <td>""</td>
                     </tr>
                     <tr align="center">
                         <td colspan="2">
                             <form name="form1" method="post" action="${path}/shop/cart/insert.do">
-                                <input type="hidden" name="productId" value="${vo.productId}">
+                                <input type="hidden" name="membershipNum" value="${membership.membershipNum }">
                                 <select name="amount">
                                     <c:forEach begin="1" end="10" var="i">
                                         <option value="${i}">${i}</option>
@@ -47,6 +48,6 @@
             </td>
         </tr>
     </table>
-
+    <tiles:insertAttribute name="header"  ignore="true"/>
 </body>
 </html>
