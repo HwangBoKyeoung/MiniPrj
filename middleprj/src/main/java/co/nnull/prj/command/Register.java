@@ -23,6 +23,7 @@ public class Register implements Command {
 		vo.setMembersAuthor(request.getParameter("author"));
 		vo.setMembersMembership(request.getParameter("membership"));
 		
+		
 		int r = memberDao.memberInsert(vo);
 		
 		if(r != 0) {
