@@ -13,7 +13,7 @@
 	}
 </script>
 
-<form action="${pageContext.request.contextPath}/noticeDelete.do"
+<form action="${pageContext.request.contextPath}/freeDelete.do"
 	method="post" id="delFrm" name="delFrm">
 	<input type="hidden" name="id">
 </form>
@@ -31,35 +31,35 @@
 					<tbody>
 						<tr>
 							<th>
-								<h3 class="subject">${notice.noticeTitle }</h3> <span
+								<h3 class="subject">${free.freeTitle }</h3> <span
 								class="subj-info"> <span class="writer">BY <span
-										class="name">${notice.noticeWriter }</span></span> <span
-									class="date ff-lucida">${notice.noticeDate }</span> <span
-									class="hits ff-lucida">VIEW<span class="count">${notice.noticeHit }</span></span>
+										class="name">${free.freeWriter }</span></span> <span
+									class="date ff-lucida">${free.freeDate }</span> <span
+									class="hits ff-lucida">VIEW<span class="count">${free.freeHit }</span></span>
 							</span>
 							</th>
 						</tr>
 					</tbody>
 				</table>
 				<div class="context" style="margin-top: 40px; padding-bottom: 80px">
-					<p>${notice.noticeSubject }</p>
+					<p>${free.freeSubject }</p>
 				</div>
 			</div>
 		</div>
 		<div style="display: inline-block;">
 			<input type="button" value="수정"
 				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
-				onclick="location.href='noticeUpdateForm.do?id=${notice.noticeId}'" >
+				onclick="location.href='freeUpdateForm.do?id=${free.freeId}'" >
 		</div>
 		<div style="display: inline-block;">
 			<input type="button" value="삭제"
 				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
-				onclick="deleteFnc(${notice.noticeId})">
+				onclick="deleteFnc(${free.freeId})">
 		</div>
 		<div style="display: inline-block">
 			<input type="button" value="목록"
 			class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;" 
-			onclick="location.href='notice.do'">
+			onclick="location.href='free.do'">
 		</div>
 	</div>
 

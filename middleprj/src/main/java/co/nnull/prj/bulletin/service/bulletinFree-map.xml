@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.bulletin.service.BulletinFreeMapper">
+
+	<resultMap type="co.nnull.prj.bulletin.vo.BulletinFreeVO" id="freeMap">
+		<id property="freeId" column="free_id" />
+		<result property="freeTitle" column="free_title"/>
+		<result property="freeSubject" column="free_subject"/>
+		<result property="freeWriter" column="free_writer"/>
+		<result property="freeDate" column="free_date"/>
+		<result property="freeHit" column="free_hit"/>
+	</resultMap>
+	
+	<select id="freeSelectList" resultType="co.nnull.prj.bulletin.vo.BulletinFreeVO">
+		SELECT
+			FREE_ID AS FREEID,
+			FREE_WRITER AS FREEWRITER,
+			FREE_TITLE AS FREETITLE,
+			FREE_SUBJECT AS FREESUBJECT,
+			FREE_DATE AS FREEDATE,
+			FREE_HIT AS FREEHIT
+		FROM BULLETIN_FREE ORDER BY FREEID DESC
+	</select>
+	
+	<select id="freeSelect" resultMap="freeMap">
+		SELECT * FROM BULLETIN_FREE WHERE FREE_ID = #{freeId}
+	</select>
+	
+	<insert id="freeInsert" parameterType="co.nnull.prj.bulletin.vo.BulletinFreeVO">
+		<selectKey keyProperty="freeId" resultType="int" order="BEFORE">
+			SELECT MAX(FREE_ID)+1 AS FREEID FROM BULLETIN_FREE
+		</selectKey>
+			INSERT INTO BULLETIN_FREE(FREE_ID, FREE_WRITER, FREE_TITLE, FREE_SUBJECT, FREE_DATE)
+			VALUES (#{freeId}, #{freeWriter}, #{freeTitle}, #{freeSubject}, #{freeDate})
+	</insert>
+	
+	<delete id="freeDelete">
+		DELETE FROM BULLETIN_FREE WHERE FREE_ID = #{freeId}
+	</delete>
+	 
+	<update id="freeUpdate" parameterType="co.nnull.prj.bulletin.vo.BulletinFreeVO">		
+		UPDATE BULLETIN_FREE
+		SET FREE_TITLE = NVL(#{freeTitle},FREE_TITLE),
+			FREE_SUBJECT = NVL(#{freeSubject},FREE_SUBJECT)
+		WHERE FREE_ID = #{freeId}
+	</update>
+	
+	<update id="freeHitUpdate">
+	 UPDATE BULLETIN_FREE SET FREE_HIT = FREE_HIT + 1 WHERE FREE_ID = #{id}
+	</update>
+
+</mapper>

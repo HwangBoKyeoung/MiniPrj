@@ -19,6 +19,12 @@ import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
+import co.nnull.prj.command.FreeDelete;
+import co.nnull.prj.command.FreeSelect;
+import co.nnull.prj.command.FreeUpdate;
+import co.nnull.prj.command.FreeUpdateForm;
+import co.nnull.prj.command.FreeWrite;
+import co.nnull.prj.command.FreeWriteForm;
 import co.nnull.prj.command.IdCheck;
 import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
@@ -99,8 +105,14 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeUpdate.do", new NoticeUpdate()); // 공지사항 글수정
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
 		
-		
 		map.put("/free.do", new Free());	// 자유게시판
+		map.put("/freeSelect.do", new FreeSelect()); // 공지사항 한 건 선택
+		map.put("/freeWriteForm.do", new FreeWriteForm()); // 공지사항 글쓰기 폼
+		map.put("/freeWrite.do", new FreeWrite()); // 공지사항 글쓰기
+		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 공지사항 글수정 폼
+		map.put("/freeUpdate.do", new FreeUpdate()); // 공지사항 글수정
+		map.put("/freeDelete.do", new FreeDelete()); // 공지사항 삭제
+		
 		map.put("/deal.do", new Deal());	// 중고거래
 		map.put("/experience.do", new Experience());	// 체험신청
 		

@@ -47,9 +47,5 @@ public class BulletinNoticeServiceImpl implements BulletinNoticeService {
 
 	}
 
-	@Override
-	public List<BulletinNoticeVO> noticeSearch(String key, String str) {
-		return map.noticeSearch(key, str);
-	}
 
 }

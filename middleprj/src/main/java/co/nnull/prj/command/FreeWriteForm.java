@@ -5,17 +5,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.bulletin.service.BulletinFreeService;
 import co.nnull.prj.bulletin.serviceImpl.BulletinFreeServiceImpl;
+import co.nnull.prj.bulletin.vo.BulletinFreeVO;
 import co.nnull.prj.comm.Command;
 
-public class Free implements Command {
+public class FreeWriteForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-
-		// 자유게시판 목록
-		BulletinFreeService bulletinFreeDao = new BulletinFreeServiceImpl();
-		request.setAttribute("frees", bulletinFreeDao.freeSelectList());
-		return "bulletin/free";
+		// 자유게시판 글쓰기 폼
+		BulletinFreeService bulletinFreeService = new BulletinFreeServiceImpl();
+		BulletinFreeVO vo = new BulletinFreeVO();
+		
+		vo = bulletinFreeService.freeSelect(vo);
+		request.setAttribute("writer", vo);
+		
+		
+		return "bulletin/freeWriteForm";
 	}
 
 }

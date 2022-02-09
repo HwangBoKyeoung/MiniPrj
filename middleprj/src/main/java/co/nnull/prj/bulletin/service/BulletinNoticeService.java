@@ -18,7 +18,5 @@ public interface BulletinNoticeService {
 	int noticeUpdate(BulletinNoticeVO vo);
 	
 	void noticeHitUpdate(int id);
-	
-	List<BulletinNoticeVO> noticeSearch(String key, String str);
 
 }
