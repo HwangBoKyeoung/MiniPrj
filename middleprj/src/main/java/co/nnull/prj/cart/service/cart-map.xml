@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="co.nnull.prj.cart.service.cart-map"></mapper>
+<mapper namespace="co.nnull.prj.cart.service.CartMapper">
+	<resultMap type="co.nnull.prj.cart.vo.CartVO" id="cartMap">
+		<id property="cartId" column="cart_id"/>
+		<result property="membersId" column="members_id"/>
+		<result property="membershipNum" column="membership_num"/>
+		<result property="cartAmount" column="cart_amout"/>
+	</resultMap>
+	
+	<select id="cartSelectList" resultType="co.nnull.prj.cart.vo.CartVO">
+		SELECT A.CART_ID, A.MEMBERS_ID, A.MEMBERSHIP_NUM, A.CART_AMOUNT, B.MEMBERSHIP_NAME, B.MEMBERSHIP_PRICE
+		FROM CART A LEFT OUTER JOIN MEMBERSHIP B ON A.MEMBERSHIP_NUM = B.MEMBERSHIP_NUM
+		WHERE MEMBERS_ID = #{membersId}	
+	</select>
+	
+	<select id="checkCart" resultType="co.nnull.prj.cart.vo.CartVO">
+		SELECT * FROM CART
+		WHERE MEMBERS_ID = #{membersId}
+	</select>
+	
+	<insert id="addCart">
+		INSERT INTO CART(MEMBERS_ID, MEMBERSHIP_NUM, CART_AMOUNT)
+		VALUES(#{membersId}, #{membershipNum}, #{cartAmount}) 
+	</insert>
+	
+	<delete id="deleteCart">
+		DELETE FROM CART WHERE CART_ID = #{cartId}
+	</delete>
+	
+	<update id="updateCount">
+		UPDATE CART SET CART_AMOUNT = #{cartAmount}
+		WHERE CART_ID = #{cartId}
+	</update>
+</mapper>

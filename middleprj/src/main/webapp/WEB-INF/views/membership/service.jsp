@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -148,67 +150,35 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single_prising text-center">
-						<div class="prising_header">
-							<h3>Silver</h3>
-							<span>&#8361; 50,000 / Month</span>
-						</div>
-						<div class="pricing_body">
-							<ul>
-								<li>24시간 이용</li>
-								<li>월 P.T 1회 제공</li>
-								<li>락커룸 + 샤워실 무제한</li>
-								<li class="off-color"></li>
-								<li class="off-color"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single_prising text-center">
-						<div class="prising_header">
-							<h3>Gold</h3>
-							<span>&#8361; 100,000 / Month</span>
-						</div>
-						<div class="pricing_body">
-							<ul>
-								<li>24시간 이용</li>
-								<li>월 P.T 2회 제공</li>
-								<li>락커룸 & 샤워실 무제한</li>
-								<li>G.X & 스피닝 무제한
-								<li>
-								<li class="off-color"></li>
-							</ul>
+			<c:forEach items="${memberships }" var="membership">
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="single_prising text-center"
+							style="width: 300px; float: left;">
+							<div class="prising_header">
+								<h3>${membership.membershipName }</h3>
+								<span><fmt:formatNumber pattern="###,###,###"
+										value="${membership.membershipPrice}" />원</span>
+							</div>
+							<div class="pricing_body">
+								<ul>
+									<li>24시간 이용</li>
+									<li>월 P.T 1회 제공</li>
+									<li>락커룸 + 샤워실 무제한</li>
+									<li class="off-color"></li>
+									<li class="off-color"></li>
+								</ul>
+							</div>
+							<div class="pricing_btn" align="center">
+								<a href="cartForm.do" class="boxed-btn3">구 매</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single_prising text-center">
-						<div class="prising_header">
-							<h3>Platinum</h3>
-							<span>&#8361; 150,000 / Month</span>
-						</div>
-						<div class="pricing_body">
-							<ul>
-								<li>24시간 이용</li>
-								<li>월 P.T 4회 제공</li>
-								<li>락커룸 & 샤워실 무제한</li>
-								<li>G.X & 스피닝 무제한
-								<li>
-								<li>사우나 무제한
-								<li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="pricing_btn" align="center">
-			<a href="payment.do" class="boxed-btn3">구 매</a>
+			</c:forEach>
 		</div>
 	</div>
+
 	<!-- 멤버십 상품 끝-->
 </body>
 </html>
