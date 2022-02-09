@@ -13,22 +13,23 @@ public class CalServiceImpl implements CalService {
 
 	SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	CalMapper map = sqlSession.getMapper(CalMapper.class);
-
+	
 	@Override
 	public List<CalVO> selectCal() {
 		return map.selectCal();
 	}
-
 	@Override
-	public void insertCal(CalVO cvo) {
-		map.insertCal(cvo);
-
+	public int insertCal(CalVO cvo) {
+		return map.insertCal(cvo);
+	}
+	@Override
+	public int deleteCal(CalVO cvo) {
+		return map.deleteCal(cvo);
+	}
+	@Override
+	public int updateCal(CalVO cvo) {
+		return map.updateCal(cvo);
 	}
 
-	@Override
-	public void deleteCal(CalVO cvo) {
-		map.deleteCal(cvo);
-
-	}
-
+	
 }

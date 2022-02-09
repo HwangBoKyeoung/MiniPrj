@@ -6,6 +6,7 @@ import co.nnull.prj.cal.vo.CalVO;
 
 public interface CalMapper {
 	List<CalVO> selectCal();
-	public void insertCal(CalVO cvo);
-	public void deleteCal(CalVO cvo);
+	public int insertCal(CalVO cvo);
+	public int deleteCal(CalVO cvo);
+	public int updateCal(CalVO cvo);
 }

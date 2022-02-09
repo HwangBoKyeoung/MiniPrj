@@ -3,6 +3,7 @@
 
 <mapper namespace="co.nnull.prj.cal.service.CalMapper">
 	<resultMap type="co.nnull.prj.cal.vo.CalVO" id="calMap">
+		<id property="id" column="cal_id"/>
 		<result property="title" column="cal_title"/>
 		<result property="start" column="start_date"/>
 		<result property="end" column="end_date"/>
@@ -11,15 +12,26 @@
 	
 	<select id="selectCal" resultMap="calMap">
 		SELECT CAL_TITLE, START_DATE, END_DATE, ALL_DAY
-		FROM CALENDAR
+		FROM CALENDAR ORDER BY START_DATE
 	</select>
 	
 	<insert id="insertCal" parameterType="co.nnull.prj.cal.vo.CalVO">
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			SELECT MAX(CAL_ID)+1 AS ID FROM CALENDAR
+		</selectKey>
 		INSERT INTO CALENDAR
-		VALUES (#{calTitle}, #{startDate}, #{endDate}, #{allDay})
+		VALUES (#{title}, #{start}, #{end}, #{allDay}, #{id})
 	</insert>
 	
+	<update id="updateCal" parameterType="co.nnull.prj.cal.vo.CalVO">
+		UPDATE CALENDAR
+		SET CAL_TITLE=NVL(#{title},cal_title),
+			START_DATE=NVL(#{start},start_date),
+			END_DATE=NVL(#{end},end_date)
+		WHERE CAL_ID=#{id}
+	</update>
+	
 	<delete id="deleteCal" parameterType="co.nnull.prj.cal.vo.CalVO">
-		DELETE FROM CALENDAR WHERE CAL_TITLE = #{calTitle}
+		DELETE FROM CALENDAR WHERE CAL_ID = #{id}
 	</delete>
 </mapper>

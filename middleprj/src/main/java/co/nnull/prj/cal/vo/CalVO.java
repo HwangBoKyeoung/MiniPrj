@@ -8,4 +8,5 @@ public class CalVO {
 	private String start;
 	private String end;
 	private boolean allDay;
+	private int id;
 }
