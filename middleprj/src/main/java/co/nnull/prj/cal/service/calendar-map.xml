@@ -3,18 +3,13 @@
 
 <mapper namespace="co.nnull.prj.cal.service.CalMapper">
 	<resultMap type="co.nnull.prj.cal.vo.CalVO" id="calMap">
-		<result property="calTitle" column="cal_title"/>
+		<result property="title" column="title"/>
 		<result property="startDate" column="start_date"/>
 		<result property="endDate" column="end_date"/>
-		<result property="allDay" column="all_day"/>
 	</resultMap>
 	
 	<select id="selectCal" resultMap="calMap">
-		SELECT CAL_TITLE,
-		TO_CHAR(START_DATE, 'YYYY/MM/DD HH24:MI') START_DATE,
-		TO_CHAR(END_DATE, 'YYYY/MM/DD HH24:MI') END_DATE,
-		ALL_DAY
-		FROM CALENDAR
+		SELECT TITLE, START_DATE END_DATE FROM FULL_CALENDAR
 	</select>
 	<insert id="insertCal" parameterType="co.nnull.prj.cal.vo.CalVO">
 		INSERT INTO CALENDAR

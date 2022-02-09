@@ -24,7 +24,8 @@ public class ScheduleView implements Command {
 		List<CalVO> scheduleView = calDao.selectCal();
 
 		Gson gson = new GsonBuilder().create();
-		String str = gson.toJson(scheduleView).toString();
+		String str = gson.toJson(scheduleView);
+		System.out.println(str);
 
 		return "ajax:" + str;
 	}

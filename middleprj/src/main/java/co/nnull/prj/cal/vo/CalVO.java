@@ -4,8 +4,7 @@ import lombok.Data;
 
 @Data
 public class CalVO {
-	private String calTitle;
+	private String title;
 	private String startDate;
 	private String endDate;
-	private boolean allDay;
 }

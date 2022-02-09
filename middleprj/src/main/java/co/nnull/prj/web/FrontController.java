@@ -111,7 +111,8 @@ public class FrontController extends HttpServlet {
 		map.put("/mainM.do", new MainMCommand());	//메인
 		
 //		매출현황
-		map.put("/sales.do", new Sales());
+		map.put("/sales.do", new Sales());	// 매출현황
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
