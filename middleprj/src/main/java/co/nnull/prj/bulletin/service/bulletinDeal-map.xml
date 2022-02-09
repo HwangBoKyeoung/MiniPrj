@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.bulletin.service.BulletinDealMapper">
+
+	<resultMap type="co.nnull.prj.bulletin.vo.BulletinDealVO" id="dealMap">
+		<id property="dealId" column="deal_id" />
+		<result property="dealTitle" column="deal_title"/>
+		<result property="dealSubject" column="deal_subject"/>
+		<result property="dealWriter" column="deal_writer"/>
+		<result property="dealDate" column="deal_date"/>
+		<result property="dealHit" column="deal_hit"/>
+	</resultMap>
+	
+	<select id="dealSelectList" resultType="co.nnull.prj.bulletin.vo.BulletinDealVO">
+		SELECT
+			DEAL_ID AS DEALID,
+			DEAL_WRITER AS DEALWRITER,
+			DEAL_TITLE AS DEALTITLE,
+			DEAL_SUBJECT AS DEALSUBJECT,
+			DEAL_DATE AS DEALDATE,
+			DEAL_HIT AS DEALHIT
+		FROM BULLETIN_DEAL ORDER BY DEALID DESC
+	</select>
+	
+	<select id="dealSelect" resultMap="dealMap">
+		SELECT * FROM BULLETIN_DEAL WHERE DEAL_ID = #{dealId}
+	</select>
+	
+	<insert id="dealInsert" parameterType="co.nnull.prj.bulletin.vo.BulletinDealVO">
+		<selectKey keyProperty="dealId" resultType="int" order="BEFORE">
+			SELECT MAX(DEAL_ID)+1 AS DEALID FROM BULLETIN_DEAL
+		</selectKey>
+			INSERT INTO BULLETIN_DEAL(DEAL_ID, DEAL_WRITER, DEAL_TITLE, DEAL_SUBJECT, DEAL_DATE)
+			VALUES (#{dealId}, #{dealWriter}, #{dealTitle}, #{dealSubject}, #{dealDate})
+	</insert>
+	
+	<delete id="dealDelete">
+		DELETE FROM BULLETIN_DEAL WHERE DEAL_ID = #{dealId}
+	</delete>
+	 
+	<update id="dealUpdate" parameterType="co.nnull.prj.bulletin.vo.BulletinDealVO">		
+		UPDATE BULLETIN_DEAL
+		SET DEAL_TITLE = NVL(#{dealTitle},DEAL_TITLE),
+			DEAL_SUBJECT = NVL(#{dealSubject},DEAL_SUBJECT)
+		WHERE DEAL_ID = #{dealId}
+	</update>
+	
+	<update id="dealHitUpdate">
+	 UPDATE BULLETIN_DEAL SET DEAL_HIT = DEAL_HIT + 1 WHERE DEAL_ID = #{id}
+	</update>
+
+</mapper>
