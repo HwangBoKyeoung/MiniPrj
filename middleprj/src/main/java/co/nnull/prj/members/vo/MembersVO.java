@@ -11,4 +11,8 @@ public class MembersVO {
 	private String membersAddress;
 	private String membersAuthor;
 	private String membersMembership;
+	private int membersWeight;
+	private int membersHeight;
+	
+	
 }

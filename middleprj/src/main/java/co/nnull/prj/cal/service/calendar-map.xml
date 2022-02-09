@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.nnull.prj.cal.service.CalMapper">
+	<resultMap type="co.nnull.prj.cal.vo.CalVO" id="calMap">
+		<result property="title" column="title"/>
+		<result property="startDate" column="start_date"/>
+		<result property="endDate" column="end_date"/>
+	</resultMap>
+	
+	<select id="selectCal" resultMap="calMap">
+		SELECT TITLE, START_DATE END_DATE FROM FULL_CALENDAR
+	</select>
+	<insert id="insertCal" parameterType="co.nnull.prj.cal.vo.CalVO">
+		INSERT INTO CALENDAR
+		VALUES (#{calTitle}, #{startDate}, #{endDate}, #{allDay})
+	</insert>
+	<delete id="deleteCal" parameterType="co.nnull.prj.cal.vo.CalVO">
+		DELETE FROM CALENDAR WHERE CAL_TITLE = #{calTitle}
+	</delete>
+</mapper>

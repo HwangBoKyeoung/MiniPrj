@@ -21,5 +21,4 @@ public interface BulletinNoticeMapper {
 	
 	void noticeHitUpdate(int id); 
 	
-	List<BulletinNoticeVO> noticeSearch(@Param("key") String key, @Param("str") String str);
 }

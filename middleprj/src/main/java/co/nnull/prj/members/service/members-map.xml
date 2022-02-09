@@ -9,6 +9,8 @@
 		<result property="membersAddress" column="members_address"/>
 		<result property="membersAuthor" column="members_author"/>
 		<result property="membersMembership" column="members_membership"/>
+		<result property="membersWeight" column="members_weight"/>
+		<result property="membersHeight" column="members_height"/>
 	</resultMap>
 
 	<select id="memberSelectList" resultType="co.nnull.prj.members.vo.MembersVO">
@@ -20,6 +22,8 @@
 			MEMBERS_ADDRESS AS MEMBERSADDRESS,
 			MEMBERS_AUTHOR AS MEMBERSAUTHOR,
 			MEMBERS_MEMBERSHIP AS MEMBERSMEMBERSHIP
+			MEMBERS_WEIGHT AS MEMBERWEIGHT,
+			MEMBERS_HEIGHT AS MEMBERHEIGHT
 		FROM MEMBERS ORDER BY MEMBERS_ID DESC
 	</select>
 	
@@ -41,7 +45,9 @@
 		SET MEMBERS_PASSWORD=NVL(#{membersPassword},MEMBERS_PASSWORD), 
 			MEMBERS_NAME=NVL(#{membersName},MEMBERS_NAME),
 			MEMBERS_TEL=NVL(#{membersTel},MEMBERS_TEL),
-			MEMBERS_ADDRESS=NVL(#{membersAddress},MEMBERS_ADDRESS)
+			MEMBERS_ADDRESS=NVL(#{membersAddress},MEMBERS_ADDRESS),
+			MEMBERS_WEIGHT=NVL(#{membersWeight},MEMBERS_WEIGHT),
+			MEMBERS_HEIGHT=NVL(#{membersHeight},MEMBERS_HEIGHT)
 		WHERE MEMBERS_ID=#{membersId}
 	</update>
 	

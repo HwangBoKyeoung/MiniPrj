@@ -47,8 +47,8 @@
 				data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Member's information</h6>
-					<a class="collapse-item" href="buttons.html">회원리스트</a> <a
-						class="collapse-item" href="cards.html">회원수정</a>
+					<a class="collapse-item" href="#">회원리스트</a> <a
+						class="collapse-item" href="#">회원수정</a>
 				</div>
 			</div></li>
 

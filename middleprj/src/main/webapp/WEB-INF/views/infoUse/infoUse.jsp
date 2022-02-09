@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<section class="program24">
-		<div class="section-inner ta-r" id="program1">
+	<section class="program24" id="program1">
+		<div class="section-inner ta-r">
 			<img alt="1번" src="img/programs/01.PNG">
 			<h4>
 				<span class="num">01</span><strong class="tit">스트롱 바이 줌바</strong>
@@ -26,8 +26,8 @@
 		</div>
 	</section>
 
-	<section class="program23">
-		<div class="section-inner" id="program2">
+	<section class="program23" id="program2">
+		<div class="section-inner">
 			<img alt="2번" src="img/programs/02.PNG">
 			<h4>
 				<span class="num">02</span><strong class="tit">플라잉 요가</strong>
@@ -42,8 +42,8 @@
 		</div>
 	</section>
 
-	<section class="program22">
-		<div class="section-inner ta-r" id="program3">
+	<section class="program22" id="program3">
+		<div class="section-inner ta-r">
 			<img alt="3번" src="img/programs/03.PNG">
 			<h4>
 				<span class="num">03</span><strong class="tit">바디컴뱃</strong>
@@ -58,8 +58,8 @@
 
 		</div>
 	</section>
-	<section class="program19">
-		<div class="section-inner" id="program4">
+	<section class="program19" id="program4">
+		<div class="section-inner">
 			<img alt="4번" src="img/programs/04.PNG">
 			<h4>
 				<span class="num">04</span><strong class="tit">Vg댄스</strong>
@@ -74,8 +74,8 @@
 		</div>
 	</section>
 
-	<section class="program20">
-		<div class="section-inner ta-r""="" id="program5">
+	<section class="program20" id="program5">
+		<div class="section-inner ta-r""="">
 			<img alt="5번" src="img/programs/05.PNG">
 			<h4>
 				<span class="num">05</span><strong class="tit">다이어트댄스</strong>
@@ -93,8 +93,8 @@
 		</div>
 	</section>
 
-	<section class="program21">
-		<div class="section-inner" id="program6">
+	<section class="program21" id="program6">
+		<div class="section-inner">
 			<img alt="6번" src="img/programs/06.PNG">
 			<h4>
 				<span class="num">06</span><strong class="tit">그룹P.T</strong>
@@ -107,8 +107,8 @@
 			</p>
 		</div>
 	</section>
-	<section class="program1">
-		<div class="section-inner ta-r" id="program7">
+	<section class="program1" id="program7">
+		<div class="section-inner ta-r">
 			<img alt="7번" src="img/programs/07.PNG">
 			<h4>
 				<span class="num">07</span><strong class="tit">스피닝</strong>
@@ -123,8 +123,8 @@
 			</p>
 		</div>
 	</section>
-	<section class="program2">
-		<div class="section-inner" id="program8">
+	<section class="program2" id="program8">
+		<div class="section-inner">
 			<img alt="8번" src="img/programs/08.PNG">
 			<h4>
 				<span class="num">08</span><strong class="tit">점핑잭</strong>

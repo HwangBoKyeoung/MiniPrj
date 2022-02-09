@@ -18,37 +18,62 @@
 	<input type="hidden" name="id">
 </form>
 
-<div align="center">
-<form action="${pageContext.request.contextPath}/noticeUpdate.do" method="post">
-	<div>
-		<table border="1">
-			<thead>
-				<tr>
-					<th width="100">작성자</th>
-					<td width="150">${notice.noticeWriter }</td>
-					<th width="100">작성일</th>
-					<td width="150">${notice.noticeDate}</td>
-					<th width="100">조회수</th>
-					<td width="100">${notice.noticeHit }</td>
-				</tr>
-				<tr>
-					<th>제목</th>
-					<td colspan="5"><textarea name="title" rows="1" cols="90">${notice.noticeTitle }</textarea></td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td colspan="5"><textarea name="subject" rows="10" cols="90">${notice.noticeSubject }</textarea></td>
-				</tr>
-			</thead>
-		</table>
-	</div>
-	<br>
+<form action="${pageContext.request.contextPath}/noticeUpdate.do"
+	method="post">
+	<section class="contact-section">
+		<div class="container" style="margin-left: 30px">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="contact-title">수정</h2>
+					<br>
+				</div>
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<input class="form-control valid" name="noticeWriter"
+									id="noticeWriter" value="${name }" readonly="readonly"
+									type="text" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '작성자'" placeholder="작성자">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<input class="form-control valid" name="noticeDate"
+									id="noticeDate" value="${notice.noticeDate}"
+									readonly="readonly" type="date" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '작성일'" placeholder="작성일">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<textarea class="form-control w-100" name="title"
+									id="title" cols="3" rows="1"
+									onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '제목'" placeholder="제목">${notice.noticeTitle }</textarea>
+							</div>
+						</div>
 
-	<div>
+
+						<div class="col-12">
+							<div class="form-group">
+								<textarea class="form-control w-100" name="subject"
+									id="subject" cols="30" rows="9"
+									onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '내용'" placeholder="내용">${notice.noticeSubject }</textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div style="margin-left: 60px">
 		<input type="hidden" name="noticeId" value="${notice.noticeId}">
-		<input type="submit" value="수정완료">
+		<input type="submit" value="수정완료"
+		class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;">
 	</div>
-	</form>
-</div>
+	</section>
+</form>
+
 
 </html>

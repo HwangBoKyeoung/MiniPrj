@@ -13,11 +13,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.CartCommand;
+import co.nnull.prj.command.CartDelete;
+import co.nnull.prj.command.CartForm;
+import co.nnull.prj.command.CartInsert;
+import co.nnull.prj.command.CartList;
+import co.nnull.prj.command.CartUpdate;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
+import co.nnull.prj.command.FreeDelete;
+import co.nnull.prj.command.FreeSelect;
+import co.nnull.prj.command.FreeUpdate;
+import co.nnull.prj.command.FreeUpdateForm;
+import co.nnull.prj.command.FreeWrite;
+import co.nnull.prj.command.FreeWriteForm;
 import co.nnull.prj.command.IdCheck;
+import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertEnquiry;
 import co.nnull.prj.command.LoginCommand;
@@ -41,6 +54,7 @@ import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
+import co.nnull.prj.command.ScheduleView;
 import co.nnull.prj.command.UserMyPage;
 
 
@@ -74,11 +88,19 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/payment.do", new Payment()); // 결제 테스트
+		map.put("/cartList.do", new CartList()); // 장바구니 리스트
+		map.put("/cartInsert.do", new CartInsert()); // 장바구니 추가
+		map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
+		map.put("/cartUpdate.do", new CartUpdate()); // 장바구니 수정
+		map.put("/cartForm.do", new CartForm()); // 장바구니 폼 호출
+		map.put("/cart.do", new CartCommand()); // 장바구니 넣기
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
 		
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
+		map.put("/infoSchedule.do", new InfoSchedule()); // 이용안내 -> 스케쥴
+		map.put("/scheduleView.do", new ScheduleView());	// 스케줄 -> 달력형태로 보기
 		
 //		게시판
 		map.put("/notice.do", new Notice());	// 공지사항
@@ -90,6 +112,13 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
 		
 		map.put("/free.do", new Free());	// 자유게시판
+		map.put("/freeSelect.do", new FreeSelect()); // 공지사항 한 건 선택
+		map.put("/freeWriteForm.do", new FreeWriteForm()); // 공지사항 글쓰기 폼
+		map.put("/freeWrite.do", new FreeWrite()); // 공지사항 글쓰기
+		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 공지사항 글수정 폼
+		map.put("/freeUpdate.do", new FreeUpdate()); // 공지사항 글수정
+		map.put("/freeDelete.do", new FreeDelete()); // 공지사항 삭제
+		
 		map.put("/deal.do", new Deal());	// 중고거래
 		map.put("/experience.do", new Experience());	// 체험신청
 		
@@ -101,9 +130,11 @@ public class FrontController extends HttpServlet {
 //		관리자페이지
 //		메인
 		map.put("/mainM.do", new MainMCommand());	//메인
+		//map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
 		
 //		매출현황
-		map.put("/sales.do", new Sales());
+		map.put("/sales.do", new Sales());	// 매출현황
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

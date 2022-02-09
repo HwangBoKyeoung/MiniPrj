@@ -168,6 +168,8 @@ iframe {
 
 table {
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 th, td {
@@ -176,24 +178,24 @@ th, td {
 }
 
 .column1 {
-  width: 33%;
+  width: 15%;
   padding-left: 40px;
 }
 
 .column2 {
-  width: 13%;
+  width: 50%;
 }
 
 .column3 {
-  width: 22%;
+  width: 15%;
 }
 
 .column4 {
-  width: 19%;
+  width: 10%;
 }
 
 .column5 {
-  width: 13%;
+  width: 10%;
 }
 
 .table100-head th {

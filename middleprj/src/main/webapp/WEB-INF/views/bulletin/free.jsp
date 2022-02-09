@@ -1,145 +1,79 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
-<head>
 <meta charset="UTF-8">
 <title>자유게시판</title>
-</head>
-<body>
-<!-- Begin Page Content -->
-	<div class="container-fluid">
 
-		<!-- DataTales Example -->
-		<div class="card shadow mb-4">
-			<div class="card-header py-3">
-				<h2 class="m-0 font-weight-bold text-primary">자유게시판</h2>
+<div class="container-table100">
+	<div class="wrap-table100">
+
+
+		<a href="free.do" class="btn btn-secondary btn-icon-split btn-lg">
+			<span class="icon text-white-50"> <i class="fas fa-flag"></i>
+		</span> <span class="text">자유게시판</span>
+		</a><br> <br>
+
+		<div class="table100 ver5 m-b-110">
+			<div class="table100-head">
+				<table>
+					<thead>
+						<tr class="row100 head">
+							<th class="cell100 column1">글번호</th>
+							<th class="cell100 column2" style="text-align: center;">글제목</th>
+							<th class="cell100 column3">작성자</th>
+							<th class="cell100 column4">날짜</th>
+							<th class="cell100 column5">조회수</th>
+						</tr>
+					</thead>
+				</table>
 			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-bordered" id="dataTable">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Position</th>
-								<th>Office</th>
-								<th>Age</th>
-								<th>Start date</th>
-								<th>Salary</th>
+
+			<div class="table100-body js-pscroll">
+				<table>
+					<tbody>
+						<c:forEach items="${frees }" var="free">
+							<tr class="row100 body"
+								onclick="freeSelect(${free.freeId})">
+								<td class="cell100 column1" style="padding-left: 55px">${free.freeId}</td>
+								<td class="cell100 column2">${free.freeTitle}</td>
+								<td class="cell100 column3" style="padding-left: 14px">${free.freeWriter}</td>
+								<td class="cell100 column4" style="padding-right: 30px">${free.freeDate}</td>
+								<td class="cell100 column5" style="padding-left: 38px">${free.freeHit}</td>
 							</tr>
-						</thead>
-						<tfoot>
-							<tr>
-								<th>Name</th>
-								<th>Position</th>
-								<th>Office</th>
-								<th>Age</th>
-								<th>Start date</th>
-								<th>Salary</th>
-							</tr>
-						</tfoot>
-						<tbody>
-							<tr>
-								<td>Tiger Nixon</td>
-								<td>System Architect</td>
-								<td>Edinburgh</td>
-								<td>61</td>
-								<td>2011/04/25</td>
-								<td>$320,800</td>
-							</tr>
-							<tr>
-								<td>Garrett Winters</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>63</td>
-								<td>2011/07/25</td>
-								<td>$170,750</td>
-							</tr>
-							<tr>
-								<td>Ashton Cox</td>
-								<td>Junior Technical Author</td>
-								<td>San Francisco</td>
-								<td>66</td>
-								<td>2009/01/12</td>
-								<td>$86,000</td>
-							</tr>
-							<tr>
-								<td>Cedric Kelly</td>
-								<td>Senior Javascript Developer</td>
-								<td>Edinburgh</td>
-								<td>22</td>
-								<td>2012/03/29</td>
-								<td>$433,060</td>
-							</tr>
-							<tr>
-								<td>Airi Satou</td>
-								<td>Accountant</td>
-								<td>Tokyo</td>
-								<td>33</td>
-								<td>2008/11/28</td>
-								<td>$162,700</td>
-							</tr>
-							<tr>
-								<td>Brielle Williamson</td>
-								<td>Integration Specialist</td>
-								<td>New York</td>
-								<td>61</td>
-								<td>2012/12/02</td>
-								<td>$372,000</td>
-							</tr>
-							<tr>
-								<td>Herrod Chandler</td>
-								<td>Sales Assistant</td>
-								<td>San Francisco</td>
-								<td>59</td>
-								<td>2012/08/06</td>
-								<td>$137,500</td>
-							</tr>
-							<tr>
-								<td>Rhona Davidson</td>
-								<td>Integration Specialist</td>
-								<td>Tokyo</td>
-								<td>55</td>
-								<td>2010/10/14</td>
-								<td>$327,900</td>
-							</tr>
-							<tr>
-								<td>Colleen Hurst</td>
-								<td>Javascript Developer</td>
-								<td>San Francisco</td>
-								<td>39</td>
-								<td>2009/09/15</td>
-								<td>$205,500</td>
-							</tr>
-							<tr>
-								<td>Sonya Frost</td>
-								<td>Software Engineer</td>
-								<td>Edinburgh</td>
-								<td>23</td>
-								<td>2008/12/13</td>
-								<td>$103,600</td>
-							</tr>
-							<tr>
-								<td>Jena Gaines</td>
-								<td>Office Manager</td>
-								<td>London</td>
-								<td>30</td>
-								<td>2008/12/19</td>
-								<td>$90,560</td>
-							</tr>
-							<tr>
-								<td>Quinn Flynn</td>
-								<td>Support Lead</td>
-								<td>Edinburgh</td>
-								<td>22</td>
-								<td>2013/03/03</td>
-								<td>$342,000</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 		</div>
+		<br> <br>
+		<div align="center">
+			<button type="button" class="btn btn-secondary btn-icon-split"
+				style="padding: 5px 10px 5px 10px"
+				onclick="location.href='freeWriteForm.do'">글쓰기</button>
+		</div>
 	</div>
-</body>
+</div>
+
+
+<div>
+	<form id="frm" action="freeSelect.do" method="post">
+		<input type="hidden" id="freeId" name="freeId">
+	</form>
+</div>
+
+
+
+<script type="text/javascript">
+		function freeSelect(id) { 
+			frm.freeId.value = id;
+			frm.submit();
+		}
+</script>
+
+
+
+
 </html>

@@ -5,14 +5,18 @@ import java.util.List;
 import co.nnull.prj.cart.vo.CartVO;
 
 public interface CartMapper {
-	List<CartVO> cartMoney();
-	void insert(CartVO vo); // 장바구니 추가
-	List<CartVO> listCart(String membersId); // 장바구니 목록
-	void delete(int cartId); // 장바구니 개별 삭제
-	void deleteAll(String membersId); // 장바구니 비우기
-	void update(int cart_id);
-	int sumMoney(String membersId); // 장바구니 금액 합계
-	int countCart(String membersId, int membershipNum); // 장바구니
-	void updateCart(CartVO vo); // 장바구니 수정
-	void modifyCart(CartVO vo); //
+	/* 카트 목록 */
+	public List<CartVO> cartSelectList();	
+
+	/* 카트 확인 */
+	public CartVO checkCart(CartVO vo);
+
+	/* 카트 추가 */
+	public int addCart(CartVO vo);
+	
+	/* 카트 삭제 */
+	public int deleteCart(int cartId);
+	
+	/* 카트 수량 수정 */
+	public int updateCount(CartVO vo);
 }
