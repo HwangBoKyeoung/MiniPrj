@@ -16,7 +16,7 @@ public class CartForm implements Command {
 		
 		CartService cartDao = new CartServiceImpl();
 		request.setAttribute("carts", cartDao.cartSelectList());
-		return "membership/cartForm";
+		return "cartInsert.do";
 	}
 
 }

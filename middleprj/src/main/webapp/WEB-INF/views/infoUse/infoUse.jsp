@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<section class="program24">
+	<section class="program24" id="program1">
 		<div class="section-inner ta-r">
 			<img alt="1번" src="img/programs/01.PNG">
 			<h4>
@@ -26,7 +26,7 @@
 		</div>
 	</section>
 
-	<section class="program23">
+	<section class="program23" id="program2">
 		<div class="section-inner">
 			<img alt="2번" src="img/programs/02.PNG">
 			<h4>
@@ -42,7 +42,7 @@
 		</div>
 	</section>
 
-	<section class="program22">
+	<section class="program22" id="program3">
 		<div class="section-inner ta-r">
 			<img alt="3번" src="img/programs/03.PNG">
 			<h4>
@@ -58,7 +58,7 @@
 
 		</div>
 	</section>
-	<section class="program19">
+	<section class="program19" id="program4">
 		<div class="section-inner">
 			<img alt="4번" src="img/programs/04.PNG">
 			<h4>
@@ -74,7 +74,7 @@
 		</div>
 	</section>
 
-	<section class="program20">
+	<section class="program20" id="program5">
 		<div class="section-inner ta-r""="">
 			<img alt="5번" src="img/programs/05.PNG">
 			<h4>
@@ -93,7 +93,7 @@
 		</div>
 	</section>
 
-	<section class="program21">
+	<section class="program21" id="program6">
 		<div class="section-inner">
 			<img alt="6번" src="img/programs/06.PNG">
 			<h4>
@@ -107,7 +107,7 @@
 			</p>
 		</div>
 	</section>
-	<section class="program1">
+	<section class="program1" id="program7">
 		<div class="section-inner ta-r">
 			<img alt="7번" src="img/programs/07.PNG">
 			<h4>
@@ -123,7 +123,7 @@
 			</p>
 		</div>
 	</section>
-	<section class="program2">
+	<section class="program2" id="program8">
 		<div class="section-inner">
 			<img alt="8번" src="img/programs/08.PNG">
 			<h4>
