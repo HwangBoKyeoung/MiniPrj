@@ -35,7 +35,7 @@ public class LoginCommand implements Command {
 			page = "main.do";
 		} else {
 			request.setAttribute("message", "아이디 또는 패스워드가 틀렸습니다.");
-			page = "member/memberErr";
+			page = "member/memberError";
 		}
 		return page;
 	}

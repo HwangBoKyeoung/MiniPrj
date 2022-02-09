@@ -1,45 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 
 <link href='lib/main.css' rel='stylesheet' />
 <script src='lib/main.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
-	var eventData = ''; // 값을 넣어주기
-	// 아래 부분을 실행
-	document.addEventListener('DOMContentLoaded', function() {
 
-		// Azax 호출
-		var xhtp = new XMLHttpRequest();
-		xhtp.open('get', 'scheduleView.do');
-		xhtp.send();
-		xhtp.onload = function(obj) {
-			console.log(JSON.parse(xhtp.responseText));
-			eventData = JSON.parse(xhtp.responseText);
-			showCalendar();
-		}
+
+$(function(){
+	
+	var request = $.ajax({
+	  url: "scheduleView.do",
+	  method: "GET",
+	  dataType: "json"
 	});
+	 
+	request.done(function( data ) {
+		console.log(data);
+			
+			var calendarEl = document.getElementById('calendar');
+			
+		    var calendar = new FullCalendar.Calendar(calendarEl, {
+		      initialView: 'dayGridMonth',
+		      headerToolbar: {
+		        left: 'prev,next today',
+		        center: 'title',
+		        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+		      },
+		      events: data
+		    });
+		    
+		    console.log(calendar);
+	
+		    calendar.render();								
+	});
+	 
+	request.fail(function( jqXHR, textStatus ) {
+	  alert( "Request failed: " + textStatus );
+	});
+});
 
-	function showCalendar() {
-		var calendarEl = document.getElementById('calendar');
-
-		var calendar = new FullCalendar.Calendar(calendarEl, {
-			headerToolbar : {
-				left : 'prev,next, today',
-				center : 'title',
-				right : 'dayGridMonth,timeGridWeek,timeGridDay'
-			},
-			initialDate : '2022-02-09',
-			navLinks : true, // can click day/week names to navigate views
-			selectable : true,
-			selectMirror : true,
-			editable : true,
-			dayMaxEvents : true, // allow "more" link when too many events
-			events : eventData
-		});
-		
-		calendar.render();
-	}
 </script>
 
 

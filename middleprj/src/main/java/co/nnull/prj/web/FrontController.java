@@ -54,6 +54,8 @@ import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
+import co.nnull.prj.command.ScheduleInfo;
+import co.nnull.prj.command.ScheduleManage;
 import co.nnull.prj.command.ScheduleView;
 import co.nnull.prj.command.UserMyPage;
 
@@ -134,6 +136,10 @@ public class FrontController extends HttpServlet {
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황
+		
+//		일정
+		map.put("/scheduleManage.do", new ScheduleManage());	// 일정 입력, 수정, 삭제
+		map.put("/scheduleInfo.do", new ScheduleInfo());	//일정보기
 		
 	}
 

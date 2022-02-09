@@ -8,6 +8,7 @@
 	width: 30%;
 	padding: 20px;
 	margin: 10px;
+	height: 300px;
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -22,6 +23,9 @@
 	line-height: 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 table {

@@ -3,18 +3,22 @@
 
 <mapper namespace="co.nnull.prj.cal.service.CalMapper">
 	<resultMap type="co.nnull.prj.cal.vo.CalVO" id="calMap">
-		<result property="title" column="title"/>
-		<result property="startDate" column="start_date"/>
-		<result property="endDate" column="end_date"/>
+		<result property="title" column="cal_title"/>
+		<result property="start" column="start_date"/>
+		<result property="end" column="end_date"/>
+		<result property="allDay" column="all_day"/>
 	</resultMap>
 	
 	<select id="selectCal" resultMap="calMap">
-		SELECT TITLE, START_DATE END_DATE FROM FULL_CALENDAR
+		SELECT CAL_TITLE, START_DATE, END_DATE, ALL_DAY
+		FROM CALENDAR
 	</select>
+	
 	<insert id="insertCal" parameterType="co.nnull.prj.cal.vo.CalVO">
 		INSERT INTO CALENDAR
 		VALUES (#{calTitle}, #{startDate}, #{endDate}, #{allDay})
 	</insert>
+	
 	<delete id="deleteCal" parameterType="co.nnull.prj.cal.vo.CalVO">
 		DELETE FROM CALENDAR WHERE CAL_TITLE = #{calTitle}
 	</delete>
