@@ -18,6 +18,12 @@ public class MemberShipForm implements Command {
 		
 		vo.setMembershipNum(Integer.valueOf(request.getParameter("membershipNum")));
 		vo = membershipDao.membershipSelect(vo);
+		if(vo != null) {
+			request.setAttribute("membership", vo);
+		} else {
+			request.setAttribute("message", "조회된 데이터가 없습니다.");
+			return "membership/membershipError";
+		}
 		
 		return "membership/membershipSelect";
 	}

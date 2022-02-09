@@ -142,7 +142,7 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="section_title text-center mb-73">
-						<h3>멤버십 상품</h3>
+						<h3 id="item">멤버십 상품</h3>
 						<p>
 							There are many variations of passages of lorem Ipsum available,
 							but the majority <br> have suffered alteration.
