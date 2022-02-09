@@ -154,8 +154,10 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="single_prising text-center"
-							style="width: 300px; float: left;">
+							style="width: 300px; float: left;"
+							>
 							<div class="prising_header">
+								<h3>${membership.membershipNum }</h3>
 								<h3>${membership.membershipName }</h3>
 								<span><fmt:formatNumber pattern="###,###,###"
 										value="${membership.membershipPrice}" />원</span>
@@ -170,15 +172,25 @@
 								</ul>
 							</div>
 							<div class="pricing_btn" align="center">
-								<a href="cartForm.do" class="boxed-btn3">구 매</a>
+								<a onclick="membershipSelect(${membership.membershipNum})" class="boxed-btn3">구 매</a>
 							</div>
+							<form id="frm" action="memberShipSelect.do" method="post">
+								<input type="hidden" id="membershipNum" name="membershipNum">
+							</form>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
 		</div>
 	</div>
-
 	<!-- 멤버십 상품 끝-->
+	<script type="text/javascript">
+		function membershipSelect(id) { 
+			console.log(id);
+			document.forms.frm.membershipNum.value = id;
+			document.forms.frm.submit();
+		}
+	</script>
+	
 </body>
 </html>
