@@ -7,43 +7,64 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
-		<div>
-			<h1>글작성</h1>
-		</div>
-		<div>
-			<form id="frm" action="noticeWrite.do" method="post">
-				<div>
-					<table border="1">
-						<tr>
-							<th width="100">작성자</th>
-							<td width="150"><input type="text" id="noticeWriter"
-								name="noticeWriter" value="${name }" readonly="readonly"></td>
-							<th width="100">작성일</th>
-							<td width="150"><input type="date" id="noticeDate"
-								name="noticeDate"></td>
+
+	<section class="contact-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="contact-title">게시글 작성</h2><br>
+				</div>
+				<div class="col-lg-8">
+					<form class="form-contact contact_form" action="noticeWrite.do"
+						method="post" id="frm">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input class="form-control valid" name="noticeWriter"
+										id="noticeWriter" value="${name }" readonly="readonly"
+										type="text" onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Enter your name'"
+										placeholder="작성자">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input class="form-control valid" name="noticeDate"
+										id="noticeDate" type="date" onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Enter email address'"
+										placeholder="작성일">
+								</div>
+							</div>
+
 							<script>
 								document.getElementById('noticeDate').value = new Date()
 										.toISOString().substring(0, 10);
 							</script>
-						</tr>
-						<tr>
-							<th>제 목</th>
-							<td colspan="3"><input type="text" size="57"
-								id="noticeTitle" name="noticeTitle"></td>
-						</tr>
-						<tr>
-							<th>내 용</th>
-							<td colspan="3"><textarea rows="10" cols="59"
-									id="noticeSubject" name="noticeSubject"></textarea></td>
-						</tr>
-					</table>
+							<div class="col-12">
+								<div class="form-group">
+									<input class="form-control" name="noticeTitle" id="noticeTitle"
+										type="text" onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Enter Subject'" placeholder="제목">
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-group">
+									<textarea class="form-control w-100" name="noticeSubject"
+										id="noticeSubject" cols="30" rows="9"
+										onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Enter Message'" placeholder="내용"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-3">
+							<button type="submit" class="button button-contactForm boxed-btn">등록</button>
+						</div>
+					</form>
 				</div>
-				<br> <input type="submit" value="등록">&nbsp;&nbsp; 
-					 <input type="reset" value="초기화">&nbsp;&nbsp; 
-					 <input type="button" value="목록" onclick="location.href='notice.do'">
-			</form>
+
+			</div>
 		</div>
-	</div>
+	</section>
+
 </body>
 </html>
