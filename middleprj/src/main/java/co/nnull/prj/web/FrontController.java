@@ -20,6 +20,12 @@ import co.nnull.prj.command.CartInsert;
 import co.nnull.prj.command.CartList;
 import co.nnull.prj.command.CartUpdate;
 import co.nnull.prj.command.Deal;
+import co.nnull.prj.command.DealDelete;
+import co.nnull.prj.command.DealSelect;
+import co.nnull.prj.command.DealUpdate;
+import co.nnull.prj.command.DealUpdateForm;
+import co.nnull.prj.command.DealWrite;
+import co.nnull.prj.command.DealWriteForm;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
@@ -120,6 +126,13 @@ public class FrontController extends HttpServlet {
 		map.put("/freeDelete.do", new FreeDelete()); // 공지사항 삭제
 		
 		map.put("/deal.do", new Deal());	// 중고거래
+		map.put("/dealSelect.do", new DealSelect()); // 공지사항 한 건 선택
+		map.put("/dealWriteForm.do", new DealWriteForm()); // 공지사항 글쓰기 폼
+		map.put("/dealWrite.do", new DealWrite()); // 공지사항 글쓰기
+		map.put("/dealUpdateForm.do", new DealUpdateForm()); // 공지사항 글수정 폼
+		map.put("/dealUpdate.do", new DealUpdate()); // 공지사항 글수정
+		map.put("/dealDelete.do", new DealDelete()); // 공지사항 삭제
+		
 		map.put("/experience.do", new Experience());	// 체험신청
 		
 //		오시는길
