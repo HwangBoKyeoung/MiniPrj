@@ -20,6 +20,7 @@ import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
 import co.nnull.prj.command.IdCheck;
+import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertEnquiry;
 import co.nnull.prj.command.LoginCommand;
@@ -44,6 +45,7 @@ import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
+import co.nnull.prj.command.ScheduleView;
 import co.nnull.prj.command.UserMyPage;
 
 
@@ -85,6 +87,8 @@ public class FrontController extends HttpServlet {
 		
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
+		map.put("/infoSchedule.do", new InfoSchedule()); // 이용안내 -> 스케쥴
+		map.put("/scheduleView.do", new ScheduleView());	// 스케줄 -> 달력형태로 보기
 		
 //		게시판
 		map.put("/notice.do", new Notice());	// 공지사항
