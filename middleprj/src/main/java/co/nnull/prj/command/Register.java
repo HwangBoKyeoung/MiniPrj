@@ -22,6 +22,8 @@ public class Register implements Command {
 		vo.setMembersAddress(request.getParameter("address"));
 		vo.setMembersAuthor(request.getParameter("author"));
 		vo.setMembersMembership(request.getParameter("membership"));
+		vo.setMembersWeight(Integer.parseInt(request.getParameter("weight")));
+		vo.setMembersHeight(Integer.parseInt(request.getParameter("height")));
 		
 		int r = memberDao.memberInsert(vo);
 		
