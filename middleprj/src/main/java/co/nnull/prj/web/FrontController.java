@@ -26,6 +26,7 @@ import co.nnull.prj.command.DealUpdate;
 import co.nnull.prj.command.DealUpdateForm;
 import co.nnull.prj.command.DealWrite;
 import co.nnull.prj.command.DealWriteForm;
+import co.nnull.prj.command.DeleteSchedule;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.Experience;
 import co.nnull.prj.command.Free;
@@ -38,6 +39,7 @@ import co.nnull.prj.command.FreeWriteForm;
 import co.nnull.prj.command.IdCheck;
 import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
+import co.nnull.prj.command.InsertCalendar;
 import co.nnull.prj.command.InsertEnquiry;
 import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
@@ -45,6 +47,7 @@ import co.nnull.prj.command.LogoutCommand;
 import co.nnull.prj.command.MainCommand;
 import co.nnull.prj.command.MainMCommand;
 import co.nnull.prj.command.MapCommand;
+import co.nnull.prj.command.MemberList;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.MemberShipForm;
 import co.nnull.prj.command.MyInfoUpdate;
@@ -62,9 +65,13 @@ import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
 import co.nnull.prj.command.ScheduleInfo;
+import co.nnull.prj.command.ScheduleInfoPage;
 import co.nnull.prj.command.ScheduleManage;
 import co.nnull.prj.command.ScheduleView;
+import co.nnull.prj.command.UpdateCalendar;
+import co.nnull.prj.command.UpdateScheduleForm;
 import co.nnull.prj.command.UserMyPage;
+import co.nnull.prj.common.InsertForm;
 
 
 @WebServlet("*.do")
@@ -147,15 +154,20 @@ public class FrontController extends HttpServlet {
 //		관리자페이지
 //		메인
 		map.put("/mainM.do", new MainMCommand());	//메인
-		//map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
+		map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황
 		
 //		일정
 		map.put("/scheduleManage.do", new ScheduleManage());	// 일정 입력, 수정, 삭제
-		map.put("/scheduleInfo.do", new ScheduleInfo());	//일정보기
-		
+		map.put("/scheduleInfoPage.do", new ScheduleInfoPage());	// 일정json처리
+		map.put("/scheduleInfo.do", new ScheduleInfo());	// 일정보기
+		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	// 스케줄수정 폼
+		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정)
+		map.put("/deleteSchedule.do", new DeleteSchedule());	// 일정삭제
+		map.put("/insertForm.do", new InsertForm());	//일정등록 폼
+		map.put("/insertCalendar.do", new InsertCalendar());	//일정등록
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

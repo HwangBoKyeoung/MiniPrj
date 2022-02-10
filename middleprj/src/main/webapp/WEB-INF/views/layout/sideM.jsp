@@ -47,7 +47,7 @@
 				data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Member's information</h6>
-					<a class="collapse-item" href="#">회원리스트</a> <a
+					<a class="collapse-item" href="memberList.do">회원리스트</a> <a
 						class="collapse-item" href="#">회원수정</a>
 				</div>
 			</div></li>
@@ -63,7 +63,7 @@
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Schedule</h6>
 					<a class="collapse-item" href="scheduleManage.do">일정관리</a> <a
-						class="collapse-item" href="scheduleInfo.do">일정보기</a> 
+						class="collapse-item" href="scheduleInfoPage.do">일정보기</a> 
 				</div>
 			</div></li>
 
