@@ -6,6 +6,10 @@
 		<result property="membershipName" column="membership_name"/>
 		<result property="membershipPrice" column="membership_price"/>
 		<result property="membershipMonth" column="membership_month"/>
+		<result property="membershipSubject1" column="membership_subject1"/>
+		<result property="membershipSubject2" column="membership_subject2"/>
+		<result property="membershipSubject3" column="membership_subject3"/>
+		<result property="membershipSubject4" column="membership_subject4"/>
 	</resultMap>
 		
 	<select id="membershipSelectList" resultType="co.nnull.prj.membership.vo.MembershipVO">
@@ -13,7 +17,11 @@
 			MEMBERSHIP_NUM AS MEMBERSHIPNUM,
 			MEMBERSHIP_NAME AS MEMBERSHIPNAME,
 			MEMBERSHIP_PRICE AS MEMBERSHIPPRICE,
-			MEMBERSHIP_MONTH AS MEMBERSHIPMONTH
+			MEMBERSHIP_MONTH AS MEMBERSHIPMONTH,
+			MEMBERSHIP_SUBJECT1 AS MEMBERSHIPSUBJECT1,
+			MEMBERSHIP_SUBJECT2 AS MEMBERSHIPSUBJECT2,
+			MEMBERSHIP_SUBJECT3 AS MEMBERSHIPSUBJECT3,
+			MEMBERSHIP_SUBJECT4 AS MEMBERSHIPSUBJECT4
 		FROM MEMBERSHIP ORDER BY MEMBERSHIP_NUM
 	</select>	
 	
@@ -25,8 +33,8 @@
 		<selectKey keyProperty="membershipNum" resultType="int" order="BEFORE">
 			SELECT MAX(MEMBERSHIP_NUM) + 1 AS MEMBERSHIP_NUM FROM MEMBERSHIP
 		</selectKey>
-		INSERT INTO MEMBERSHIP(MEMBERSHIP_NUM, MEMBERSHIP_NAME, MEMBERSHIP_PRICE, MEMBERSHIP_MONTH)
-		VALUES(#{membershipNum}, #{membershipName}, #{membershipPrice}, #{membershipMonth})
+		INSERT INTO MEMBERSHIP(MEMBERSHIP_NUM, MEMBERSHIP_NAME, MEMBERSHIP_PRICE, MEMBERSHIP_MONTH, MEMBERSHIP_SUBJECT1, MEMBERSHIP_SUBJECT2, MEMBERSHIP_SUBJECT3, MEMBERSHIP_SUBJECT4)
+		VALUES(#{membershipNum}, #{membershipName}, #{membershipPrice}, #{membershipMonth}, #{membershipSubject1},  #{membershipSubject2},  #{membershipSubject3},  #{membershipSubject4})
 	</insert>
 	
 	<delete id="membershipDelete" parameterType="co.nnull.prj.membership.vo.MembershipVO">
@@ -38,6 +46,10 @@
 		<if test="membershipName != null">SET MEMBERSHIP_NAME = #{membershipName}</if>
 		<if test="membershipPrice != null">SET MEMBERSHIP_PRICE = #{membershipPrice}</if>
 		<if test="membershipMonth != null">SET MEMBERSHIP_MONTH = #{membershipMonth}</if>
+		<if test="membershipSubject1 != null">SET MEMBERSHIP_SUBJECT1 = #{MEMBERSHIPSUBJECT1}</if>
+		<if test="membershipSubject2 != null">SET MEMBERSHIP_SUBJECT2 = #{MEMBERSHIPSUBJECT2}</if>
+		<if test="membershipSubject3 != null">SET MEMBERSHIP_SUBJECT3 = #{MEMBERSHIPSUBJECT3}</if>
+		<if test="membershipSubject4 != null">SET MEMBERSHIP_SUBJECT4 = #{MEMBERSHIPSUBJECT4}</if>
 		WHERE MEMBERSHIP_NUM = #{membershipNum}
 	</update>
 </mapper>

@@ -16,6 +16,8 @@ public class PlaceOrder implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 		
+		response.setContentType("text/json; charset=utf-8");
+		
 		OrderService orderDao = new OrderServiceImpl();
 		OrderVO vo = new OrderVO();
 		

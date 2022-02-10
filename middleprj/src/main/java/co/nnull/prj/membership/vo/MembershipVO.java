@@ -8,4 +8,8 @@ public class MembershipVO {
 	private String membershipName;
 	private int membershipPrice;
 	private int membershipMonth;
+	private String membershipSubject1;
+	private String membershipSubject2;
+	private String membershipSubject3;
+	private String membershipSubject4;
 }
