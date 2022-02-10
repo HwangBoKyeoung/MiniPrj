@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.BulletinExperienceSelect;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DealDelete;
 import co.nnull.prj.command.DealSelect;
@@ -22,6 +23,8 @@ import co.nnull.prj.command.DealWrite;
 import co.nnull.prj.command.DealWriteForm;
 import co.nnull.prj.command.DeleteSchedule;
 import co.nnull.prj.command.DeleteUser;
+import co.nnull.prj.command.EnquirySelectM;
+import co.nnull.prj.command.EnquirySelectOne;
 import co.nnull.prj.command.ExpRequest;
 import co.nnull.prj.command.ExpForm;
 import co.nnull.prj.command.Free;
@@ -36,6 +39,7 @@ import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertCalendar;
 import co.nnull.prj.command.InsertEnquiry;
+import co.nnull.prj.command.InsertServieM;
 import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
 import co.nnull.prj.command.LogoutCommand;
@@ -157,10 +161,16 @@ public class FrontController extends HttpServlet {
 		map.put("/scheduleInfoPage.do", new ScheduleInfoPage());	// 일정json처리
 		map.put("/scheduleInfo.do", new ScheduleInfo());	// 일정보기
 		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	//  스케줄수정 폼
-		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정)
+		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정
 		map.put("/deleteSchedule.do", new DeleteSchedule());	// 일정삭제
 		map.put("/insertForm.do", new InsertForm());	//일정등록 폼
 		map.put("/insertCalendar.do", new InsertCalendar());	//일정등록
+		
+//		회원등록 글 조회
+		map.put("/enquirySelectM.do", new EnquirySelectM());	// 상담문의조회
+		map.put("/enquirySelectOne.do", new EnquirySelectOne());	// 상담문의 1건 조회
+		map.put("/bulletinExperienceSelect.do", new BulletinExperienceSelect());	// 체험신청조회
+		map.put("/insertServiceM.do", new InsertServieM());	// 서비스등록
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

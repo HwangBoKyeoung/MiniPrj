@@ -16,14 +16,19 @@ public class InsertEnquiry implements Command {
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String message = request.getParameter("message");
+		String phone = request.getParameter("phone");
 		
-		if(subject=="" || name=="" || email=="" || message=="") {
+		if(subject=="" || name=="" || email=="" || message=="" || phone=="") {
 			return "main/map";
 		}
 		
-		EnquiryService enquiryDao = new EnquiryServiceImpl(); EnquiryVO vo = new
-		EnquiryVO(); vo.setEnquiryEmail(email); vo.setEnquiryMessage(message);
-		vo.setEnquiryName(name); vo.setEnquirySubject(subject);
+		EnquiryService enquiryDao = new EnquiryServiceImpl(); 
+		EnquiryVO vo = new EnquiryVO(); 
+		vo.setEnquiryEmail(email); 
+		vo.setEnquiryMessage(message);
+		vo.setEnquiryName(name); 
+		vo.setEnquirySubject(subject);
+		vo.setEnquiryTel(phone);
 		 
 		enquiryDao.insertEnquiry(vo);
 

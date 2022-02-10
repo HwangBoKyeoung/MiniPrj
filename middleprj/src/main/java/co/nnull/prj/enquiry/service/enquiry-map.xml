@@ -8,6 +8,7 @@
 		<result property="enquiryName" column="enquiry_name" />
 		<result property="enquiryEmail" column="enquiry_email" />
 		<result property="enquiryMessage" column="enquiry_message" />
+		<result property="enquiryTel" column="enquiry_tel" />
 	</resultMap>
 
 	<select id="selectListEnquiry" resultMap="enquiryMap">
@@ -23,6 +24,6 @@
 			SELECT MAX(ENQUIRY_ID)+1 AS ENQUIRYID FROM ENQUIRY
 		</selectKey>
 		INSERT INTO ENQUIRY
-		VALUES (#{enquiryId}, #{enquirySubject}, #{enquiryName}, #{enquiryEmail}, #{enquiryMessage})
+		VALUES (#{enquiryId}, #{enquirySubject}, #{enquiryName}, #{enquiryEmail}, #{enquiryMessage}, #{enquiryTel})
 	</insert>
 </mapper>
