@@ -11,7 +11,7 @@
 	<div class="container">
 
 				<!-- Nested Row within Card Body -->
-						<div style="margin: 100px;" class="p-5">
+						<div style="margin: 100px;" class="p-5" id="mustRegister">
 							<div class="text-center">
 								<h1 style="font-size: 35px; font-weight: 800;" class="h4 text-gray-900 mb-4">회 원 가 입</h1>
 							</div>
