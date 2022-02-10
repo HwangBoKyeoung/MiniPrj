@@ -20,8 +20,10 @@ import co.nnull.prj.command.DealUpdate;
 import co.nnull.prj.command.DealUpdateForm;
 import co.nnull.prj.command.DealWrite;
 import co.nnull.prj.command.DealWriteForm;
+import co.nnull.prj.command.DeleteSchedule;
 import co.nnull.prj.command.DeleteUser;
-import co.nnull.prj.command.Experience;
+import co.nnull.prj.command.ExpRequest;
+import co.nnull.prj.command.ExpForm;
 import co.nnull.prj.command.Free;
 import co.nnull.prj.command.FreeDelete;
 import co.nnull.prj.command.FreeSelect;
@@ -32,6 +34,7 @@ import co.nnull.prj.command.FreeWriteForm;
 import co.nnull.prj.command.IdCheck;
 import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
+import co.nnull.prj.command.InsertCalendar;
 import co.nnull.prj.command.InsertEnquiry;
 import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
@@ -39,6 +42,8 @@ import co.nnull.prj.command.LogoutCommand;
 import co.nnull.prj.command.MainCommand;
 import co.nnull.prj.command.MainMCommand;
 import co.nnull.prj.command.MapCommand;
+import co.nnull.prj.command.MemberList;
+import co.nnull.prj.command.MemberSelect;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.MemberShipForm;
 import co.nnull.prj.command.MyInfoUpdate;
@@ -58,9 +63,13 @@ import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
 import co.nnull.prj.command.ScheduleInfo;
+import co.nnull.prj.command.ScheduleInfoPage;
 import co.nnull.prj.command.ScheduleManage;
 import co.nnull.prj.command.ScheduleView;
+import co.nnull.prj.command.UpdateCalendar;
+import co.nnull.prj.command.UpdateScheduleForm;
 import co.nnull.prj.command.UserMyPage;
+import co.nnull.prj.common.InsertForm;
 
 
 @WebServlet("*.do")
@@ -113,22 +122,23 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeDelete.do", new NoticeDelete()); // 공지사항 삭제
 		
 		map.put("/free.do", new Free());	// 자유게시판
-		map.put("/freeSelect.do", new FreeSelect()); // 공지사항 한 건 선택
-		map.put("/freeWriteForm.do", new FreeWriteForm()); // 공지사항 글쓰기 폼
-		map.put("/freeWrite.do", new FreeWrite()); // 공지사항 글쓰기
-		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 공지사항 글수정 폼
-		map.put("/freeUpdate.do", new FreeUpdate()); // 공지사항 글수정
-		map.put("/freeDelete.do", new FreeDelete()); // 공지사항 삭제
+		map.put("/freeSelect.do", new FreeSelect()); // 자유게시판 한 건 선택
+		map.put("/freeWriteForm.do", new FreeWriteForm()); // 자유게시판 글쓰기 폼
+		map.put("/freeWrite.do", new FreeWrite()); // 자유게시판 글쓰기
+		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 자유게시판 글수정 폼
+		map.put("/freeUpdate.do", new FreeUpdate()); // 자유게시판 글수정
+		map.put("/freeDelete.do", new FreeDelete()); // 자유게시판 삭제
 		
 		map.put("/deal.do", new Deal());	// 중고거래
-		map.put("/dealSelect.do", new DealSelect()); // 공지사항 한 건 선택
-		map.put("/dealWriteForm.do", new DealWriteForm()); // 공지사항 글쓰기 폼
-		map.put("/dealWrite.do", new DealWrite()); // 공지사항 글쓰기
-		map.put("/dealUpdateForm.do", new DealUpdateForm()); // 공지사항 글수정 폼
-		map.put("/dealUpdate.do", new DealUpdate()); // 공지사항 글수정
-		map.put("/dealDelete.do", new DealDelete()); // 공지사항 삭제
+		map.put("/dealSelect.do", new DealSelect()); // 중고거래 한 건 선택
+		map.put("/dealWriteForm.do", new DealWriteForm()); // 중고거래 글쓰기 폼
+		map.put("/dealWrite.do", new DealWrite()); // 중고거래 글쓰기
+		map.put("/dealUpdateForm.do", new DealUpdateForm()); // 중고거래 글수정 폼
+		map.put("/dealUpdate.do", new DealUpdate()); // 중고거래 글수정
+		map.put("/dealDelete.do", new DealDelete()); // 중고거래 삭제
 		
-		map.put("/experience.do", new Experience());	// 체험신청
+		map.put("/expForm.do", new ExpForm());	// 체험신청 폼
+		map.put("/expRequest.do", new ExpRequest()); // 체험신청 글전송
 		
 //		오시는길
 		map.put("/map.do", new MapCommand());	// 오시는길
@@ -138,15 +148,21 @@ public class FrontController extends HttpServlet {
 //		관리자페이지
 //		메인
 		map.put("/mainM.do", new MainMCommand());	//메인
-		//map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
+		map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
+		map.put("/memberSelect.do", new MemberSelect());	//회원 개별조회
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황
 		
 //		일정
 		map.put("/scheduleManage.do", new ScheduleManage());	// 일정 입력, 수정, 삭제
-		map.put("/scheduleInfo.do", new ScheduleInfo());	//일정보기
-		
+		map.put("/scheduleInfoPage.do", new ScheduleInfoPage());	// 일정json처리
+		map.put("/scheduleInfo.do", new ScheduleInfo());	// 일정보기
+		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	//  스케줄수정 폼
+		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정)
+		map.put("/deleteSchedule.do", new DeleteSchedule());	// 일정삭제
+		map.put("/insertForm.do", new InsertForm());	//일정등록 폼
+		map.put("/insertCalendar.do", new InsertCalendar());	//일정등록
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

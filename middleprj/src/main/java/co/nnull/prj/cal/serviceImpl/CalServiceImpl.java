@@ -30,6 +30,10 @@ public class CalServiceImpl implements CalService {
 	public int updateCal(CalVO cvo) {
 		return map.updateCal(cvo);
 	}
+	@Override
+	public CalVO selectOneCal(CalVO cvo) {
+		return map.selectOneCal(cvo);
+	}
 
 	
 }

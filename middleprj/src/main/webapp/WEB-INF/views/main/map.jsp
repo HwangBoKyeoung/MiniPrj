@@ -109,7 +109,7 @@
 						</div>
 						<div class="form-group mt-3">
 							<button type="submit" id="btn"
-								class="button button-contactForm boxed-btn">Send</button>
+								class="genric-btn danger">보내기</button>
 						</div>
 					</form>
 				</div>

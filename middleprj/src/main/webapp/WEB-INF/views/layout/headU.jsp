@@ -2,6 +2,25 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+<script>
+function freeFnc(){
+   if(${author == null}){
+      alert('로그인 후 이용하실 수 있습니다.');
+   } else {
+		location.href  ="free.do"
+   }
+}
+
+function dealFnc(){
+	if(${author == null}){
+	  alert('로그인 후 이용하실 수 있습니다.');
+	} else {
+		location.href  ="deal.do"
+	}
+}
+</script>
+
 <div class="header-area ">
 	<div id="sticky-header" class="main-header-area">
 		<div class="container-fluid ">
@@ -32,9 +51,9 @@
 									<li><a href="#">게시판 <i class="ti-angle-down"></i></a>
 										<ul class="submenu">
 											<li><a href="notice.do">공지사항</a></li>
-											<li><a href="free.do">자유게시판</a></li>
-											<li><a href="deal.do">중고거래</a></li>
-											<li><a href="experience.do">체험문의</a></li>
+											<li><a onclick="freeFnc()">자유게시판</a></li>
+											<li><a onclick="dealFnc()">중고거래</a></li>
+											<li><a href="expForm.do">체험신청</a></li>
 										</ul></li>
 									<li><a href="map.do">오시는길</a></li>
 								</ul>

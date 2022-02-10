@@ -8,6 +8,8 @@ public interface MembersMapper {
 	List<MembersVO> memberSelectList();
 
 	MembersVO memberSelect(MembersVO vo); // 로그인, 한명데이터 조회
+	
+	MembersVO memberSelectOne(MembersVO vo);
 
 	int memberInsert(MembersVO vo);
 

@@ -11,8 +11,14 @@
 	</resultMap>
 	
 	<select id="selectCal" resultMap="calMap">
-		SELECT CAL_TITLE, START_DATE, END_DATE, ALL_DAY
-		FROM CALENDAR ORDER BY START_DATE
+		SELECT *
+		FROM CALENDAR ORDER BY CAL_ID
+	</select>
+	
+	<select id="selectOneCal" resultMap="calMap">
+		SELECT *
+		FROM CALENDAR
+		WHERE CAL_ID=#{id}
 	</select>
 	
 	<insert id="insertCal" parameterType="co.nnull.prj.cal.vo.CalVO">

@@ -14,7 +14,7 @@
 		<a href="deal.do" class="btn btn-secondary btn-icon-split btn-lg">
 			<span class="icon text-white-50"> <i class="fas fa-flag"></i>
 		</span> <span class="text">중고거래</span>
-		</a><br> <br>
+		</a><br><br>
 
 		<div class="table100 ver5 m-b-110">
 			<div class="table100-head">
@@ -39,9 +39,9 @@
 								onclick="dealSelect(${deal.dealId})">
 								<td class="cell100 column1" style="padding-left: 55px">${deal.dealId}</td>
 								<td class="cell100 column2">${deal.dealTitle}</td>
-								<td class="cell100 column3" style="padding-left: 14px">${deal.dealWriter}</td>
-								<td class="cell100 column4" style="padding-right: 30px">${deal.dealDate}</td>
-								<td class="cell100 column5" style="padding-left: 38px">${deal.dealHit}</td>
+								<td class="cell100 column3" style="padding-left: 4px">${deal.dealWriter}</td>
+								<td class="cell100 column4" style="padding-left: -20px">${deal.dealDate}</td>
+								<td class="cell100 column5" style="padding-left: 18px">${deal.dealHit}</td>
 							</tr>
 						</c:forEach>
 					</tbody>

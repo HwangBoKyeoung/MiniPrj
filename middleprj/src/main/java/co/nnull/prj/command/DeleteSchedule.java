@@ -1,32 +1,32 @@
 package co.nnull.prj.command;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import co.nnull.prj.cal.service.CalService;
 import co.nnull.prj.cal.serviceImpl.CalServiceImpl;
 import co.nnull.prj.cal.vo.CalVO;
 import co.nnull.prj.comm.Command;
 
-public class ScheduleInfo implements Command {
+public class DeleteSchedule implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
-		response.setContentType("text/json; charset=utf-8");
-
+		String calId = request.getParameter("del");
+		
 		CalService calDao = new CalServiceImpl();
-		List<CalVO> scheduleView = calDao.selectCal();
-
-		Gson gson = new GsonBuilder().create();
-		String str = gson.toJson(scheduleView);
-		System.out.println(str);
-
-		return "ajax:" + str;
+		CalVO vo = new CalVO();
+		vo.setId(Integer.parseInt(calId));
+		
+		int n = calDao.deleteCal(vo);
+		String viewPage = null;
+		if(n!=0) {
+			viewPage = "scheduleManage.do";
+		} else {
+			request.setAttribute("message", "삭제 실패.");
+			viewPage = "manager/adminSchedule/managerErr";
+		}
+		return viewPage;
 	}
 
 }

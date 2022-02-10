@@ -32,7 +32,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<input class="form-control valid" name="freeWriter"
-									id="freeWriter" value="${name }" readonly="readonly"
+									id="freeWriter" value="${id }" readonly="readonly"
 									type="text" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = '작성자'" placeholder="작성자">
 							</div>
