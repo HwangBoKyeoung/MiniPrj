@@ -15,12 +15,19 @@
 </head>
 <body>
 	<script>
+	function deleteBtn(membersId){
+		document.forms.frm.deleteId.value = membersId;
+		document.forms.frm.submit();
+	}
 		function clickTr(id){
 			document.forms.frms.trt.value=id;
 			document.forms.frms.submit();
-		}
+	}
 	</script>
-	
+	<form action="${pageContext.request.contextPath}/memberStatusDelete.do"
+		id="frm" name="frm">
+		<input type="hidden" id="deleteId" name="deleteId">
+	</form>
 	<form action="${pageContext.request.contextPath}/memberSelect.do" id="frms" name="frms" method="post">
 		<input type="hidden" name="trt" id="trt">
 	</form>
@@ -48,6 +55,8 @@
 								<th>membership</th>
 								<th>weight(kg)</th>
 								<th>height(cm)</th>
+								<th>수정</th>
+								<th>삭제</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -60,6 +69,13 @@
 									<td>${member.membersMembership}</td>
 									<td>${member.membersWeight}</td>
 									<td>${member.membersHeight}</td>
+									<td>
+										<input type="button" value="수정"
+											onclick="location.href='memberStatusUpdate.do?membersId=${member.membersId}'">
+									</td>
+									<td><input type="button" value="삭제"
+										onclick="deleteBtn(${member.membersId})">
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -69,5 +85,6 @@
 		</div>
 
 	</div>
+	
 </body>
 </html>
