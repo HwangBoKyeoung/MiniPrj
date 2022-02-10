@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            	
+                            	<form action="">
 	                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	                                    <thead>
 	                                        <tr>
@@ -44,21 +44,32 @@
 	                                        </tr>
 	                                    </thead>
 	                                    
-	                                    <tbody>
-	                                    	<c:forEach items="${lists}" var="list">
-		                                        <tr>
-		                                            <td>
-		                                            	${list.title}
-		                                            	<div id="shows" style="display: none;"><input type="text" id="title" name="title" value="${list.title}"></div>
-		                                            </td>
-		                                            <td>${list.start}</td>
-		                                            <td>${list.end}</td>
-		                                            <td><input type="submit" value="수정" onclick="updateFnc(${list.id})"></td>
-		                                            <td><input type="button" value="삭제" onclick="deleteFnc(${list.id})"></td>
-		                                        </tr>
-	                                        </c:forEach>
-	                                    </tbody>
+	                                    
+		                                    <tbody>
+		                                    	<c:forEach items="${lists}" var="list">
+			                                        <tr>
+			                                            <td>
+			                                            	${list.title}
+			                                            	<div id="shows1" style="display: none;"><input type="text" id="title" name="title" value="${list.title}"></div>
+			                                            </td>
+			                                            <td>
+			                                            	${list.start}
+			                                            	<div id="shows2" style="display: none;"><input type="text" id="start" name="start" value="${list.start}"></div>
+			                                            </td>
+			                                            <td>
+			                                            	${list.end}
+			                                            	<div id="shows3" style="display: none;"><input type="text" id="end" name="end" value="${list.end}"></div>
+			                                            </td>
+			                                            <td>
+			                                            	<input type="button" value="수정" onclick="updateFnc(${list.id})">
+			                                            	<input type="submit" value="수정완료">
+			                                            </td>
+			                                            <td><input type="button" value="삭제" onclick="deleteFnc(${list.id})"></td>
+			                                        </tr>
+		                                        </c:forEach>
+		                                    </tbody>
 	                                </table>
+	                                    </form>
                                
                             </div>
                         </div>
@@ -68,7 +79,9 @@
                 
 <script>
 	function updateFnc(id){
-		document.getElementById('shows').style.display = '';
+		document.getElementById('shows1').style.display = '';
+		document.getElementById('shows2').style.display = '';
+		document.getElementById('shows3').style.display = '';
 	}
 </script>
 
