@@ -26,6 +26,6 @@
 		<mapper resource="co/nnull/prj/bulletin/service/bulletinDeal-map.xml"/>
 		<mapper resource="co/nnull/prj/membership/service/membership-map.xml"/>
 		<mapper resource="co/nnull/prj/cal/service/calendar-map.xml"/>
-		<mapper resource="co/nnull/prj/cart/service/cart-map.xml"/>
+		<mapper resource="co/nnull/prj/order/service/order-map.xml"/>
 	</mappers>
 </configuration>

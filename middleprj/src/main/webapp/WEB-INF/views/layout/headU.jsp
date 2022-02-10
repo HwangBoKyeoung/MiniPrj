@@ -103,9 +103,9 @@
 										<div
 											class="dropdown-menu dropdown-menu-right shadow animated--grow-in my-undermenu"
 											aria-labelledby="userDropdown">
-											<a class="dropdown-item" href="registerForm.do"> <i
+											<a class="dropdown-item" href="registerForm.do#mustRegister"> <i
 												class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 회원가입
-											</a> <a class="dropdown-item" href="loginForm.do"> <i
+											</a> <a class="dropdown-item" href="loginForm.do#mustLogin"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> 로그인
 											</a>
 										</div>

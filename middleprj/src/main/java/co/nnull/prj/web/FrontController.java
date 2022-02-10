@@ -13,12 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
-import co.nnull.prj.command.CartCommand;
-import co.nnull.prj.command.CartDelete;
-import co.nnull.prj.command.CartForm;
-import co.nnull.prj.command.CartInsert;
-import co.nnull.prj.command.CartList;
-import co.nnull.prj.command.CartUpdate;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DealDelete;
 import co.nnull.prj.command.DealSelect;
@@ -55,9 +49,11 @@ import co.nnull.prj.command.NoticeUpdate;
 import co.nnull.prj.command.NoticeUpdateForm;
 import co.nnull.prj.command.NoticeWrite;
 import co.nnull.prj.command.NoticeWriteForm;
+import co.nnull.prj.command.PaySuccess;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
+import co.nnull.prj.command.PlaceOrder;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.Sales;
@@ -97,13 +93,8 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/memberShipSelect.do", new MemberShipForm()); // 멤버십 상품 상세페이지
+		map.put("/placeOrder.do", new PlaceOrder()); // 주문내역 입력
 		map.put("/payment.do", new Payment()); // 결제 테스트
-		map.put("/cartList.do", new CartList()); // 장바구니 리스트
-		map.put("/cartInsert.do", new CartInsert()); // 장바구니 추가
-		map.put("/cartDelete.do", new CartDelete()); // 장바구니 삭제
-		map.put("/cartUpdate.do", new CartUpdate()); // 장바구니 수정
-		map.put("/cartForm.do", new CartForm()); // 장바구니 폼 호출
-		map.put("/cart.do", new CartCommand()); // 장바구니 넣기
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
 		

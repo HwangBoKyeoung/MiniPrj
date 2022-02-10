@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.order.service.OrderMapper">
+	<resultMap type="co.nnull.prj.order.vo.OrderVO" id="orderMap">
+		<id property="orderId" column="order_id"/>
+		<result property="orderName" column="order_name"/>
+		<result property="orderPrice" column="order_price"/>
+		<result property="orderDate" column="order_date"/>
+		<result property="membersId" column="members_id"/>
+	</resultMap>
+	
+	<select id="orderSelectList" resultType="co.nnull.prj.order.vo.OrderVO">
+		SELECT
+			ORDER_ID AS ORDERID,
+			ORDER_NAME AS ORDERNAME,
+			ORDER_PRICE AS ORDERPRICE,
+			ORDER_DATE AS ORDERDATE,
+			MEMBERS_ID AS MEMBERSID
+		FROM ORDERLIST ORDER BY ORDERID DESC	
+	</select>
+	
+	<select id="orderSelect" resultType="co.nnull.prj.order.vo.OrderVO">
+		SELECT * FROM ORDERLIST
+		WHERE members_ID = #{membersId}
+	</select>
+	
+	<insert id="orderInsert" parameterType="co.nnull.prj.order.vo.OrderVO">
+		<selectKey keyProperty="orderId" resultType="int" order="BEFORE" >
+			SELECT MAX(ORDER_ID)+1 AS ORDERID FROM ORDERLIST
+		</selectKey>
+		INSERT INTO orderList(ORDER_ID, ORDER_NAME, ORDER_PRICE ,ORDER_DATE, MEMBERS_ID)
+		VALUES(#{orderId}, #{orderName}, #{orderPrice}, #{orderDate}, #{membersId}) 
+	</insert>
+	
+</mapper>
