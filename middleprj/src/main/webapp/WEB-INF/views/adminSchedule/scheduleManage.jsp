@@ -79,7 +79,7 @@
 						</tbody>
 					</table>
 					<div>
-						<input type="button" value="일정등록" onclick=""
+						<input type="button" value="일정등록" onclick="location.href='insertForm.do'"
 							class="btn btn-secondary btn-icon-split"
 							style="padding: 5px 10px 5px 10px;">
 					</div>
