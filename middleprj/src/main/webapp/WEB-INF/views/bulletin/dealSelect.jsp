@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -46,21 +47,50 @@
 				</div>
 			</div>
 		</div>
-		<div style="display: inline-block;">
-			<input type="button" value="수정"
-				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
-				onclick="location.href='dealUpdateForm.do?id=${deal.dealId}'" >
-		</div>
-		<div style="display: inline-block;">
-			<input type="button" value="삭제"
-				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
-				onclick="deleteFnc(${deal.dealId})">
-		</div>
-		<div style="display: inline-block">
-			<input type="button" value="목록"
-			class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;" 
-			onclick="location.href='deal.do'">
-		</div>
+		<c:choose>
+			<c:when test="${id == deal.dealWriter}">
+				<div style="display: inline-block;">
+					<input type="button" value="수정"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px"
+						onclick="location.href='dealUpdateForm.do?id=${deal.dealId}'">
+				</div>
+				<div style="display: inline-block;">
+					<input type="button" value="삭제"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px"
+						onclick="deleteFnc(${deal.dealId})">
+				</div>
+				<div style="display: inline-block">
+					<input type="button" value="목록"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px;"
+						onclick="location.href='deal.do'">
+				</div>
+			</c:when>
+			<c:when test="${author == 'admin'}">
+				<div style="display: inline-block;">
+					<input type="button" value="삭제"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px"
+						onclick="deleteFnc(${deal.dealId})">
+				</div>
+				<div style="display: inline-block">
+					<input type="button" value="목록"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px;"
+						onclick="location.href='deal.do'">
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div style="display: inline-block">
+					<input type="button" value="목록"
+						class="btn btn-secondary btn-icon-split"
+						style="padding: 5px 10px 5px 10px;"
+						onclick="location.href='deal.do'">
+				</div>
+			</c:otherwise>
+		</c:choose>
 	</div>
 
 

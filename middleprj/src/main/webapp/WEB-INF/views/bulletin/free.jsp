@@ -41,7 +41,7 @@
 								<td class="cell100 column2">${free.freeTitle}</td>
 								<td class="cell100 column3" style="padding-left: 14px">${free.freeWriter}</td>
 								<td class="cell100 column4" style="padding-right: 30px">${free.freeDate}</td>
-								<td class="cell100 column5" style="padding-left: 38px">${free.freeHit}</td>
+								<td class="cell100 column5" style="padding-left: 32px">${free.freeHit}</td>
 							</tr>
 						</c:forEach>
 					</tbody>

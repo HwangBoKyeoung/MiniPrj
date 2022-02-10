@@ -42,7 +42,7 @@
 								<td class="cell100 column1" style="padding-left: 55px">${notice.noticeId}</td>
 								<td class="cell100 column2">${notice.noticeTitle}</td>
 								<td class="cell100 column3" style="padding-left: 14px">${notice.noticeWriter}</td>
-								<td class="cell100 column4" style="padding-right: 30px">${notice.noticeDate}</td>
+								<td class="cell100 column4" style="padding-right: 35px">${notice.noticeDate}</td>
 								<td class="cell100 column5" style="padding-left: 38px">${notice.noticeHit}</td>
 							</tr>
 						</c:forEach>
@@ -51,11 +51,13 @@
 			</div>
 		</div>
 		<br> <br>
+		<c:if test="${author == 'admin'}">
 		<div align="center">
 			<button type="button" class="btn btn-danger btn-icon-split"
 				style="padding: 5px 10px 5px 10px"
 				onclick="location.href='noticeWriteForm.do'">글쓰기</button>
 		</div>
+		</c:if>
 	</div>
 </div>
 
