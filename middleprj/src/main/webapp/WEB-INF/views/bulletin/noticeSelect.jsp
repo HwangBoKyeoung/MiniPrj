@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -46,6 +48,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<c:if test="${author == 'admin'}">
 		<div style="display: inline-block;">
 			<input type="button" value="수정"
 				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
@@ -56,11 +60,14 @@
 				class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px"
 				onclick="deleteFnc(${notice.noticeId})">
 		</div>
+		</c:if>
+
 		<div style="display: inline-block">
 			<input type="button" value="목록"
 			class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;" 
 			onclick="location.href='notice.do'">
 		</div>
+	<a>${notice.noticeId }</a>
 	</div>
 
 

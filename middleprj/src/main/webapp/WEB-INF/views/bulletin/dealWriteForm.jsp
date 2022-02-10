@@ -21,7 +21,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<input class="form-control valid" name="dealWriter"
-										id="dealWriter" value="${name }" readonly="readonly"
+										id="dealWriter" value="${id }" readonly="readonly"
 										type="text" onfocus="this.placeholder = ''"
 										onblur="this.placeholder = '작성자'"
 										placeholder="작성자">

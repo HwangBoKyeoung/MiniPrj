@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.bulletin.service.BulletinExpMapper">
+
+	<resultMap type="co.nnull.prj.bulletin.vo.BulletinExpVO" id="expMap">
+		<id property="expId" column="exp_id" />
+		<result property="expDate" column="exp_date"/>
+		<result property="expName" column="exp_name"/>
+		<result property="expTel" column="exp_tel"/>
+		<result property="expCity" column="exp_city"/>
+		<result property="expProgram" column="exp_program"/>
+		<result property="expMessage" column="exp_message"/>
+	</resultMap>
+	
+	
+	<insert id="expInsert" parameterType="co.nnull.prj.bulletin.vo.BulletinExpVO">
+		<selectKey keyProperty="expId" resultType="int" order="BEFORE">
+			SELECT MAX(EXP_ID)+1 AS EXPID FROM BULLETIN_EXPERIENCE
+		</selectKey>
+			INSERT INTO BULLETIN_EXPERIENCE(EXP_ID, EXP_DATE, EXP_NAME, EXP_TEL, EXP_CITY, EXP_PROGRAM, EXP_MESSAGE)
+			VALUES (#{expId}, #{expDate}, #{expName}, #{expTel}, #{expCity}, #{expProgram}, #{expMessage})
+	</insert>
+
+</mapper>

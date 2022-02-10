@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
 
-public class Experience implements Command {
+public class ExpForm implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
 
-		return "bulletin/experience";
+		return "bulletin/expForm";
 	}
 
 }
