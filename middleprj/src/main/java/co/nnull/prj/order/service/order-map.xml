@@ -28,8 +28,8 @@
 		<selectKey keyProperty="orderId" resultType="int" order="BEFORE" >
 			SELECT MAX(ORDER_ID)+1 AS ORDERID FROM ORDERLIST
 		</selectKey>
-		INSERT INTO orderList(ORDER_ID, ORDER_NAME, ORDER_PRICE ,ORDER_DATE, MEMBERS_ID)
-		VALUES(#{orderId}, #{orderName}, #{orderPrice}, #{orderDate}, #{membersId}) 
+		INSERT INTO ORDERLIST(ORDER_ID, ORDER_NAME, ORDER_PRICE, MEMBERS_ID)
+		VALUES(#{orderId}, #{orderName}, #{orderPrice}, #{membersId}) 
 	</insert>
 	
 </mapper>

@@ -6,13 +6,12 @@ import lombok.Data;
 
 @Data
 public class OrderVO {
-	private String orderId;
+	private int orderId;
 	private String orderName;
 	private int orderPrice;
 	private Date orderDate;
 	private String membersId;
-	
-	
+
 }
 
 

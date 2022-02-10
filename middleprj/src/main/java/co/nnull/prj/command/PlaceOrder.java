@@ -1,10 +1,10 @@
 package co.nnull.prj.command;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import co.nnull.prj.comm.Command;
 import co.nnull.prj.order.service.OrderService;
@@ -15,15 +15,31 @@ public class PlaceOrder implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		response.setContentType("text/json;charset=utf-8");
 		
+		HttpSession session = request.getSession();
 		OrderService orderDao = new OrderServiceImpl();
 		OrderVO vo = new OrderVO();
 		
-		Gson gson = new GsonBuilder().create();
-		String str = gson.toJson(orderDao.orderInsert(vo));
-		System.out.println(str);
+		String orderName = request.getParameter("s_name");
+		String orderPrice = request.getParameter("o_paidAmount");
 		
-		return "ajax:" + str;
+		System.out.println(orderName + " " + orderPrice);
+		
+		vo.setMembersId((String) session.getAttribute("id"));
+		vo.setOrderName(orderName);
+		vo.setOrderPrice(Integer.parseInt(orderPrice));
+		
+		String result = "";
+		if(orderDao.orderInsert(vo)!=0) {
+//			{"result":"y"}
+			result = "{\"result\":\"y\"}";
+		} else {
+//			{"result":"n"}
+			result = "{\"result\":\"n\"}";
+		}
+		
+		return "ajax:"+result;
 	}
 
 }

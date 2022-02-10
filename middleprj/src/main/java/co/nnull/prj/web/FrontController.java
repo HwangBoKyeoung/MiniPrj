@@ -54,7 +54,6 @@ import co.nnull.prj.command.NoticeUpdate;
 import co.nnull.prj.command.NoticeUpdateForm;
 import co.nnull.prj.command.NoticeWrite;
 import co.nnull.prj.command.NoticeWriteForm;
-import co.nnull.prj.command.PaySuccess;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
@@ -102,11 +101,10 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/memberShipSelect.do", new MemberShipForm()); // 멤버십 상품 상세페이지
-		map.put("/placeOrder.do", new PlaceOrder()); // 주문내역 입력
 		map.put("/payment.do", new Payment()); // 결제 테스트
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
-		
+		map.put("/placeorder.do", new PlaceOrder()); 	// 주문내역 DB
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
 		map.put("/infoSchedule.do", new InfoSchedule()); // 이용안내 -> 스케쥴
