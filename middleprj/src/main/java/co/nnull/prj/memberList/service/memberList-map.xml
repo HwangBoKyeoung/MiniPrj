@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.nnull.prj.memberList.service.memberListMapper">
-	<resultMap type="co.nnull.prj.memberList.vo.memberListVO" id="listMap">
-		<id property="memId" column="mem_id"/>
-		<result property="memName" column="mem_name"/>
-		<result property="memTel" column="mem_tel"/>
-		<result property="memAddress" column="mem_address"/>
-		<result property="memAge" column="mem_age"/>
-		<result property="memWeight" column="mem_weight"/>
-		<result property="memHeight" column="mem_height"/>
+	<resultMap type="co.nnull.prj.members.vo.MembersVO" id="listMap">
+		<id property="membersId" column="members_id"/>
+		<result property="membersPassword" column="members_password"/>
+		<result property="membersName" column="members_name"/>
+		<result property="membersTel" column="members_tel"/>
+		<result property="membersAddress" column="members_address"/>
+		<result property="membersAuthor" column="members_author"/>
+		<result property="membersMembership" column="members_membership"/>
+		<result property="membersWeight" column="members_weight"/>
+		<result property="membersHeight" column="members_height"/>
 	</resultMap>
 	
-	<select id="memberSelectList" resultType="co.nnull.prj.memberList.vo.memberListVO">
-		
+	<select id="memberSelectList" resultType="co.nnull.prj.members.vo.MembersVO">
+		SELECT *
+		FROM MEMBERS ORDER BY MEMBERS_ID DESC
 	</select>
 	
-	<select id="memberSelect" resultMap="listMap" resultType="co.nnull.prj.memberList.vo.memberListVO">
-		
+	<select id="memberSelectOne" resultMap="listMap" resultType="co.nnull.prj.members.vo.MembersVO">
+		SELECT * FROM MEMBERS
+		WHERE MEMBERS_ID = #{membersId}
 	</select>
 	
-	<insert id="memberInsert">
-		
+	<insert id="memberListInsert" parameterType="co.nnull.prj.members.vo.MembersVO">
+		INSERT INTO MEMBERS(MEMBERS_ID,MEMBERS_PASSWORD,MEMBERS_NAME,MEMBERS_TEL,MEMBERS_ADDRESS)
+		VALUES(#{membersId},#{membersPassword},#{membersName},#{membersTel},#{membersAddress},#{membersWeight},#{membersHeight})
 	</insert>
+	
+	<update id="memberListUpdate" parameterType="co.nnull.prj.members.vo.MembersVO">
+		 UPDATE MEMBERS
+			SET  
+			MEMBERS_ID=NVL(#{membersId},MEMBERS_ID),
+			MEMBERS_NAME=NVL(#{membersName},MEMBERS_NAME),
+			MEMBERS_TEL=NVL(#{membersTel},MEMBERS_TEL),
+			MEMBERS_ADDRESS=NVL(#{membersAddress},MEMBERS_ADDRESS),
+			MEMBERS_WEIGHT=NVL(#{membersWeight},MEMBERS_WEIGHT),
+			MEMBERS_HEIGHT=NVL(#{membersHeight},MEMBERS_HEIGHT)
+		WHERE MEMBERS_ID=#{membersId}
+	</update>
+
+	<delete id="memberListDelete" parameterType="co.nnull.prj.members.vo.MembersVO">
+		DELETE FROM MEMBERS WHERE MEMBERS_ID = #{membersId}
+	</delete>
 </mapper>

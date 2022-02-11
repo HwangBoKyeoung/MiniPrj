@@ -99,8 +99,11 @@ function dealFnc(){
 											aria-labelledby="userDropdown">
 											<a class="dropdown-item" href="userMypage.do?id=${id}"> <i
 												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-												마이페이지
-											</a> <a class="dropdown-item" href="logout.do"> <i
+												마이페이지</a>
+											<a class="dropdown-item" href="BMI.do"> <i 
+												class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+												BMI계산기</a>
+											 <a class="dropdown-item" href="logout.do"> <i
 												class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 로그아웃
 											</a>
 										</div>

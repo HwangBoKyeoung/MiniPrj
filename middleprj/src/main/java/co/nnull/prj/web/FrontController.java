@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.BMItest;
 import co.nnull.prj.command.BulletinExperienceSelect;
 import co.nnull.prj.command.BulletinExperienceSelectOne;
 import co.nnull.prj.command.Deal;
@@ -26,8 +27,8 @@ import co.nnull.prj.command.DeleteSchedule;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.EnquirySelectM;
 import co.nnull.prj.command.EnquirySelectOne;
-import co.nnull.prj.command.ExpRequest;
 import co.nnull.prj.command.ExpForm;
+import co.nnull.prj.command.ExpRequest;
 import co.nnull.prj.command.Free;
 import co.nnull.prj.command.FreeDelete;
 import co.nnull.prj.command.FreeSelect;
@@ -51,6 +52,9 @@ import co.nnull.prj.command.MemberList;
 import co.nnull.prj.command.MemberSelect;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.MemberShipForm;
+import co.nnull.prj.command.MemberStatusDelete;
+import co.nnull.prj.command.MemberStatusUpdate;
+import co.nnull.prj.command.MemberStatusUpdateForm;
 import co.nnull.prj.command.MembersMembership;
 import co.nnull.prj.command.MyInfoUpdate;
 import co.nnull.prj.command.Notice;
@@ -68,7 +72,6 @@ import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.ReplyFreeDelete;
 import co.nnull.prj.command.ReplyFreeWrite;
-import co.nnull.prj.command.ReplyFreeWriteForm;
 import co.nnull.prj.command.Sales;
 import co.nnull.prj.command.ScheduleInfo;
 import co.nnull.prj.command.ScheduleInfoPage;
@@ -115,6 +118,7 @@ public class FrontController extends HttpServlet {
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
 		map.put("/placeorder.do", new PlaceOrder()); 	// 주문내역 DB
+		
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
 		map.put("/infoSchedule.do", new InfoSchedule()); // 이용안내 -> 스케쥴
@@ -162,6 +166,11 @@ public class FrontController extends HttpServlet {
 		map.put("/mainM.do", new MainMCommand());	//메인
 		map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
 		map.put("/memberSelect.do", new MemberSelect());	//회원 개별조회
+		map.put("/memberStatusUpdateForm.do", new MemberStatusUpdateForm()); //관리자 회원 수정폼
+		map.put("/memberStatusUpdate.do", new MemberStatusUpdate()); // 관리자 회원 키, 몸무게 수정
+		map.put("/memberStatusDelete.do", new MemberStatusDelete()); // 관리자 회원 삭제
+
+		map.put("/BMI.do", new BMItest()); // bmi계산기 테스트
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황

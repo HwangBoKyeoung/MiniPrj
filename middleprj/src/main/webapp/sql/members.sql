@@ -11,6 +11,8 @@ create table members
 
 ALTER TABLE members add members_weight number;
 ALTER TABLE members add members_height number;
+alter table members modify (member_weight default 0 not null);
+alter table members modify (member_height default 0 not null);
 
 insert into members(members_id,members_password,members_name,members_tel,members_address, members_author) values('hbk','1111','관리자','010-1234-1234','대구 중구','admin');
 insert into members(members_id,members_password,members_name,members_tel,members_address) values('micol','1234','micol','010-1234-1234','대구 중구');

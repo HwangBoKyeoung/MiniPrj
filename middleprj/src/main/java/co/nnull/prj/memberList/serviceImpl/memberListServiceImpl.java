@@ -7,40 +7,40 @@ import org.apache.ibatis.session.SqlSession;
 import co.nnull.prj.comm.DataSource;
 import co.nnull.prj.memberList.service.memberListMapper;
 import co.nnull.prj.memberList.service.memberListService;
-import co.nnull.prj.memberList.vo.memberListVO;
+import co.nnull.prj.members.vo.MembersVO;
 
 public class memberListServiceImpl implements memberListService{
 
 	private SqlSession session = DataSource.getInstance().openSession(true);
 	private memberListMapper map = session.getMapper(memberListMapper.class);
 	@Override
-	public List<memberListVO> memberSelectList() {
+	public List<MembersVO> memberSelectList() {
+		// TODO Auto-generated method stub
 		return map.memberSelectList();
 	}
 
 	@Override
-	public memberListVO memberSelect(memberListVO vo) {
-		return map.memberSelect(vo);
+	public MembersVO memberSelectOne(MembersVO vo) {
+		// TODO Auto-generated method stub
+		return map.memberSelectOne(vo);
 	}
 
 	@Override
-	public int memberInsert(memberListVO vo) {
-		return map.memberInsert(vo);
+	public int memberListInsert(MembersVO vo) {
+		// TODO Auto-generated method stub
+		return map.memberListInsert(vo);
 	}
 
 	@Override
-	public int memberUpdate(memberListVO vo) {
-		return map.memberUpdate(vo);
+	public int memberListUpdate(MembersVO vo) {
+		// TODO Auto-generated method stub
+		return map.memberListUpdate(vo);
 	}
 
 	@Override
-	public int memberDelete(memberListVO vo) {
-		return map.memberDelete(vo);
-	}
-
-	@Override
-	public List<memberListVO> memberListSearch(String key, String str) {
-		return map.memberListSearch(key, str);
+	public int memberListDelete(MembersVO vo) {
+		// TODO Auto-generated method stub
+		return map.memberListDelete(vo);
 	}
 
 }

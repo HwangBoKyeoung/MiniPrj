@@ -30,5 +30,6 @@
 		<mapper resource="co/nnull/prj/cal/service/calendar-map.xml"/>
 		<mapper resource="co/nnull/prj/order/service/order-map.xml"/>
 		<mapper resource="co/nnull/prj/users/service/users-map.xml"/>
+		<mapper resource="co/nnull/prj/memberList/service/memberList-map.xml"/>
 	</mappers>
 </configuration>
