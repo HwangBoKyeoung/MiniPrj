@@ -2,18 +2,18 @@ package co.nnull.prj.memberList.service;
 
 import java.util.List;
 
-import co.nnull.prj.memberList.vo.memberListVO;
+import co.nnull.prj.members.vo.MembersVO;
+
 
 public interface memberListService {
-List<memberListVO> memberSelectList();
+	List<MembersVO> memberSelectList();
 	
-	memberListVO memberSelect(memberListVO vo);
+	MembersVO memberSelectOne(MembersVO vo);
 	
-	int memberInsert(memberListVO vo);
+	int memberListInsert(MembersVO vo);
 	
-	int memberUpdate(memberListVO vo);
+	int memberListUpdate(MembersVO vo);
 	
-	int memberDelete(memberListVO vo);
+	int memberListDelete(MembersVO vo);
 	
-	List<memberListVO> memberListSearch(String key, String str);
 }

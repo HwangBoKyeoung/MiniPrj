@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>memberStatusUpdateForm</title>
 
-<form action="${pageContext.request.contextPath}/memberStatusUpdate.do" method="post">
+<form action="memberStatusUpdate.do" method="post">
 	<section class="contact-section">
 		<div class="container" style="margin-left: 30px">
 			<div class="row">
@@ -18,60 +18,59 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input class="form-control valid" name="membersId"
-									id="membersId" value="${member.membersId}" readonly="readonly"
-									type="text" onfocus="this.placeholder = ''">
+								회원 아이디<input class="form-control valid" name="membersId"
+									id="membersId" value="${members.membersId}" readonly="readonly"
+									type="text" >
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<input class="form-control valid" name="name"
-									id="name" value="${member.membersName}"  readonly="readonly" type="text"
-									onfocus="this.placeholder = ''">
+								이름<input class="form-control valid" name="memName"
+									id="memName" value="${members.membersName}"  readonly="readonly" type="text"
+									">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input class="form-control valid" name="tel"
-									id="tel" value="${member.membersTel}"
-									type="text" onfocus="this.placeholder = ''">
+								전화번호<input class="form-control valid" name="memTel"
+									id="memTel" value="${members.membersTel}"
+									type="text" readonly="readonly">
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="form-group">
-								<input class="form-control valid" name="address"
-									id="address" value="${member.membersAddress}" readonly="readonly"
-									 type="text"onfocus="this.placeholder = ''">
+								주소<input class="form-control valid" name="memAddress"
+									id="memAddress" value="${members.membersAddress}" readonly="readonly"
+									 type="text">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								멤버쉽등급<input class="form-control valid" name="memMemberShip"
+									id="memMemberShip" value="${members.membersMembership}" readonly="readonly"
+									type="text" >
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input class="form-control valid" name="memberShip"
-									id="memberShip" value="${member.membersMembership}" readonly="readonly"
-									type="text" onfocus="this.placeholder = ''">
+								몸무게(kg)<input class="form-control valid" name="memWeight"
+									id="memWeight" value="${members.membersWeight}" placeholder="몸무게(kg)"
+									type="text">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input class="form-control valid" name="Weight"
-									id="Weight" value="${member.membersWeight}"
-									type="text" onfocus="this.placeholder = ''">
+								신장(cm)<input class="form-control valid" name="memHeight"
+									id="memHeight" value="${members.membersHeight}" placeholder="키(cm)"
+									type="text">
 							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<input class="form-control valid" name="Height"
-									id="Height" value="${member.membersHeight}"
-									type="text" onfocus="this.placeholder = ''">
-							</div>
-						</div>
+						</div> 
 						
 					</div>
 				</div>
 			</div>
 		</div>
 	<div style="margin-left: 60px">
-		<input type="hidden" name="membersId">
 		<input type="submit" value="수정"
 		class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;">
 	</div>

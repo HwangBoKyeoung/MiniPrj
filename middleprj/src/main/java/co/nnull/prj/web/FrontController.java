@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
-import co.nnull.prj.command.BulletinExperienceSelect;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DealDelete;
 import co.nnull.prj.command.DealSelect;
@@ -23,8 +22,6 @@ import co.nnull.prj.command.DealWrite;
 import co.nnull.prj.command.DealWriteForm;
 import co.nnull.prj.command.DeleteSchedule;
 import co.nnull.prj.command.DeleteUser;
-import co.nnull.prj.command.EnquirySelectM;
-import co.nnull.prj.command.EnquirySelectOne;
 import co.nnull.prj.command.ExpRequest;
 import co.nnull.prj.command.ExpForm;
 import co.nnull.prj.command.Free;
@@ -39,7 +36,6 @@ import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertCalendar;
 import co.nnull.prj.command.InsertEnquiry;
-import co.nnull.prj.command.InsertServieM;
 import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
 import co.nnull.prj.command.LogoutCommand;
@@ -50,6 +46,9 @@ import co.nnull.prj.command.MemberList;
 import co.nnull.prj.command.MemberSelect;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.MemberShipForm;
+import co.nnull.prj.command.MemberStatusDelete;
+import co.nnull.prj.command.MemberStatusUpdate;
+import co.nnull.prj.command.MemberStatusUpdateForm;
 import co.nnull.prj.command.MyInfoUpdate;
 import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.NoticeDelete;
@@ -58,6 +57,7 @@ import co.nnull.prj.command.NoticeUpdate;
 import co.nnull.prj.command.NoticeUpdateForm;
 import co.nnull.prj.command.NoticeWrite;
 import co.nnull.prj.command.NoticeWriteForm;
+import co.nnull.prj.command.PaySuccess;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
@@ -105,10 +105,11 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/memberShipSelect.do", new MemberShipForm()); // 멤버십 상품 상세페이지
+		map.put("/placeOrder.do", new PlaceOrder()); // 주문내역 입력
 		map.put("/payment.do", new Payment()); // 결제 테스트
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
-		map.put("/placeorder.do", new PlaceOrder()); 	// 주문내역 DB
+		
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
 		map.put("/infoSchedule.do", new InfoSchedule()); // 이용안내 -> 스케쥴
@@ -152,6 +153,10 @@ public class FrontController extends HttpServlet {
 		map.put("/mainM.do", new MainMCommand());	//메인
 		map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
 		map.put("/memberSelect.do", new MemberSelect());	//회원 개별조회
+		map.put("/memberStatusUpdateForm.do", new MemberStatusUpdateForm()); //관리자 회원 수정폼
+		map.put("/memberStatusUpdate.do", new MemberStatusUpdate()); // 관리자 회원 키, 몸무게 수정
+		map.put("/memberStatusDelete.do", new MemberStatusDelete()); // 관리자 회원 삭제
+		
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황
@@ -161,16 +166,10 @@ public class FrontController extends HttpServlet {
 		map.put("/scheduleInfoPage.do", new ScheduleInfoPage());	// 일정json처리
 		map.put("/scheduleInfo.do", new ScheduleInfo());	// 일정보기
 		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	//  스케줄수정 폼
-		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정
+		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정)
 		map.put("/deleteSchedule.do", new DeleteSchedule());	// 일정삭제
 		map.put("/insertForm.do", new InsertForm());	//일정등록 폼
 		map.put("/insertCalendar.do", new InsertCalendar());	//일정등록
-		
-//		회원등록 글 조회
-		map.put("/enquirySelectM.do", new EnquirySelectM());	// 상담문의조회
-		map.put("/enquirySelectOne.do", new EnquirySelectOne());	// 상담문의 1건 조회
-		map.put("/bulletinExperienceSelect.do", new BulletinExperienceSelect());	// 체험신청조회
-		map.put("/insertServiceM.do", new InsertServieM());	// 서비스등록
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

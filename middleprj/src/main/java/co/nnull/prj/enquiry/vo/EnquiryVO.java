@@ -11,5 +11,4 @@ public class EnquiryVO {
 	private String enquiryName;
 	private String enquiryEmail;
 	private String enquiryMessage;
-	private String enquiryTel;
 }

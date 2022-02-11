@@ -12,5 +12,5 @@ public interface OrderService {
 
 	public int orderInsert(OrderVO vo);
 	
-	public OrderVO orderSales(OrderVO vo);
+	
 }

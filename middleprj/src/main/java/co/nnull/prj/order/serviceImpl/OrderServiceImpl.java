@@ -30,11 +30,6 @@ public class OrderServiceImpl implements OrderService {
 		return map.orderInsert(vo);
 	}
 
-	@Override
-	public OrderVO orderSales(OrderVO vo) {
-		return map.orderSales(vo);
-	}
-
 	
 
 }

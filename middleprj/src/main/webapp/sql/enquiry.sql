@@ -6,8 +6,5 @@ create table enquiry(
     enquiry_message varchar2(1000)
 );
 
-alter table enquiry
-add enquiry_tel varchar2(15);
-
 insert into enquiry
-values(1,'subject', 'name', 'aaa@email.com', 'message', '01055558888');
+values(1,'subject', 'name', 'aaa@email.com', 'message');

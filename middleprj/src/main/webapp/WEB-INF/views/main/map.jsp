@@ -90,16 +90,8 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input type="text" class="form-control valid"
-										name="phone" id="phone" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = '전화번호'" placeholder="전화번호">
-								</div>
-							</div>
-							
-							<div class="col-12">
-								<div class="form-group">
-									<input class="form-control" name="email" id="email"
-										type="email" onfocus="this.placeholder = ''"
+									<input type="email" class="form-control valid"
+										name="email" id="email" onfocus="this.placeholder = ''"
 										onblur="this.placeholder = '이메일'" placeholder="이메일">
 								</div>
 							</div>
@@ -160,9 +152,8 @@
 			let name = $('#name').val();
 			let email = $('#email').val();
 			let message = $('#message').val();
-			let tel = $('#phone').val();
 
-			if (subject == '' || name == '' || email == '' || message == '' || phone == '') {
+			if (subject == '' || name == '' || email == '' || message == '') {
 				alert('필수값을 입력해주세요');
 			} else {
 				alert('정상적으로 처리되었습니다.');
