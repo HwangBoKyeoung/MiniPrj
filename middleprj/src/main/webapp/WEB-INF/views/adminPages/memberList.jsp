@@ -61,12 +61,10 @@
 									<td>${member.membersWeight}</td>
 									<td>${member.membersHeight}</td>
 									<td>
-										<input type="button" value="수정"
-											onclick="location.href='memberStatusUpdateForm.do?id=${member.membersId}'">
+										<input type="button" value="수정" onclick="location.href='memberStatusUpdateForm.do?id=${member.membersId}'">
 									</td>
 									<td>
-									<input type="button" value="삭제"
-										onclick="deleteBtn('${member.membersId}')">
+										<input type="button" value="삭제" onclick="deleteBtn('${member.membersId}')">
 									</td>
 								</tr>
 							</c:forEach>

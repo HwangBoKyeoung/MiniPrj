@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
+import co.nnull.prj.command.BMItest;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DealDelete;
 import co.nnull.prj.command.DealSelect;
@@ -156,7 +157,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memberStatusUpdateForm.do", new MemberStatusUpdateForm()); //관리자 회원 수정폼
 		map.put("/memberStatusUpdate.do", new MemberStatusUpdate()); // 관리자 회원 키, 몸무게 수정
 		map.put("/memberStatusDelete.do", new MemberStatusDelete()); // 관리자 회원 삭제
-		
+		map.put("/BMI.do", new BMItest()); // bmi계산기 테스트
 		
 //		매출현황
 		map.put("/sales.do", new Sales());	// 매출현황
