@@ -35,8 +35,7 @@
 				<table>
 					<tbody>
 						<c:forEach items="${frees }" var="free">
-							<tr class="row100 body"
-								onclick="freeSelect(${free.freeId})">
+							<tr class="row100 body" onclick="freeSelect('${free.freeId}')">
 								<td class="cell100 column1" style="padding-left: 55px">${free.freeId}</td>
 								<td class="cell100 column2">${free.freeTitle}</td>
 								<td class="cell100 column3" style="padding-left: 14px">${free.freeWriter}</td>
@@ -65,15 +64,12 @@
 </div>
 
 
-
 <script type="text/javascript">
 		function freeSelect(id) { 
 			frm.freeId.value = id;
 			frm.submit();
 		}
 </script>
-
-
 
 
 </html>
