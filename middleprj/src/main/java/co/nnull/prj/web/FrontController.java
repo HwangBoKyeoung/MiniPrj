@@ -24,6 +24,7 @@ import co.nnull.prj.command.DealUpdateForm;
 import co.nnull.prj.command.DealWrite;
 import co.nnull.prj.command.DealWriteForm;
 import co.nnull.prj.command.DeleteSchedule;
+import co.nnull.prj.command.DeleteService;
 import co.nnull.prj.command.DeleteUser;
 import co.nnull.prj.command.EnquirySelectM;
 import co.nnull.prj.command.EnquirySelectOne;
@@ -37,10 +38,12 @@ import co.nnull.prj.command.FreeUpdateForm;
 import co.nnull.prj.command.FreeWrite;
 import co.nnull.prj.command.FreeWriteForm;
 import co.nnull.prj.command.IdCheck;
+import co.nnull.prj.command.ImageUpload;
 import co.nnull.prj.command.InfoSchedule;
 import co.nnull.prj.command.InfoUseCommand;
 import co.nnull.prj.command.InsertCalendar;
 import co.nnull.prj.command.InsertEnquiry;
+import co.nnull.prj.command.InsertService;
 import co.nnull.prj.command.InsertServieM;
 import co.nnull.prj.command.LoginCommand;
 import co.nnull.prj.command.LoginForm;
@@ -64,10 +67,13 @@ import co.nnull.prj.command.NoticeUpdate;
 import co.nnull.prj.command.NoticeUpdateForm;
 import co.nnull.prj.command.NoticeWrite;
 import co.nnull.prj.command.NoticeWriteForm;
+import co.nnull.prj.command.OrderInfo;
 import co.nnull.prj.command.Payment;
 import co.nnull.prj.command.PaymentFail;
 import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.PlaceOrder;
+import co.nnull.prj.command.ProgramInsert;
+import co.nnull.prj.command.ProgramSelectOne;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
 import co.nnull.prj.command.ReplyFreeDelete;
@@ -79,6 +85,7 @@ import co.nnull.prj.command.ScheduleManage;
 import co.nnull.prj.command.ScheduleView;
 import co.nnull.prj.command.UpdateCalendar;
 import co.nnull.prj.command.UpdateScheduleForm;
+import co.nnull.prj.command.UpdateService;
 import co.nnull.prj.command.UserMyPage;
 import co.nnull.prj.common.InsertForm;
 
@@ -118,6 +125,7 @@ public class FrontController extends HttpServlet {
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패
 		map.put("/placeorder.do", new PlaceOrder()); 	// 주문내역 DB
+		map.put("/orderInfo.do", new OrderInfo()); // 멤버십 결제내역 단건조회 // 02-11 추가부분
 		
 //		이용안내
 		map.put("/infoUse.do", new InfoUseCommand()); // 이용안내 -> 프로그램
@@ -165,7 +173,7 @@ public class FrontController extends HttpServlet {
 //		메인
 		map.put("/mainM.do", new MainMCommand());	//메인
 		map.put("/memberList.do", new MemberList()); //관리자 -> 회원리스트
-		map.put("/memberSelect.do", new MemberSelect());	//회원 개별조회
+		map.put("/memberSelect.do", new MemberSelect());	// 회원 개별조회
 		map.put("/memberStatusUpdateForm.do", new MemberStatusUpdateForm()); //관리자 회원 수정폼
 		map.put("/memberStatusUpdate.do", new MemberStatusUpdate()); // 관리자 회원 키, 몸무게 수정
 		map.put("/memberStatusDelete.do", new MemberStatusDelete()); // 관리자 회원 삭제
@@ -179,19 +187,26 @@ public class FrontController extends HttpServlet {
 		map.put("/scheduleManage.do", new ScheduleManage());	// 일정 입력, 수정, 삭제
 		map.put("/scheduleInfoPage.do", new ScheduleInfoPage());	// 일정json처리
 		map.put("/scheduleInfo.do", new ScheduleInfo());	// 일정보기
-		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	//  스케줄수정 폼
+		map.put("/updateScheduleForm.do", new UpdateScheduleForm());	// 스케줄수정 폼
 		map.put("/updateCalendar.do", new UpdateCalendar());	// 일정수정
 		map.put("/deleteSchedule.do", new DeleteSchedule());	// 일정삭제
-		map.put("/insertForm.do", new InsertForm());	//일정등록 폼
-		map.put("/insertCalendar.do", new InsertCalendar());	//일정등록
+		map.put("/insertForm.do", new InsertForm());	// 일정등록 폼
+		map.put("/insertCalendar.do", new InsertCalendar());	// 일정등록
 		
 //		회원등록 글 조회
 		map.put("/enquirySelectM.do", new EnquirySelectM());	// 상담문의조회
 		map.put("/enquirySelectOne.do", new EnquirySelectOne());	// 상담문의 1건 조회
 		map.put("/bulletinExperienceSelect.do", new BulletinExperienceSelect());	// 체험신청조회
-		map.put("/bulletinExperienceSelectOne.do", new BulletinExperienceSelectOne());	//체험신청 1건 조회
-		map.put("/insertServiceM.do", new InsertServieM());	// 서비스등록
-	}
+		map.put("/bulletinExperienceSelectOne.do", new BulletinExperienceSelectOne());	// 체험신청 1건 조회
+		/*
+		 * map.put("/insertServiceM.do", new InsertServieM()); // 서비스조회
+		 * map.put("/programSelectOne.do", new ProgramSelectOne()); // 서비스 1건 조회
+		 * map.put("/updateService.do", new UpdateService()); // 서비스 1건 수정
+		 * map.put("/insertService.do", new InsertService()); // 서비스 1건 입력
+		 * map.put("/programInsert.do", new ProgramInsert()); // 서비스 DB insert
+		 * map.put("/imageUpload.do", new ImageUpload()); // 이미지처리
+		 * map.put("/deleteService.do", new DeleteService()); // 서비스 1건 삭제
+		 */	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");

@@ -31,8 +31,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public OrderVO orderSales(OrderVO vo) {
-		return map.orderSales(vo);
+	public List<OrderVO> orderSales() {
+		return map.orderSales();
 	}
 
 

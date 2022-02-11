@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.program.service.ProgramMapper">
+	<resultMap type="co.nnull.prj.program.vo.ProgramVO" id="programMap">
+		<id property="programId" column="program_id"/>
+		<result property="programName" column="program_name"/>
+		<result property="programContent" column="program_content"/>
+		<result property="programImage" column="program_image"/>
+	</resultMap>
+	
+	<select id="programList" resultMap="programMap">
+		SELECT *
+		FROM PROGRAM ORDER BY PROGRAM_ID
+	</select>
+	
+	<select id="programSelect" resultMap="programMap">
+		SELECT *
+		FROM PROGRAM
+		WHERE PROGRAM_ID=#{programId}
+	</select>
+	
+	<insert id="programInsert" parameterType="co.nnull.prj.program.vo.ProgramVO">
+		<selectKey keyProperty="programId" resultType="int" order="BEFORE">
+			SELECT MAX(PROGRAM_ID)+1 AS PROGRAMID FROM PROGRAM
+		</selectKey>
+		INSERT INTO PROGRAM
+		VALUES (#{programId}, #{programName}, #{programContent}, #{programImage})
+	</insert>
+	
+	<update id="programUpdate" parameterType="co.nnull.prj.program.vo.ProgramVO">
+		UPDATE PROGRAM
+		SET program_name=NVL(#{programName},program_name),
+			program_content=NVL(#{programContent},program_content),
+			program_image=NVL(#{programImage},program_image)
+		WHERE PROGRAM_ID=#{programId}
+	</update>
+	
+	<delete id="programDelete" parameterType="co.nnull.prj.program.vo.ProgramVO">
+		DELETE FROM PROGRAM WHERE PROGRAM_ID = #{programId}
+	</delete>
+</mapper>

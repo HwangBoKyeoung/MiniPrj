@@ -14,7 +14,7 @@
 		<!-- Sidebar - Brand -->
 		<a
 			class="sidebar-brand d-flex align-items-center justify-content-center"
-			href="main.do">
+			href="mainM.do">
 			<div class="sidebar-brand-icon rotate-n-15">
 				<i class="fas fa-laugh-wink"></i>
 			</div>
@@ -82,11 +82,7 @@
 				<i class="fas fa-fw fa-chart-area"></i> <span>체험신청조회</span>
 		</a></li>
 
-		<!-- Nav Item - Tables -->
-		<li class="nav-item"><a class="nav-link" href="insertServiceM.do">
-				<i class="fas fa-fw fa-table"></i> <span>서비스등록</span>
-		</a></li>
-
+		
 		<!-- Divider -->
 		<hr class="sidebar-divider d-none d-md-block">
 

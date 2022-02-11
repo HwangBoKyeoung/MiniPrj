@@ -12,6 +12,6 @@ public interface OrderMapper {
 
 	public int orderInsert(OrderVO vo);
 	
-	public OrderVO orderSales(OrderVO vo);
+	public List<OrderVO> orderSales();
 	
 }
