@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.bulletin.service.ReplyFreeMapper">
+
+	<resultMap type="co.nnull.prj.bulletin.vo.ReplyFreeVO" id="freeMap">
+		<id property="replyId" column="reply_id" />
+		<result property="freeId" column="free_id"/>
+		<result property="replyWriter" column="reply_writer"/>
+		<result property="replyContent" column="reply_content"/>
+	</resultMap>
+	
+	<select id="freeSelectList" resultType="co.nnull.prj.bulletin.vo.ReplyFreeVO">
+		SELECT
+			FREE_ID AS FREEID,
+			REPLY_ID AS REPLYID,
+			REPLY_WRITER AS REPLYWRITER,
+			REPLY_CONTENT AS REPLYCONTENT
+		FROM reply_free ORDER BY REPLYID
+	</select>
+	
+	<insert id="freeInsert" parameterType="co.nnull.prj.bulletin.vo.ReplyFreeVO">
+		<selectKey keyProperty="replyId" resultType="int" order="BEFORE">
+			SELECT MAX(REPLY_ID)+1 AS REPLYID FROM REPLY_FREE
+		</selectKey>
+			INSERT INTO REPLY_FREE(FREE_ID, REPLY_ID, REPLY_WRITER, REPLY_CONTENT)
+			VALUES (#{freeId}, #{replyId}, #{replyWriter}, #{replyContent})
+	</insert>
+	
+	<delete id="freeDelete" parameterType="co.nnull.prj.bulletin.vo.ReplyFreeVO">
+		DELETE FROM REPLY_FREE WHERE REPLY_ID = #{replyId}
+	</delete>
+	
+</mapper>

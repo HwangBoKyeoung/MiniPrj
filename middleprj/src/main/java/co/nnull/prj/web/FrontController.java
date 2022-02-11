@@ -64,6 +64,9 @@ import co.nnull.prj.command.PaymentSuccess;
 import co.nnull.prj.command.PlaceOrder;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
+import co.nnull.prj.command.ReplyFreeDelete;
+import co.nnull.prj.command.ReplyFreeWrite;
+import co.nnull.prj.command.ReplyFreeWriteForm;
 import co.nnull.prj.command.Sales;
 import co.nnull.prj.command.ScheduleInfo;
 import co.nnull.prj.command.ScheduleInfoPage;
@@ -130,6 +133,10 @@ public class FrontController extends HttpServlet {
 		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 자유게시판 글수정 폼
 		map.put("/freeUpdate.do", new FreeUpdate()); // 자유게시판 글수정
 		map.put("/freeDelete.do", new FreeDelete()); // 자유게시판 삭제
+		
+//필요 ㄴㄴ		map.put("/replyFreeWriteForm.do", new ReplyFreeWriteForm()); // 자유게시판 댓글쓰기 폼
+		map.put("/replyFreeWrite.do", new ReplyFreeWrite()); // 자유게시판 댓글쓰기
+		map.put("/replyFreeDelete.do", new ReplyFreeDelete()); // 자유게시판 댓글삭제
 		
 		map.put("/deal.do", new Deal());	// 중고거래
 		map.put("/dealSelect.do", new DealSelect()); // 중고거래 한 건 선택

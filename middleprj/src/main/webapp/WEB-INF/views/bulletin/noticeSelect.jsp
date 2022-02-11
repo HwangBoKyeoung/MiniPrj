@@ -67,7 +67,6 @@
 			class="btn btn-secondary btn-icon-split" style="padding: 5px 10px 5px 10px;" 
 			onclick="location.href='notice.do'">
 		</div>
-	<a>${notice.noticeId }</a>
 	</div>
 
 
