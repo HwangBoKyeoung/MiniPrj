@@ -76,6 +76,8 @@ import co.nnull.prj.command.ProgramInsert;
 import co.nnull.prj.command.ProgramSelectOne;
 import co.nnull.prj.command.Register;
 import co.nnull.prj.command.RegisterForm;
+import co.nnull.prj.command.ReplyDealDelete;
+import co.nnull.prj.command.ReplyDealWrite;
 import co.nnull.prj.command.ReplyFreeDelete;
 import co.nnull.prj.command.ReplyFreeWrite;
 import co.nnull.prj.command.Sales;
@@ -148,8 +150,6 @@ public class FrontController extends HttpServlet {
 		map.put("/freeUpdateForm.do", new FreeUpdateForm()); // 자유게시판 글수정 폼
 		map.put("/freeUpdate.do", new FreeUpdate()); // 자유게시판 글수정
 		map.put("/freeDelete.do", new FreeDelete()); // 자유게시판 삭제
-		
-//필요 ㄴㄴ		map.put("/replyFreeWriteForm.do", new ReplyFreeWriteForm()); // 자유게시판 댓글쓰기 폼
 		map.put("/replyFreeWrite.do", new ReplyFreeWrite()); // 자유게시판 댓글쓰기
 		map.put("/replyFreeDelete.do", new ReplyFreeDelete()); // 자유게시판 댓글삭제
 		
@@ -160,6 +160,8 @@ public class FrontController extends HttpServlet {
 		map.put("/dealUpdateForm.do", new DealUpdateForm()); // 중고거래 글수정 폼
 		map.put("/dealUpdate.do", new DealUpdate()); // 중고거래 글수정
 		map.put("/dealDelete.do", new DealDelete()); // 중고거래 삭제
+		map.put("/replyDealWrite.do", new ReplyDealWrite()); // 중고거래 댓글쓰기
+		map.put("/replydealDelete.do", new ReplyDealDelete()); // 중고거래 댓글삭제
 		
 		map.put("/expForm.do", new ExpForm());	// 체험신청 폼
 		map.put("/expRequest.do", new ExpRequest()); // 체험신청 글전송

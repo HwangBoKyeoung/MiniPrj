@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.nnull.prj.bulletin.service.ReplyDealMapper">
+
+	<resultMap type="co.nnull.prj.bulletin.vo.ReplyDealVO" id="dealMap">
+		<id property="replyId" column="reply_id" />
+		<result property="dealId" column="deal_id"/>
+		<result property="replyWriter" column="reply_writer"/>
+		<result property="replyContent" column="reply_content"/>
+	</resultMap>
+	
+	<select id="dealSelectList" resultType="co.nnull.prj.bulletin.vo.ReplyDealVO">
+		SELECT
+			DEAL_ID AS DEALID,
+			REPLY_ID AS REPLYID,
+			REPLY_WRITER AS REPLYWRITER,
+			REPLY_CONTENT AS REPLYCONTENT
+		FROM reply_deal ORDER BY REPLYID
+	</select>
+	
+	<insert id="dealInsert" parameterType="co.nnull.prj.bulletin.vo.ReplyDealVO">
+		<selectKey keyProperty="replyId" resultType="int" order="BEFORE">
+			SELECT MAX(REPLY_ID)+1 AS REPLYID FROM REPLY_DEAL
+		</selectKey>
+			INSERT INTO REPLY_DEAL(DEAL_ID, REPLY_ID, REPLY_WRITER, REPLY_CONTENT)
+			VALUES (#{dealId}, #{replyId}, #{replyWriter}, #{replyContent})
+	</insert>
+	
+	<delete id="dealDelete" parameterType="co.nnull.prj.bulletin.vo.ReplyDealVO">
+		DELETE FROM REPLY_DEAL WHERE REPLY_ID = #{replyId}
+	</delete>
+	
+</mapper>
