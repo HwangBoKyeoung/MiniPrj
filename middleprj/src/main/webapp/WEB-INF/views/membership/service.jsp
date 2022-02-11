@@ -15,8 +15,8 @@
    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/boo\tstrap.bundle.min.js"></script>
 <script>
 function mustLogin() {
-	location.href="loginForm.do#mustLogin";
-	alert("로그인 해주세요.")
+   location.href="loginForm.do#mustLogin";
+   alert("로그인 해주세요.")
 }
 </script>
 <link rel="stylesheet" href="css/membership.css">
@@ -158,11 +158,10 @@ function mustLogin() {
                      </div>
                      <div class="pricing_body">
                         <ul>
-                           <li>24시간 이용</li>
-                           <li>월 P.T 1회 제공</li>
-                           <li>락커룸 + 샤워실 무제한</li>
-                           <li class="off-color"></li>
-                           <li class="off-color"></li>
+                           <li>${membership.membershipSubject1}</li>
+                           <li>${membership.membershipSubject2}</li>
+                           <li>${membership.membershipSubject3}</li>
+                           <li>${membership.membershipSubject4}</li>
                         </ul>
                      </div>
                      <c:choose>
@@ -193,6 +192,7 @@ function mustLogin() {
          document.forms.frm.membershipNum.value = id;
          document.forms.frm.submit();
       }
+      
    </script>
    
 </body>
