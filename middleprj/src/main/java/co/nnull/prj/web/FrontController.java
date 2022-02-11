@@ -50,6 +50,7 @@ import co.nnull.prj.command.MemberList;
 import co.nnull.prj.command.MemberSelect;
 import co.nnull.prj.command.MemberShip;
 import co.nnull.prj.command.MemberShipForm;
+import co.nnull.prj.command.MembersMembership;
 import co.nnull.prj.command.MyInfoUpdate;
 import co.nnull.prj.command.Notice;
 import co.nnull.prj.command.NoticeDelete;
@@ -105,6 +106,7 @@ public class FrontController extends HttpServlet {
 //		멤버십
 		map.put("/memberShip.do", new MemberShip()); // 멤버십 -> 서비스
 		map.put("/memberShipSelect.do", new MemberShipForm()); // 멤버십 상품 상세페이지
+		map.put("/membersMembership.do", new MembersMembership()); // 멤버십 회원 정보 수정
 		map.put("/payment.do", new Payment()); // 결제 테스트
 		map.put("/paymentSuccess.do", new PaymentSuccess()); // 결제 성공
 		map.put("/paymentFail.do", new PaymentFail()); // 결제 실패

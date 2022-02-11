@@ -22,7 +22,7 @@
          pay_method : "card",
          merchant_uid : 'merchant_' + new Date().getTime(),
          name : "${membership.membershipName}",
-         amount : 50,
+         amount : "${membership.membershipPrice}",
          buyer_email : "test@test.com",
          buyer_name : "<%=(String)session.getAttribute("id")%>",
          buyer_tel : "<%=(String)session.getAttribute("tel")%>",
@@ -34,7 +34,6 @@
      	        msg += '상점 거래ID : ' + rsp.merchant_uid;
      	        msg += '결제 상품명 : ' + "${membership.membershipName}";
      	        msg += '결제 금액 : ' + "${membership.membershipPrice}";
-     	        msg += '결제 시간 : ' + rsp.paid_at + rsp.created;
      	        
     	    	$.ajax({
     	    		url: 'placeorder.do',
@@ -47,9 +46,8 @@
     	    			 console.log(data);
     	    			 if(data=="y"){
     	    				 alert('msg');
-	    	    			 location.href = "paymentSuccess.do";
     	    			 } else{
-    	    				 alert('디비입력실패');
+	    	    			 location.href = "paymentSuccess.do";
     	    				 return false;
     	    			 }
     	    		}
@@ -105,7 +103,7 @@
          </div>
          <br> <br>
          <div style="float: left; margin-left: 400px;">
-            <button onclick="requestPay(); orderInsert();" class="boxed-btn3">결제</button>
+            <button onclick="requestPay()" class="boxed-btn3">결제</button>
          </div>
          <div style="float: left; margin-left: 50px;">
             <button onclick="location.href='memberShip.do#item'" class="boxed-btn3">상품목록</button>
