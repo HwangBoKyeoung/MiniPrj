@@ -48,4 +48,9 @@ public class MembersServiceImpl implements MembersService {
 		return map.memberSelectOne(vo);
 	}
 
+	@Override
+	public int orderUpdate(MembersVO vo) {
+		return map.orderUpdate(vo);
+	}
+
 }

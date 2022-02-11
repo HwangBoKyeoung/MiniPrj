@@ -2,6 +2,7 @@ package co.nnull.prj.order.vo;
 
 import java.sql.Date;
 
+
 import lombok.Data;
 
 @Data
@@ -11,6 +12,7 @@ public class OrderVO {
 	private int orderPrice;
 	private Date orderDate;
 	private String membersId;
+	private String membersMembership;
 
 }
 

@@ -19,4 +19,6 @@ public interface MembersService {
 	int memberDelete(MembersVO vo);
 
 	boolean isIdCheck(String id); // 아이디 중복체크
+	
+	int orderUpdate(MembersVO vo);
 }

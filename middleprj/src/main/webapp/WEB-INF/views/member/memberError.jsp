@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container-fluid">
-
-		<!-- Page Heading -->
-		<h1 class="h3 mb-4 text-gray-800">Error page</h1>
-		<h3>${message }</h3>
-	</div>
+<script>
+   alert('${message}');
+   location.href="main.do";
+</script>
 </body>
 </html>
