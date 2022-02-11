@@ -66,7 +66,7 @@
 </script>
 </head>
 <body>
-   <div class="container-table100">
+<div class="container-table100">
       <div class="wrap-table100">
 
          <a class="btn btn-danger btn-icon-split btn-lg"> <span
@@ -79,9 +79,9 @@
                <table>
                   <thead>
                      <tr class="row100 head">
-                        <th class="cell100 column1">상품명</th>
-                        <th class="cell100 column2" style="text-align: center;">상품소개</th>
-                        <th class="cell100 column3">가격</th>
+                        <th class="cell100 membership1">상품명</th>
+                        <th class="cell100 membership2" style="text-align: center;" colspan="4">상품소개</th>
+                        <th class="cell100 membership3">가격</th>
                      </tr>
                   </thead>
                </table>
@@ -91,9 +91,12 @@
                <table>
                   <tbody>
                      <tr class="row100 body">
-                        <td class="cell100 column1" style="padding-left: 55px">${membership.membershipName}</td>
-                        <td class="cell100 column2">""</td>
-                        <td class="cell100 column3" style="padding-left: 14px"><fmt:formatNumber
+                        <td class="cell100 membership4" >${membership.membershipName}</td>
+                        <td class="cell100 membership4">${membership.membershipSubject1}</td>
+                        <td class="cell100 membership4">${membership.membershipSubject2}</td>
+                        <td class="cell100 membership4">${membership.membershipSubject3}</td>
+                        <td class="cell100 membership4">${membership.membershipSubject4}</td>
+                        <td class="cell100 membership5"><fmt:formatNumber
                               value="${membership.membershipPrice}" pattern="###,###,###" /></td>
                      </tr>
                   </tbody>
@@ -102,7 +105,7 @@
          </div>
          <br> <br>
          <div style="float: left; margin-left: 400px;">
-            <button onclick="requestPay()" class="boxed-btn3">결제</button>
+            <button onclick="requestPay(); orderInsert();" class="boxed-btn3">결제</button>
          </div>
          <div style="float: left; margin-left: 50px;">
             <button onclick="location.href='memberShip.do#item'" class="boxed-btn3">상품목록</button>
@@ -110,10 +113,9 @@
       </div>
    </div>
 
-	
-		<input type="hidden" id="g_name" name="g_name" value="${membership.membershipName}" readonly="readonly">
-		<input type="hidden" id="g_price" name="g_price" value="${membership.membershipPrice}" readonly="readonly">
-		<input type="hidden" id="m_id" name="m_id" value="${id}" readonly="readonly">
-
+   
+      <input type="hidden" id="g_name" name="g_name" value="${membership.membershipName}" readonly="readonly">
+      <input type="hidden" id="g_price" name="g_price" value="${membership.membershipPrice}" readonly="readonly">
+      <input type="hidden" id="m_id" name="m_id" value="${id}" readonly="readonly">
 </body>
 </html>
