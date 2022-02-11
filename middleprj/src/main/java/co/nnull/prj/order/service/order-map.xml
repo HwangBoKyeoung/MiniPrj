@@ -27,10 +27,6 @@
 		WHERE members_ID = #{membersId}
 	</select>
 	
-	<select id="orderSales" resultMap="orderMap">
-		SELECT SUM(ORDER_PRICE) FROM ORDERLIST
-		WHERE ORDER_NAME = #{orderName}
-	</select>
 	
 	<insert id="orderInsert" parameterType="co.nnull.prj.order.vo.OrderVO">
 		<selectKey keyProperty="orderId" resultType="int" order="BEFORE" >

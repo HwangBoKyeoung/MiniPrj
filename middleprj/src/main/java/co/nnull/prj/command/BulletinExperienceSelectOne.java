@@ -21,7 +21,7 @@ public class BulletinExperienceSelectOne implements Command {
 		vo = expDao.expSelect(vo);
 		String viewPage = null;
 		if(vo!=null) {
-			request.setAttribute("exps", vo);
+			request.setAttribute("exp", vo);
 			viewPage = "manager/adminManage/expSelectOne";
 		} else {
 			request.setAttribute("message", "체험신청 1건 조회 실패");

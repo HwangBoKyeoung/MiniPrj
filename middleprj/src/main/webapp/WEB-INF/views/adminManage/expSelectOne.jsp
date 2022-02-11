@@ -15,11 +15,22 @@
 	  padding-right: 0.75em;
 	  border: 2px solid black;
 }
+
+	.experience{
+		text-align: center;
+		width: 200px;
+	}
+	
+	.ttr{
+		height: 50px;
+		line-height: 50px;
+		border-bottom: 1px solid grey;
+	}
 </style>
 </head>
 <body>
 	<section>
-		<div style="width: 70%; margin-top: 50px; margin-bottom: 100px; margin-left: 50px">
+		<div align="center" style="width: 100%; margin-top: 50px; margin-bottom: 100px; margin-left: 50px">
 			<div id="board-view" class="board-wrap">
 				<div class="cmd"></div>
 				<div class="article-wrap">
@@ -30,23 +41,35 @@
 						<tbody>
 							<tr>
 								<th>
-									<h3 class="subject">${selectOne.enquiryId}번 문의글</h3> <span
-									class="subj-info"> <span class="writer">BY <span
-											class="name">${selectOne.enquiryName}</span></span> <span
-										class="date ff-lucida">님</span> </span>
+									<h3 class="subject">체험신청글</h3> 
 								</th>
 							</tr>
 						</tbody>
 					</table>
 					<br><br>
-					<form>
-						<fieldset>
-							<legend>문의내용</legend>
-							<div class="context" style="margin-top: 40px; padding-bottom: 80px">
-								<p>${selectOne.enquiryMessage}</p>
-							</div>
-						</fieldset>
-					</form>
+					
+					<table>
+						<tr class="ttr" style="border-top: 1px grey solid;">
+							<th class="experience">체험요청날짜</th>
+							<td class="experience">${exp.expDate}</td>
+						</tr>
+						<tr class="ttr">
+							<th class="experience">성명</th>
+							<td class="experience">${exp.expName}</td>
+						</tr>
+						<tr class="ttr">
+							<th class="experience">전화번호</th>
+							<td class="experience">${exp.expTel}</td>
+						</tr>
+						<tr class="ttr">
+							<th class="experience">희망 프로그램</th>
+							<td class="experience">${exp.expProgram}</td>
+						</tr>
+						<tr class="ttr">
+							<th class="experience">메세지</th>
+							<td class="experience">${exp.expMessage}</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 
