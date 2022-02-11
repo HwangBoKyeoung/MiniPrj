@@ -11,9 +11,7 @@
 </head>
 <body>
 
-
-	<form action="freeDelete.do"
-		method="post" id="delFrm" name="delFrm">
+	<form action="freeDelete.do" method="post" id="delFrm" name="delFrm">
 		<input type="hidden" name="id">
 	</form>
 
@@ -49,34 +47,39 @@
 					<div style="margin-bottom: 10px">댓글</div>
 					<div class="col-12">
 						<div class="form-group">
-						<form action="replyFreeWrite.do" method="post" id="frm">
-							<input type="hidden" id="replyWriter" name="replyWriter" value="${id }">
-						
-							<textarea class="form-control w-100" name="replyContent"
-								id="replyContent" cols="30" rows="3"
-								onfocus="this.placeholder = ''"
-								onblur="this.placeholder = '댓글 입력'" placeholder="댓글 입력"></textarea>
-							<div align="right" style="margin-top: 8px">
-								<button type="submit">댓글등록</button>
-							</div>
-						</form>
+							<form action="replyFreeWrite.do" method="post" id="frm">
+								<input type="hidden" id="replyWriter" name="replyWriter"
+									value="${id }"> <input type="hidden" id="freeId"
+									name="freeId" value="${free.freeId }">
+								<textarea class="form-control w-100" name="replyContent"
+									id="replyContent" cols="30" rows="3"
+									onfocus="this.placeholder = ''"
+									onblur="this.placeholder = '댓글 입력'" placeholder="댓글 입력"></textarea>
+								<div align="right" style="margin-top: 8px">
+									<button type="submit">댓글등록</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
 				<form>
-				<c:forEach items="${replyFrees }" var="replyFree" varStatus="status">
-					<c:if test="${replyFree.freeId ==  free.freeId}">
-						<div id="deleteId[${status.index}]"
-							style="border-bottom: 1px solid #D5D5D5; margin-top: 15px">
-							<span>BY</span> <span style="font-weight: 600">${replyFree.replyWriter}</span><br>
-							<span>${replyFree.replyContent}</span>
-							<div align="right" style="margin-bottom: 2px; padding-top: 0">
-								<button type="button"
-									onclick="replyDelFnc(${replyFree.replyId},${status.index})">댓글삭제</button>
+					<c:forEach items="${replyFrees }" var="replyFree"
+						varStatus="status">
+						<c:if test="${replyFree.freeId ==  free.freeId}">
+							<div class="deleteId${status.index}"
+								style="border-bottom: 1px solid #D5D5D5; margin-top: 15px">
+								<span>BY</span> <span style="font-weight: 600">${replyFree.replyWriter}</span><br>
+								<span>${replyFree.replyContent}</span>
+								<c:if test="${replyFree.replyWriter == id}">
+									<div align="right" style="margin-bottom: 2px; padding-top: 0">
+										<button type="button"
+											onclick="replyDelFnc(${replyFree.replyId},${status.index})">댓글삭제</button>
+									</div>
+								</c:if>
 							</div>
-						</div>
-					</c:if>
-				</c:forEach>
+						</c:if>
+					</c:forEach>
+
 				</form>
 				<br>
 			</div>
@@ -128,26 +131,22 @@
 		</div>
 	</section>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 	function deleteFnc(id) {
-		document.form.delFrm.id.value = id;
-		document.form.delFrm.submit();
+		document.forms.delFrm.id.value = id;
+		document.forms.delFrm.submit();
 	}
 
 	function replyDelFnc(id,index) {
-		alert(id);
-		
-		console.log(id);
-		console.log(index);
-		
+		alert('댓글이 삭제되었습니다.');
+		 location.reload();
 		 $.ajax({
 			url: 'replyFreeDelete.do',
 			data: {delId : id},
 			dataType: 'json',
 			success: function(result) {
-				console.log(result);
 				if(result == 'Success') {
-					$("#deleteId["+index+"]").remove();
+					$(".deleteId" + index).remove();
 
 				}
 			}
