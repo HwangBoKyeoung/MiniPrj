@@ -12,6 +12,13 @@
 		<result property="expMessage" column="exp_message"/>
 	</resultMap>
 	
+	<select id="expSelectList" resultMap="expMap">
+		SELECT * FROM BULLETIN_EXPERIENCE ORDER BY EXP_ID
+	</select>	
+	
+	<select id="expSelect" resultMap="expMap">
+		SELECT * FROM BULLETIN_EXPERIENCE WHERE EXP_ID=#{expId}
+	</select>
 	
 	<insert id="expInsert" parameterType="co.nnull.prj.bulletin.vo.BulletinExpVO">
 		<selectKey keyProperty="expId" resultType="int" order="BEFORE">

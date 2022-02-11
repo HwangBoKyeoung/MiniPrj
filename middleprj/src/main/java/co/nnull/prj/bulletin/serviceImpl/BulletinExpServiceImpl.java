@@ -1,5 +1,7 @@
 package co.nnull.prj.bulletin.serviceImpl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.nnull.prj.bulletin.service.BulletinExpMapper;
@@ -17,6 +19,18 @@ public class BulletinExpServiceImpl implements BulletinExpService {
 	public int expInsert(BulletinExpVO vo) {
 
 		return map.expInsert(vo);
+	}
+
+
+	@Override
+	public List<BulletinExpVO> expSelectList() {
+		return map.expSelectList();
+	}
+
+
+	@Override
+	public BulletinExpVO expSelect(BulletinExpVO vo) {
+		return map.expSelect(vo);
 	}
 
 }

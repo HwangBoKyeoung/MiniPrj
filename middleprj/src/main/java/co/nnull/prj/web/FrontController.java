@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.nnull.prj.comm.Command;
 import co.nnull.prj.command.BulletinExperienceSelect;
+import co.nnull.prj.command.BulletinExperienceSelectOne;
 import co.nnull.prj.command.Deal;
 import co.nnull.prj.command.DealDelete;
 import co.nnull.prj.command.DealSelect;
@@ -170,6 +171,7 @@ public class FrontController extends HttpServlet {
 		map.put("/enquirySelectM.do", new EnquirySelectM());	// 상담문의조회
 		map.put("/enquirySelectOne.do", new EnquirySelectOne());	// 상담문의 1건 조회
 		map.put("/bulletinExperienceSelect.do", new BulletinExperienceSelect());	// 체험신청조회
+		map.put("/bulletinExperienceSelectOne.do", new BulletinExperienceSelectOne());	//체험신청 1건 조회
 		map.put("/insertServiceM.do", new InsertServieM());	// 서비스등록
 	}
 

@@ -21,18 +21,18 @@
 		}
 	</script>
 	
-	<form action="${pageContext.request.contextPath}/enquirySelectOne.do" method="post" name="frms" id="frms">
+	<form action="${pageContext.request.contextPath}/bulletinExperienceSelectOne.do" method="post" name="frms" id="frms">
 		<input type="hidden" id="selc" name="selc">
 	</form>
 	<div class="container-fluid">
 		<!-- Page Heading -->
-		<h1 class="h3 mb-2 text-gray-800">상담문의 조회</h1>
+		<h1 class="h3 mb-2 text-gray-800">체험신청문의</h1>
 		<a target="_blank" href="mainM.do">홈으로</a>
 
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
-				<h6 class="m-0 font-weight-bold text-primary">상담문의 조회</h6>
+				<h6 class="m-0 font-weight-bold text-primary">체험신청문의</h6>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -41,20 +41,22 @@
 						<thead>
 							<tr>
 								<th>순번</th>
-								<th>제목</th>
+								<th>날짜</th>
 								<th>이름</th>
-								<th>이메일</th>
 								<th>전화번호</th>
+								<th>지역</th>
+								<th>프로그램</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${enquiries}" var="enquiry">
-								<tr id="trt" onclick="selectFnc(${enquiry.enquiryId})">
-									<td>${enquiry.enquiryId}</td>
-									<td>${enquiry.enquirySubject}</td>
-									<td>${enquiry.enquiryName}</td>
-									<td>${enquiry.enquiryEmail}</td>
-									<td>${enquiry.enquiryTel}</td>
+							<c:forEach items="${exps}" var="exp">
+								<tr id="trt" onclick="selectFnc(${exp.expId})">
+									<td>${exp.expId}</td>
+									<td>${exp.expDate}</td>
+									<td>${exp.expName}</td>
+									<td>${exp.expTel}</td>
+									<td>${exp.expCity}</td>
+									<td>${exp.expProgram}</td>
 								</tr>
 							</c:forEach>
 						</tbody>
