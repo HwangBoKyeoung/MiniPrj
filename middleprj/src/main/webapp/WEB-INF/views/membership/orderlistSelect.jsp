@@ -17,17 +17,6 @@
 	background-color: yellow;
 }
 
-#menus li {
-	text-align: center;
-	heigth: 20px;
-	line-height: 20px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 table {
 	width: 55%;
 }
@@ -64,7 +53,7 @@ th {
 				<ul id="menus" class="list-unstyled mb-0">
 					<li><a href="#general" class="mouse-down h6 text-dark">나의정보</a><br>
 						<br></li>
-					<li><a href="#orderlist" class="mouse-down h6 text-dark">주문목록</a><br>
+					<li><a onclick="orderlistSelect('${id}')" class="mouse-down h6 text-dark">결제 내역 조회</a><br>
 						<br></li>
 					<li><a href="#actionlist" class="mouse-down h6 text-dark">체험신청조회</a><br>
 						<br></li>
@@ -111,7 +100,10 @@ th {
 		</div>
 		<br> <br> <br>
 	</div>
-		
+	
+	<br><br><br><br><br><br><br><br><br><br><br>
+	
+	
 
 	
 
