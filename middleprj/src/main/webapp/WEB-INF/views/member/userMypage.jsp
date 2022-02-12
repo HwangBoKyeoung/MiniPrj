@@ -17,17 +17,6 @@
 	background-color: yellow;
 }
 
-#menus li {
-	text-align: center;
-	heigth: 20px;
-	line-height: 20px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 table {
 	width: 55%;
 }
@@ -53,7 +42,9 @@ th {
 </style>
 
 <body>
-
+<form id="frm" name="frm" action="orderInfo.do" method="post">
+                                    <input type="hidden" id="orderInfo" name="orderInfo">
+                                 </form>   
 	<div id="lists">
 		<div class="rounded shadow p-4 sticky-bar">
 			<div id="scroll">
@@ -64,7 +55,7 @@ th {
 				<ul id="menus" class="list-unstyled mb-0">
 					<li><a href="#general" class="mouse-down h6 text-dark">나의정보</a><br>
 						<br></li>
-					<li><a href="#orderlist" class="mouse-down h6 text-dark">주문목록</a><br>
+					<li><a onclick="orderlistSelect('${id}')" class="mouse-down h6 text-dark">결제 내역 조회</a><br>
 						<br></li>
 					<li><a href="#actionlist" class="mouse-down h6 text-dark">체험신청조회</a><br>
 						<br></li>
@@ -103,33 +94,6 @@ th {
 							<td align="center">${user.membersTel}</td>
 							<td align="center">${user.membersAddress}</td>
 							<td align="center">${user.membersMembership}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<br>
-		</div>
-		<br> <br> <br>
-
-		<div id="actionlist" align="center">
-			<div>
-				<h2>***주문목록***</h2>
-				<br>
-				<table border="1">
-					<thead>
-						<tr>
-							<th width="250">ㅇㅇㅇ</th>
-							<th width="250">ㅇㅇㅇ</th>
-							<th width="250">ㅇㅇㅇ</th>
-							<th width="250">ㅇㅇㅇ</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td align="center">${name}</td>
-							<td align="center">${tel}</td>
-							<td align="center">${address}</td>
-							<td align="center">${membership}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -319,6 +283,12 @@ th {
 				return false;
 			}
 		}
+		
+		function orderlistSelect(id) { 
+		    console.log(id);
+		    document.forms.frm.orderInfo.value = id;
+		    document.forms.frm.submit();
+		 }
 	</script>
 
 </body>
